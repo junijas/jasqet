@@ -82,10 +82,8 @@ were worth fixing before more people use Jasqet.
 
 ## Not verified here
 
-- The window's key was tested with a copy of Jasqet in a browser, not yet in
-  Jasqet's own window (WebView2) or on a Mac or Linux.
-- Pairing was tested against a real, a fake and an old Jasqet with the
-  extension's own code, not yet in a real browser.
+- The window's key and pairing were used on Windows, in Jasqet's own window
+  and in Edge, but not yet on a Mac or Linux, or in Chrome or Firefox.
 
 # Jasqet 1.6.1: security and Windows fixes from the 1.6.0 review
 
