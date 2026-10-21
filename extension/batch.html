@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jasqet: links on this page</title>
+<style>
+  :root { --bg:#f4f5f7; --panel:#fff; --text:#052044; --muted:#68707d; --line:#e2e5ea; --soft:#f0f2f5; --accent:#006fef; --accent-soft:#e3f1ff; --good:#13955b; --bad:#d23c3c; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0e1116; --panel:#161a21; --text:#e9ecf1; --muted:#8c94a3; --line:#262c37; --soft:#1c212a; --accent-soft:#0d2440; --good:#35c483; --bad:#ff6b6b; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:14px/1.45 "Segoe UI",system-ui,sans-serif; }
+  header { position:sticky; top:0; background:var(--panel); border-bottom:1px solid var(--line); padding:14px 20px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; z-index:2; }
+  .logo { width:30px; height:30px; background:url(icons/48.png) center/contain no-repeat; flex:none; }
+  h1 { font-size:16px; margin:0; }
+  .src { color:var(--muted); font-size:12.5px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:60vw; }
+  .bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:12px 20px; }
+  .chip { border:1px solid var(--line); background:var(--panel); color:var(--text); border-radius:20px; padding:5px 12px; cursor:pointer; font:inherit; font-size:13px; }
+  .chip.on { background:var(--accent-soft); border-color:var(--accent); font-weight:600; }
+  .chip small { color:var(--muted); margin-left:4px; }
+  input.q { flex:1; min-width:180px; height:34px; border-radius:9px; border:1px solid var(--line); background:var(--panel); color:var(--text); padding:0 12px; font:inherit; }
+  main { padding:0 20px 100px; }
+  table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  th, td { text-align:left; padding:8px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { font-size:12px; color:var(--muted); font-weight:600; background:var(--soft); }
+  td.n { font-weight:600; word-break:break-all; }
+  td.u { color:var(--muted); font-size:12px; word-break:break-all; }
+  td.t { white-space:nowrap; color:var(--muted); font-size:12px; }
+  tr:hover td { background:var(--soft); }
+  input[type=checkbox] { width:16px; height:16px; accent-color:var(--accent); }
+  footer { position:fixed; bottom:0; left:0; right:0; background:var(--panel); border-top:1px solid var(--line); padding:12px 20px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  footer .grow { flex:1; color:var(--muted); }
+  .btn { height:38px; padding:0 16px; border-radius:9px; border:1px solid var(--line); background:var(--panel); color:var(--text); font:600 14px inherit; cursor:pointer; }
+  .btn.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .btn:disabled { opacity:.5; cursor:default; }
+  .msg { padding:40px; text-align:center; color:var(--muted); }
+  .ok { color:var(--good); font-weight:600; } .err { color:var(--bad); }
+  .ask { padding-bottom:4px; }
+  .ask input.q { border-color:var(--accent); height:40px; font-size:15px; }
+  .tag { display:inline-block; padding:2px 9px; border-radius:20px; background:var(--accent-soft); color:var(--text); margin-right:4px; font-weight:600; font-size:12px; }
+  td.s { white-space:nowrap; color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
+  /* thin scrollbars in the page's own colours (Firefox: the @supports line) */
+  ::-webkit-scrollbar{width:6px;height:6px}
+  ::-webkit-scrollbar-track,::-webkit-scrollbar-corner{background:transparent}
+  ::-webkit-scrollbar-button{display:none;width:0;height:0}
+  ::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--muted) 35%,transparent);border-radius:6px}
+  ::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--muted) 60%,transparent)}
+  @supports not selector(::-webkit-scrollbar){*{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--muted) 35%,transparent) transparent}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"></div>
+  <div><h1>Links on this page</h1><div class="src" id="src"></div></div>
+</header>
+<div class="bar ask"><input class="q" id="ask" placeholder='Describe what you want, e.g. "all PDFs over 1 MB", "videos with lecture in the name", "first 10 mp3s"'><button class="btn primary" id="askGo">Select</button></div>
+<div class="bar" id="askOut" style="padding-top:0;color:var(--muted);font-size:13px;display:none"></div>
+<div class="bar" id="chips"></div>
+<div class="bar"><input class="q" id="q" placeholder="Filter by name or address, e.g. .pdf or lecture"><label style="display:flex;gap:6px;align-items:center;color:var(--muted)"><input type="checkbox" id="all"> Select all shown</label></div>
+<main id="main"><div class="msg">Collecting links…</div></main>
+<footer><span class="grow" id="count">Nothing selected</span><button class="btn" id="later" disabled>Download later</button><button class="btn primary" id="go" disabled>Download selected</button></footer>
+<script src="smartpick.js"></script>
+<script src="batch.js"></script>
+</body>
+</html>

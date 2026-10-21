@@ -1,0 +1,5 @@
+# LF line ends everywhere, like the files themselves (build.sh breaks with CRLF)
+* text=auto eol=lf
+*.syso binary
+*.ico binary
+*.png binary

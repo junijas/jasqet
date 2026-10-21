@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jasqet Viewer</title>
+<link rel="icon" href="data:image/png;base64,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">
+<style>
+/* light or dark like Jasqet's window: data-theme comes from Settings, else the system's */
+:root{
+  --bg:#f4f5f7; --panel:#ffffff; --panel2:#f0f2f5; --line:#e2e5ea; --text:#052044; --muted:#68707d;
+  --accent:#006fef; --accent-ink:#ffffff; --good:#13955b; --bad:#d23c3c; --warn:#b26a00; --info:#2f6fe0;
+  --glass:rgba(255,255,255,.88); --stage:#e9ebef; --paper:#dfe2e7; --ph:#cfd3da; --glow:#dce8f7;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b0d11; --panel:#14181f; --panel2:#1c212a; --line:#272d38; --text:#e9ecf1; --muted:#97a0ae;
+    --accent:#3daeff; --accent-ink:#052044; --good:#35c483; --bad:#ff6b6b; --warn:#ffb020; --info:#6aa1ff;
+    --glass:rgba(16,19,25,.82); --stage:#0a0b0e; --paper:#2a2f38; --ph:#3a404b; --glow:#1b2130;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b0d11; --panel:#14181f; --panel2:#1c212a; --line:#272d38; --text:#e9ecf1; --muted:#97a0ae;
+  --accent:#3daeff; --accent-ink:#052044; --good:#35c483; --bad:#ff6b6b; --warn:#ffb020; --info:#6aa1ff;
+  --glass:rgba(16,19,25,.82); --stage:#0a0b0e; --paper:#2a2f38; --ph:#3a404b; --glow:#1b2130;
+  color-scheme: dark;
+}
+/* the video player stays dark in both: its controls sit over the picture (.aud: music follows the mode) */
+.player:not(.aud){
+  --panel:#14181f; --panel2:#1c212a; --line:#272d38; --text:#e9ecf1; --muted:#97a0ae;
+  --accent:#3daeff; --accent-ink:#052044; --glass:rgba(16,19,25,.82);
+  color:var(--text); color-scheme: dark;
+}
+/* thin scrollbars in the page's own colours (Firefox: the @supports line) */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track,::-webkit-scrollbar-corner{background:transparent}
+::-webkit-scrollbar-button{display:none;width:0;height:0}
+::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--muted) 35%,transparent);border-radius:6px}
+::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--muted) 60%,transparent)}
+@supports not selector(::-webkit-scrollbar){*{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--muted) 35%,transparent) transparent}}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden}
+body{background:var(--bg);color:var(--text);font:14px/1.45 "Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;user-select:none}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+button:disabled{opacity:.4;cursor:default}
+:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.mono{font-variant-numeric:tabular-nums}
+
+/* top bar */
+header{flex:none;height:52px;display:flex;align-items:center;gap:6px;padding:0 8px 0 6px;background:var(--panel);border-bottom:1px solid var(--line);z-index:5}
+body.framed header{padding-right:146px} /* Jasqet's window buttons sit there */
+.nav{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;color:var(--muted)}
+.nav:not(:disabled):hover{background:var(--panel2);color:var(--text)}
+.file{min-width:0;flex:1;padding:0 6px}
+.file .n{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.file .m{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.file .m b{color:var(--accent);font-weight:600}
+.tb{height:34px;padding:0 11px;border-radius:8px;display:inline-flex;align-items:center;gap:7px;color:var(--text);white-space:nowrap;font-size:13px}
+.tb:not(:disabled):hover{background:var(--panel2)}
+.tb.del:not(:disabled):hover{color:var(--bad)}
+.tb.back{margin-right:4px;font-weight:600}
+[hidden]{display:none!important}
+.tb svg{flex:none;opacity:.85}
+.sep{width:1px;height:22px;background:var(--line);margin:0 4px}
+@media (max-width:760px){ .tb span{display:none} .tb{padding:0 8px} }
+
+main{flex:1;position:relative;min-height:0;overflow:hidden}
+.center{position:absolute;inset:0;display:grid;place-items:center;padding:24px}
+.card{max-width:520px;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center;user-select:text}
+.card h2{margin:10px 0 6px;font-size:18px}
+.card p{margin:0 0 6px;color:var(--muted)}
+.card .acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.card .ic{width:52px;height:52px;border-radius:14px;display:inline-grid;place-items:center;background:var(--panel2)}
+.card.danger .ic{background:rgba(255,107,107,.14);color:var(--bad)}
+.card.warn .ic{background:rgba(255,176,32,.14);color:var(--warn)}
+.btn{height:36px;padding:0 14px;border-radius:9px;display:inline-flex;align-items:center;gap:7px;font-weight:600;background:var(--panel2);border:1px solid var(--line)}
+.btn:hover{filter:brightness(1.15)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.btn.red{background:var(--bad);color:#1a0b0b;border-color:transparent}
+.spin{width:30px;height:30px;border-radius:50%;border:3px solid color-mix(in srgb,var(--muted) 25%,transparent);border-top-color:var(--accent);animation:sp 0.9s linear infinite;display:inline-block}
+@keyframes sp{to{transform:rotate(360deg)}}
+.bar{height:6px;border-radius:4px;background:var(--panel2);overflow:hidden;margin:14px auto 0;max-width:260px}
+.bar i{display:block;height:100%;background:var(--accent);width:0}
+
+/* media player */
+.player{position:absolute;inset:0;background:#000;display:flex;flex-direction:column}
+.player .screen{flex:1;position:relative;min-height:0;display:grid;place-items:center;overflow:hidden}
+.player.aud{background:none}
+.player video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+video::cue{background:rgba(0,0,0,.72);color:#fff;font-family:"Segoe UI",system-ui,sans-serif;font-size:clamp(16px,3.2vh,34px);line-height:1.3}
+.big{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:rgba(0,0,0,.55);display:grid;place-items:center;pointer-events:none;opacity:0;transition:opacity .15s}
+.paused .big{opacity:1}
+.wait{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--glass);border:1px solid var(--line);border-radius:12px;padding:14px 18px;display:none;align-items:center;gap:12px;max-width:min(440px,90%);backdrop-filter:blur(6px)}
+.wait.on{display:flex}
+.wait .t b{display:block}
+.wait .t span{color:var(--muted);font-size:12.5px}
+.wait .btn{margin-left:6px}
+.note{position:absolute;left:12px;top:12px;max-width:min(560px,80%);background:var(--glass);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:12.5px;display:none;gap:10px;align-items:center;z-index:2}
+.note.on{display:flex}
+.note button{color:var(--accent);font-weight:600;white-space:nowrap}
+.controls{flex:none;background:linear-gradient(to top,rgba(10,12,16,.96),rgba(10,12,16,.88));padding:4px 12px 8px;transition:opacity .2s}
+.player.full .controls{position:absolute;left:0;right:0;bottom:0}
+.player.full.idle .controls{opacity:0}
+.player.full.idle{cursor:none}
+.seek{position:relative;height:18px;cursor:pointer;touch-action:none}
+.seek .track{position:absolute;left:0;right:0;top:7px;height:4px;border-radius:3px;background:color-mix(in srgb,var(--text) 16%,transparent)}
+.seek:hover .track{top:6px;height:6px}
+.seek .ready,.seek .buf,.seek .done{position:absolute;left:0;top:0;bottom:0;border-radius:3px;width:0}
+.seek .ready{background:rgba(255,176,32,.25)}
+.seek .buf{background:color-mix(in srgb,var(--text) 28%,transparent)}
+.seek .done{background:var(--accent)}
+.seek .knob{position:absolute;top:50%;width:13px;height:13px;margin:-6.5px 0 0 -6.5px;border-radius:50%;background:var(--accent);left:0;box-shadow:0 0 0 3px rgba(0,0,0,.35)}
+.tip{position:absolute;bottom:22px;transform:translateX(-50%);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:4px;display:none;flex-direction:column;align-items:center;pointer-events:none;z-index:3}
+.tip canvas{display:none;border-radius:5px;background:#000}
+.tip.thumbs canvas{display:block}
+.tip span{font-size:12px;padding:2px 4px}
+.crow{display:flex;align-items:center;gap:4px;margin-top:2px}
+.cb{width:36px;height:36px;border-radius:8px;display:grid;place-items:center}
+.cb:hover{background:color-mix(in srgb,var(--text) 9%,transparent)}
+.time{font-size:12.5px;color:color-mix(in srgb,var(--text) 86%,transparent);margin:0 8px;white-space:nowrap}
+.grow{flex:1}
+.vol{width:104px;accent-color:var(--accent)}
+.sel{height:30px;border-radius:7px;background:color-mix(in srgb,var(--text) 7%,transparent);border:1px solid transparent;padding:0 6px;max-width:170px;font-size:12.5px}
+.sel:hover{border-color:var(--line)}
+.sel option{background:var(--panel)}
+@media (max-width:620px){ .vol{display:none} .sel{max-width:96px} }
+
+/* audio */
+.audio{position:absolute;inset:0;display:grid;place-items:center;padding:20px;background:radial-gradient(ellipse at top,var(--glow),var(--bg) 70%)}
+.audio .box{width:min(520px,100%);display:flex;flex-direction:column;align-items:center;gap:14px}
+.cover{width:min(300px,60vw,48vh);aspect-ratio:1;border-radius:16px;background:var(--panel2);display:grid;place-items:center;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.cover img{width:100%;height:100%;object-fit:cover}
+.tags{text-align:center;max-width:100%;user-select:text}
+.tags h2{margin:0;font-size:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tags p{margin:2px 0 0;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.audio .controls{width:100%;border-radius:12px;background:var(--panel);border:1px solid var(--line);padding:8px 12px 10px}
+
+/* images */
+.imgview{position:absolute;inset:0;overflow:hidden;background:var(--stage);cursor:grab;touch-action:none}
+.imgview.drag{cursor:grabbing}
+.imgview img{position:absolute;left:50%;top:50%;transform-origin:center center;max-width:none;image-rendering:auto;-webkit-user-drag:none}
+.imgview img.px{image-rendering:pixelated}
+.checker{background-color:#fff;background-image:linear-gradient(45deg,#ddd 25%,transparent 25%),linear-gradient(-45deg,#ddd 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#ddd 75%),linear-gradient(-45deg,transparent 75%,#ddd 75%);background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0}
+.edge{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:64px;border-radius:10px;background:rgba(0,0,0,.4);display:grid;place-items:center;opacity:0;transition:opacity .15s;z-index:2}
+.imgview:hover .edge:not(:disabled){opacity:1}
+.edge:disabled{display:none}
+.edge.l{left:10px}.edge.r{right:10px}
+.dock{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:2px;background:var(--glass);border:1px solid var(--line);border-radius:12px;padding:4px;z-index:2;backdrop-filter:blur(6px)}
+.dock .z{min-width:54px;text-align:center;font-size:12.5px}
+
+/* pdf */
+.pdf{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--paper)}
+.ptools{flex:none;height:44px;display:flex;align-items:center;gap:4px;padding:0 8px;background:var(--panel);border-bottom:1px solid var(--line)}
+.ptools input{height:30px;border-radius:7px;background:var(--panel2);border:1px solid var(--line);padding:0 8px;outline:none}
+.ptools input:focus{border-color:var(--accent)}
+.pg{width:52px;text-align:center}
+.find{width:min(220px,30vw)}
+.fcount{font-size:12px;color:var(--muted);min-width:64px}
+.pbody{flex:1;display:flex;min-height:0;position:relative}
+.side{width:150px;flex:none;overflow:auto;background:var(--panel);border-right:1px solid var(--line);padding:10px 0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.side.off{display:none}
+.th{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;color:var(--muted);padding:4px;border-radius:8px}
+.th canvas,.th .ph{width:110px;background:#fff;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.5);display:block}
+.th .ph{height:142px;background:var(--ph)}
+.th.on{background:rgba(255,176,32,.16);color:var(--text)}
+.th.on canvas{outline:2px solid var(--accent)}
+#pdfWrap{position:absolute;inset:0;overflow:auto;user-select:text}
+#pdfWrap .pdfViewer{padding:10px 0 30px}
+#pdfWrap .pdfViewer .page{border-radius:2px;box-shadow:0 2px 10px rgba(0,0,0,.45);border:0!important;margin:10px auto!important}
+.pdfmain{flex:1;position:relative;min-width:0}
+@media (max-width:700px){ .side{display:none} }
+
+/* dialogs */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;place-items:center;z-index:50;padding:16px}
+.scrim.on{display:grid}
+.dlg{width:min(460px,100%);background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;user-select:text}
+.dlg h3{margin:0 0 8px;font-size:16px}
+.dlg p{margin:0 0 6px;color:var(--muted)}
+.dlg .addr{font-family:"Cascadia Mono",ui-monospace,Consolas,monospace;font-size:12.5px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;word-break:break-all;color:var(--text);margin:8px 0;max-height:140px;overflow:auto}
+.dlg input{width:100%;height:36px;border-radius:8px;background:var(--panel2);border:1px solid var(--line);padding:0 10px;margin-top:8px;outline:none}
+.dlg .acts{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 14px;display:none;gap:12px;align-items:center;z-index:40;box-shadow:0 8px 30px rgba(0,0,0,.4);max-width:calc(100% - 32px)}
+.toast.on{display:flex}
+.toast button{color:var(--accent);font-weight:600}
+</style>
+</head>
+<body>
+<header>
+  <button class="tb back" id="bBack" title="Back to downloads (Esc)" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span>Downloads</span></button>
+  <button class="nav" id="prev" title="Previous file in this folder (Page Up)" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+  <button class="nav" id="next" title="Next file in this folder (Page Down)" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+  <div class="file"><div class="n" id="fname">Opening…</div><div class="m" id="fmeta">&nbsp;</div></div>
+  <button class="tb" id="bExt" title="Open in your computer's own program"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><span>Open externally</span></button>
+  <button class="tb" id="bFolder" title="Show in folder"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Show in folder</span></button>
+  <button class="tb del" id="bDel" title="Delete this file"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg><span>Delete</span></button>
+  <div class="sep"></div>
+  <button class="nav" id="bClose" title="Close (Esc)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+</header>
+<main id="stage"></main>
+<div class="scrim" id="scrim"><div class="dlg" id="dlg"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+const Q = new URLSearchParams(location.search);
+const TOKEN = Q.get('t');
+const EMBED = Q.get('embed') === '1';          // shown inside the Jasqet window
+const NATIVE = !EMBED && typeof window.tgClose === 'function';
+const toParent = m => { try { window.parent.postMessage(m, '*'); } catch (e) {} };
+let F = Q.get('f');          // the file being shown
+let crashedFirst = Q.get('crashed') === '1';
+let info = null;             // what the app told us about it
+let cleanup = [];            // undo the current view
+let gen = 0;                 // which load is current
+const $ = s => document.querySelector(s);
+const stage = $('#stage');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const human = n => { if (!(n >= 0)) return ''; const u = ['B','KB','MB','GB','TB']; let i = 0; while (n >= 1024 && i < 4) { n /= 1024; i++; } return (i ? n.toFixed(n < 10 ? 1 : 0) : n) + ' ' + u[i]; };
+const clock = s => { if (!isFinite(s) || s < 0) s = 0; s = Math.floor(s); const h = Math.floor(s / 3600), m = Math.floor(s / 60) % 60, x = s % 60; return (h ? h + ':' + String(m).padStart(2, '0') : m) + ':' + String(x).padStart(2, '0'); };
+const tok = u => /[?&]t=/.test(u) ? u : u + (u.includes('?') ? '&' : '?') + 't=' + encodeURIComponent(TOKEN);
+
+async function api(path, body) {
+  const r = await fetch(tok(path), body === undefined ? {cache: 'no-store'} : {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)});
+  let j = {};
+  try { j = await r.json(); } catch (e) {}
+  if (!r.ok) throw new Error(j.error || ('error ' + r.status));
+  return j;
+}
+const act = (action, extra) => api('/viewer/api/act', Object.assign({f: info ? info.id : F, action}, extra || {}));
+
+// ---------- dialogs and toasts ----------
+function dialog(html, buttons) {
+  return new Promise(res => {
+    const box = $('#dlg');
+    box.innerHTML = html + '<div class="acts"></div>';
+    const acts = box.querySelector('.acts');
+    const done = v => { $('#scrim').classList.remove('on'); document.removeEventListener('keydown', key, true); res(v); };
+    const key = e => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); done(null); } if (e.key === 'Enter' && buttons.some(b => b.primary)) { e.preventDefault(); e.stopPropagation(); done(buttons.find(b => b.primary).value); } };
+    for (const b of buttons) {
+      const el = document.createElement('button');
+      el.className = 'btn' + (b.primary ? ' primary' : '') + (b.red ? ' red' : '');
+      el.textContent = b.label;
+      el.onclick = () => done(b.value === 'input' ? box.querySelector('input').value : b.value);
+      acts.appendChild(el);
+    }
+    $('#scrim').classList.add('on');
+    document.addEventListener('keydown', key, true);
+    (box.querySelector('input') || acts.lastChild).focus();
+  });
+}
+let toastTimer;
+function toast(text, button, onClick, ms) {
+  const t = $('#toast');
+  t.innerHTML = '<span>' + esc(text) + '</span>' + (button ? '<button>' + esc(button) + '</button>' : '');
+  if (button) t.querySelector('button').onclick = () => { t.classList.remove('on'); onClick(); };
+  t.classList.add('on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('on'), ms || 4000);
+}
+function fail(e) { toast(e && e.message ? e.message : String(e)); }
+
+// ---------- the window ----------
+let closing = false;
+async function closeViewer() {
+  if (closing) return;
+  closing = true;
+  pauseAll();
+  try { await Promise.race([savePosition(true), new Promise(r => setTimeout(r, 800))]); } catch (e) {}
+  if (EMBED) { toParent({tg: 'close'}); closing = false; return; }
+  if (NATIVE) window.tgClose(); else { window.close(); setTimeout(() => { closing = false; panel('', 'You can close this tab now.', '', []); }, 200); }
+}
+window.tgPing = () => { if (window.tgPong) window.tgPong(F || ''); };
+let isFull = false;
+async function setFull(on, el) {
+  if (on === isFull) return;
+  isFull = on;
+  try {
+    if (on) { await (el || document.documentElement).requestFullscreen({navigationUI: 'hide'}); }
+    else if (document.fullscreenElement) { await document.exitFullscreen(); }
+  } catch (e) {}
+  if (NATIVE) window.tgFullscreen(on);
+  if (EMBED) toParent({tg: 'full', on});
+  document.body.classList.toggle('isfull', on);
+}
+document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement && isFull) { isFull = false; if (NATIVE) window.tgFullscreen(false); if (EMBED) toParent({tg: 'full', on: false}); lastFullExit = Date.now(); document.dispatchEvent(new Event('tg-full')); } else document.dispatchEvent(new Event('tg-full')); });
+if (EMBED) setInterval(() => toParent({tg: 'alive', f: F}), 2000);
+let lastFullExit = 0;
+// nothing dropped on the window may replace the viewer
+addEventListener('dragover', e => e.preventDefault());
+addEventListener('drop', e => e.preventDefault());
+
+// ---------- top bar ----------
+function setHeader() {
+  const name = info ? info.name : '';
+  $('#fname').textContent = name || 'Jasqet Viewer';
+  $('#fname').title = name;
+  document.title = (name ? name + ' · ' : '') + 'Jasqet Viewer';
+  if (NATIVE && window.tgTitle) window.tgTitle(document.title);
+  updateMeta();
+  const dl = info && info.download, inProgress = dl && !dl.done;
+  $('#prev').disabled = !(info && info.prev); $('#prev').title = info && info.prev ? 'Previous: ' + info.prev.name + ' (Page Up)' : 'No previous file in this folder';
+  $('#next').disabled = !(info && info.next); $('#next').title = info && info.next ? 'Next: ' + info.next.name + ' (Page Down)' : 'No next file in this folder';
+  $('#bExt').disabled = !info || inProgress || !!info.blocked;
+  $('#bExt').title = inProgress ? 'It can be opened in another program once it has finished downloading' : "Open in your computer's own program";
+  $('#bDel').disabled = !info || inProgress;
+  $('#bFolder').disabled = !info;
+}
+let extraMeta = '';
+function updateMeta() {
+  if (!info) { $('#fmeta').innerHTML = '&nbsp;'; return; }
+  const parts = [];
+  if (info.size > 0) parts.push(human(info.size));
+  if (extraMeta) parts.push(esc(extraMeta));
+  if (info.site) parts.push('from ' + esc(info.site));
+  const dl = info.download;
+  if (dl && !dl.done) parts.unshift('<b>Downloading ' + Math.floor(dl.percent) + '%</b>' + (dl.running ? '' : ' (' + dlState(dl) + ')'));
+  $('#fmeta').innerHTML = parts.join(' · ') || '&nbsp;';
+}
+// a download that isn't running: paused, waiting its turn, or about to try again by itself
+function dlState(dl) {
+  if (dl.retryIn > 0) return 'trying again by itself in ' + (dl.retryIn < 60 ? dl.retryIn + ' s' : Math.ceil(dl.retryIn / 60) + ' min');
+  if (dl.status === 'queued') return 'waiting its turn';
+  return 'paused';
+}
+$('#prev').onclick = () => info && info.prev && load(info.prev.id);
+$('#next').onclick = () => info && info.next && load(info.next.id);
+$('#bClose').onclick = closeViewer;
+$('#bBack').onclick = closeViewer;
+if (EMBED) { $('#bBack').hidden = false; $('#bClose').hidden = true; document.querySelector('header .sep').hidden = true; }
+// Inside Jasqet's own title bar (its Windows window): this top bar moves the
+// window too (drag it; double-click to maximise).
+if (EMBED && Q.get('framed') === '1') {
+  document.body.classList.add('framed');
+  let lastDown = 0;
+  document.querySelector('header').addEventListener('mousedown', e => {
+    if (e.button !== 0 || e.target.closest('button,input,select,a,label')) return;
+    e.preventDefault();
+    if (Date.now() - lastDown < 450) { lastDown = 0; toParent({tg: 'max'}); return; }
+    lastDown = Date.now();
+    toParent({tg: 'drag'});
+  });
+}
+$('#bFolder').onclick = () => act('folder').catch(fail);
+$('#bExt').onclick = openExternally;
+$('#bDel').onclick = deleteFile;
+
+async function openExternally() {
+  try {
+    pauseAll();
+    const r = await act('external');
+    if (r.confirm) {
+      const ok = await dialog('<h3>Run this program?</h3><p>' + esc(r.confirm) + '</p>', [{label: 'Cancel', value: false}, {label: 'Run it', value: true, red: true}]);
+      if (ok) await act('run');
+    }
+  } catch (e) { fail(e); }
+}
+async function deleteFile() {
+  if (!info) return;
+  const ok = await dialog('<h3>Delete this file?</h3><p><b style="color:var(--text)">' + esc(info.name) + '</b> will be deleted from your computer. This can\'t be undone.</p>', [{label: 'Cancel', value: false}, {label: 'Delete', value: true, red: true}]);
+  if (!ok) return;
+  const next = info.next || info.prev;
+  try {
+    pauseAll();
+    stop();
+    await act('delete');
+    if (next) load(next.id); else { info = null; setHeader(); panel('ok', 'Deleted', 'The file was deleted.', [{label: 'Close', primary: true, fn: closeViewer}]); }
+  } catch (e) { fail(e); }
+}
+
+// ---------- panels (messages instead of a file) ----------
+const ICONS = {
+  danger: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6z"/><path d="M12 8v4M12 16h.01"/></svg>',
+  warn: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>',
+  file: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>',
+  ok: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+};
+function panel(kind, title, text, buttons, extra) {
+  stop();
+  stage.innerHTML = '<div class="center"><div class="card ' + (kind || '') + '">' +
+    (kind === 'busy' ? '<div class="spin"></div>' : kind ? '<div class="ic">' + (ICONS[kind] || ICONS.file) + '</div>' : '') +
+    '<h2>' + esc(title) + '</h2>' + (text ? '<p>' + esc(text) + '</p>' : '') + (extra || '') + '<div class="acts"></div></div></div>';
+  const acts = stage.querySelector('.acts');
+  for (const b of buttons || []) {
+    const el = document.createElement('button');
+    el.className = 'btn' + (b.primary ? ' primary' : '') + (b.red ? ' red' : '');
+    el.textContent = b.label;
+    el.onclick = b.fn;
+    acts.appendChild(el);
+  }
+}
+// a file the viewer couldn't show (damaged, or crashed the viewer)
+function brokenPanel(title, text) {
+  const dl = info && info.download;
+  const btns = [{label: 'Open externally', primary: true, fn: openExternally}];
+  if (dl && dl.done) {
+    btns.push({label: 'Verify', fn: verify});
+    btns.push({label: 'Re-download', fn: redownload});
+  }
+  panel('warn', title, text, btns);
+}
+async function verify() {
+  panel('busy', 'Checking the file…', 'Jasqet is checking it against its checksum and the website (this uses a little data).', []);
+  try {
+    const r = await act('verify');
+    const btns = [{label: 'Open externally', primary: !r.damaged, fn: openExternally}];
+    if (info && info.download) btns.push({label: 'Re-download', primary: !!r.damaged, fn: redownload});
+    panel(r.damaged ? 'danger' : 'warn', r.damaged ? 'This file is damaged' : 'Check finished', r.message, btns);
+  } catch (e) { brokenPanel('This file could not be displayed', e.message); }
+}
+async function redownload() {
+  const ok = await dialog('<h3>Download it again?</h3><p>The damaged copy will be replaced with a fresh download from the same link.</p>', [{label: 'Cancel', value: false}, {label: 'Re-download', value: true, primary: true}]);
+  if (!ok) return;
+  try { await act('redownload'); panel('ok', 'Downloading it again', 'You can watch it here while it downloads. Click Preview in Jasqet.', [{label: 'Close', primary: true, fn: closeViewer}]); }
+  catch (e) { fail(e); }
+}
+
+// ---------- loading a file ----------
+function stop() {
+  for (const fn of cleanup.splice(0)) { try { fn(); } catch (e) {} }
+}
+let pauseAll = () => {};
+let savePosition = () => {};
+let onInfoUpdate = null;
+
+async function load(id) {
+  savePosition(true);
+  const my = ++gen;
+  stop();
+  pauseAll = () => {}; savePosition = () => {}; onInfoUpdate = null; extraMeta = ''; keys = () => false;
+  F = id;
+  try { history.replaceState(null, '', '/viewer?t=' + encodeURIComponent(TOKEN) + '&f=' + encodeURIComponent(id) + (EMBED ? '&embed=1' : '')); } catch (e) {}
+  stage.innerHTML = '';
+  try { info = await api('/viewer/api/info?f=' + encodeURIComponent(id)); }
+  catch (e) { if (my !== gen) return; info = null; setHeader(); panel('warn', "Can't show this file", e.message, [{label: 'Close', fn: closeViewer}]); return; }
+  if (my !== gen) return;
+  F = info.id;
+  setHeader();
+  if (crashedFirst) {
+    crashedFirst = false;
+    brokenPanel('This file could not be displayed', 'It made the viewer stop working. It may be damaged. Your downloads are fine.');
+    return;
+  }
+  if (info.blocked) {
+    panel('danger', 'Jasqet blocked this file', info.blocked, [
+      {label: 'Delete', red: true, fn: deleteFile},
+      {label: 'Show in folder', fn: () => act('folder').catch(fail)},
+    ], info.realType ? '<p style="font-size:12.5px">What it really is: ' + esc(info.realType) + '</p>' : '');
+    $('#bExt').disabled = true;
+    return;
+  }
+  if (!info.kind || !info.engine) {
+    panel('', "The built-in viewer can't show this file", 'Open it in your computer\'s own program instead.', [{label: 'Open externally', primary: true, fn: openExternally}]);
+    return;
+  }
+  if (info.remux && !info.remux.ready) { prepare(my); return; }
+  showFile();
+}
+
+function showFile() {
+  const dl = info.download;
+  if (dl && !dl.done) startAlive();
+  if (info.later) {
+    // a video-site download that can only be watched once it's joined: wait here
+    panel('busy', 'Not ready to watch yet', info.later, [{label: 'Close', fn: closeViewer}], '<p style="font-size:12.5px">It opens here by itself when it\'s ready.</p>');
+    onInfoUpdate = (j, replaced) => { if (j.download && j.download.done) load(j.id); else if (j.streams && j.streams.length) load(F); };
+    return;
+  }
+  if (info.kind === 'video' || info.kind === 'audio') mediaView();
+  else if (info.kind === 'image') imageView();
+  else if (info.kind === 'pdf') pdfView();
+}
+
+// keeps the download fetching from the start while we watch, and follows its progress
+function startAlive() {
+  const my = gen;
+  let n = 0;
+  const tick = async () => {
+    if (my !== gen) return;
+    if (n++ % 2 === 0) api('/viewer/api/alive?f=' + encodeURIComponent(F)).catch(() => {});
+    try {
+      const j = await api('/viewer/api/info?f=' + encodeURIComponent(F));
+      if (my !== gen) return;
+      const wasId = info.id;
+      if (j.blocked) { info = j; setHeader(); load(j.id); return; }
+      info = Object.assign(info, {download: j.download, size: j.size || info.size});
+      if (info.later && !j.later && !(j.download && j.download.done)) { load(F); return; }
+      updateMeta();
+      if (onInfoUpdate) onInfoUpdate(j, j.id !== wasId);
+      if (j.download && j.download.done) { setHeader(); return; } // finished: stop following
+    } catch (e) {}
+    timer = setTimeout(tick, 2000);
+  };
+  let timer = setTimeout(tick, 600);
+  cleanup.push(() => clearTimeout(timer));
+}
+
+// TS and FLV videos are re-wrapped as MP4 first (nothing is re-encoded)
+async function prepare(my) {
+  panel('busy', 'Getting this video ready…', 'TS and FLV videos are re-wrapped so the viewer can play them. Nothing is re-encoded, so it\'s quick.', [], '<div class="bar"><i id="rx"></i></div>');
+  try {
+    for (;;) {
+      const r = await api('/viewer/api/prepare', {f: F});
+      if (my !== gen) return;
+      if (r.error) { brokenPanel("This video can't be played here", r.error); return; }
+      const bar = $('#rx'); if (bar) bar.style.width = Math.round((r.progress || 0) * 100) + '%';
+      if (r.ready) { info = await api('/viewer/api/info?f=' + encodeURIComponent(F)); if (my === gen) showFile(); return; }
+      await new Promise(r => setTimeout(r, 500));
+    }
+  } catch (e) { if (my === gen) brokenPanel("This video can't be played here", e.message); }
+}
+
+// ---------- video and audio ----------
+const SVG = {
+  play: '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>',
+  pause: '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>',
+  vol: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>',
+  mute: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z" fill="currentColor"/><path d="m22 9-6 6M16 9l6 6"/></svg>',
+  full: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>',
+  unfull: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3M3 16h3a2 2 0 0 1 2 2v3M16 21v-3a2 2 0 0 1 2-2h3"/></svg>',
+  music: '<svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#5b6475" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
+};
+let prefs = {};
+try { prefs = JSON.parse(localStorage.getItem('tg-viewer') || '{}'); } catch (e) {}
+const savePrefs = () => { try { localStorage.setItem('tg-viewer', JSON.stringify(prefs)); } catch (e) {} };
+
+// Volume above 100% (up to 200%, as in VLC): a player can't go louder than the
+// file itself, and quiet recordings or films with 5.1 sound (mixed down to
+// stereo, which makes them quieter) were hard to hear. Above 100% the sound goes
+// through the browser's audio engine: a gain, then a limiter against crackling.
+let boostCtx = null;
+function boostGain(els, ready) {
+  try {
+    if (!boostCtx) boostCtx = new AudioContext();
+    // the browser only plays this sound after a click or key here: until then 100%, then ready()
+    if (boostCtx.state !== 'running') { boostCtx.resume().then(ready, () => {}); return null; }
+    const gain = boostCtx.createGain();
+    const limit = new DynamicsCompressorNode(boostCtx, {threshold: -2, knee: 0, ratio: 20, attack: 0.002, release: 0.15});
+    gain.connect(limit).connect(boostCtx.destination);
+    for (const el of els) boostCtx.createMediaElementSource(el).connect(gain);
+    return gain;
+  } catch (e) { return null; }
+}
+
+function mediaView() {
+  const my = gen;
+  const alive = () => my === gen && v.isConnected;
+  const isVideo = info.kind === 'video';
+  const dl = info.download;
+  const live = dl && !dl.done;
+  const streams = info.streams || [];
+  const vStream = streams.find(s => s.type === 'video'), aStream = streams.find(s => s.type === 'audio');
+  const controlsHTML = `
+    <div class="seek" id="seek"><div class="track"><div class="ready" id="sReady"></div><div class="buf" id="sBuf"></div><div class="done" id="sDone"></div></div><div class="knob" id="sKnob"></div>
+      <div class="tip" id="tip"><canvas id="thumb" width="160" height="90"></canvas><span id="tipT">0:00</span></div></div>
+    <div class="crow">
+      <button class="cb" id="cPlay" title="Play (Space)">${SVG.play}</button>
+      <span class="time mono" id="cTime">0:00 / 0:00</span>
+      <span class="grow"></span>
+      <button class="cb" id="cMute" title="Mute (M)">${SVG.vol}</button>
+      <input class="vol" id="cVol" type="range" min="0" max="2" step="0.01" list="volMarks" title="Volume (↑ ↓)"><datalist id="volMarks"><option value="1"></option></datalist>
+      <select class="sel" id="cSpeed" title="Speed">${[0.5, 0.75, 1, 1.25, 1.5, 1.75, 2].map(s => `<option value="${s}">${s}×</option>`).join('')}</select>
+      <select class="sel" id="cAudio" title="Sound track" hidden></select>
+      <select class="sel" id="cSubs" title="Subtitles" hidden></select>
+      ${isVideo ? `<button class="cb" id="cFull" title="Full screen (F)">${SVG.full}</button>` : ''}
+    </div>`;
+  if (isVideo) {
+    stage.innerHTML = `<div class="player paused" id="player"><div class="screen" id="screen">
+        <video id="v" playsinline preload="auto"></video><audio id="a2" preload="auto"></audio>
+        <div class="big">${SVG.play.replace(/20/g, '34')}</div>
+        <div class="note" id="note"></div>
+        <div class="wait" id="wait"><div class="spin"></div><div class="t"><b id="waitT">Waiting for download</b><span id="waitS"></span></div></div>
+      </div><div class="controls" id="controls">${controlsHTML}</div></div>`;
+  } else {
+    const title = info.title || info.name.replace(/\.[^.]+$/, '');
+    const sub = [info.artist, info.album].filter(Boolean).join(' · ');
+    stage.innerHTML = `<div class="player paused aud" id="player"><div class="audio"><div class="box">
+        <div class="cover">${info.cover ? `<img src="${esc(tok(info.cover))}" alt="">` : SVG.music}</div>
+        <div class="tags"><h2>${esc(title)}</h2>${sub ? `<p>${esc(sub)}</p>` : ''}</div>
+        <audio id="v" preload="auto"></audio><audio id="a2" preload="auto"></audio>
+        <div class="wait" id="wait" style="position:static;transform:none"><div class="spin"></div><div class="t"><b id="waitT">Waiting for download</b><span id="waitS"></span></div></div>
+        <div class="note" id="note" style="position:static"></div>
+        <div class="controls" id="controls">${controlsHTML}</div>
+      </div></div></div>`;
+  }
+  const player = $('#player'), v = $('#v'), a2 = $('#a2');
+  const seek = $('#seek'), knob = $('#sKnob');
+  let sep = !!(vStream && aStream);           // separate sound file (video-site downloads)
+  let ranged = streams.length ? streams.every(s => s.ranged) : true;
+  let want = false;                            // the user wants it playing
+  let waiting = false, everPlayed = false, retries = 0;
+
+  // volume and speed are remembered between files
+  v.volume = Math.min(1, prefs.volume ?? 1); v.muted = !!prefs.muted;
+  a2.volume = v.volume; a2.muted = v.muted;
+  $('#cVol').value = v.volume;
+  $('#cSpeed').value = '1';
+
+  function setSource(keepTime) {
+    const t = keepTime ? v.currentTime : 0, playing = want;
+    if (streams.length && live) {
+      v.src = tok((vStream || streams[0]).url);
+      if (sep) a2.src = tok(aStream.url); else a2.removeAttribute('src');
+    } else {
+      sep = false; ranged = true;
+      v.src = tok(info.url);
+      a2.removeAttribute('src'); a2.load();
+    }
+    if (keepTime && t > 0) v.addEventListener('loadedmetadata', () => { try { v.currentTime = t; } catch (e) {} if (playing) play(); }, {once: true});
+  }
+  setSource(false);
+
+  // ----- playing and the separate sound -----
+  // The video leads; a separate sound file (video sites send them apart until
+  // they're joined) follows it. If the sound runs out of downloaded data the
+  // video holds still for it. That's a "hold", not a pause by you.
+  let holding = false;
+  const near = () => Math.abs(a2.currentTime - v.currentTime) <= 0.25;
+  const follow = () => { if (!near()) { try { a2.currentTime = v.currentTime; } catch (e) {} } };
+  function play() {
+    want = true; holding = false;
+    const p = v.play();
+    if (p) p.catch(e => { if (e && e.name === 'NotAllowedError') { want = false; showPlaying(false); } });
+  }
+  function pause() { want = false; holding = false; v.pause(); if (sep) a2.pause(); }
+  pauseAll = pause;
+  const toggle = () => (want && !v.ended ? pause() : play());
+  const showPlaying = on => { if (!alive()) return; player.classList.toggle('paused', !on); $('#cPlay').innerHTML = on ? SVG.pause : SVG.play; $('#cPlay').title = on ? 'Pause (Space)' : 'Play (Space)'; };
+  v.addEventListener('play', () => { want = true; showPlaying(true); });
+  v.addEventListener('pause', () => {
+    if (!alive()) return;
+    if (sep) a2.pause();
+    if (holding) return;
+    want = false; showPlaying(false); savePosition();
+  });
+  v.addEventListener('playing', () => { if (sep && alive()) { follow(); a2.playbackRate = v.playbackRate; const q = a2.play(); if (q) q.catch(() => {}); } });
+  v.addEventListener('waiting', () => { if (sep) a2.pause(); });
+  v.addEventListener('ratechange', () => { if (sep) a2.playbackRate = v.playbackRate; });
+  v.addEventListener('seeked', () => { if (sep) follow(); });
+  v.addEventListener('ended', () => { want = false; showPlaying(false); });
+  a2.addEventListener('waiting', () => { if (sep && want && !v.paused && alive()) { holding = true; v.pause(); showWait(true); } });
+  const unhold = () => { if (sep && holding && want && alive()) { holding = false; follow(); const p = v.play(); if (p) p.catch(() => {}); } };
+  a2.addEventListener('error', () => {
+    if (!sep || !alive() || !a2.getAttribute('src')) return;
+    const dl = info.download;
+    if (dl && !dl.done) { setTimeout(() => { if (alive() && sep) { const t = v.currentTime; a2.src = tok(aStream.url); a2.addEventListener('loadedmetadata', () => { try { a2.currentTime = t; } catch (e) {} }, {once: true}); } }, 2000); return; }
+    sep = false; holding = false; if (want) v.play().catch(() => {});
+    note("The sound couldn't be loaded, so the video plays without it. Try Open externally.", 'Open externally', openExternally);
+  });
+  a2.addEventListener('canplay', unhold);
+  a2.addEventListener('canplaythrough', unhold);
+  const sync = setInterval(() => {
+    if (!sep || v.paused || !alive()) return;
+    follow();
+    if (a2.paused && !a2.ended && !holding) { const q = a2.play(); if (q) q.catch(() => {}); }
+    if (holding && a2.readyState >= 3) unhold();
+  }, 1000);
+  cleanup.push(() => { clearInterval(sync); v.pause(); a2.pause(); v.removeAttribute('src'); a2.removeAttribute('src'); v.load(); a2.load(); });
+
+  // ----- waiting for the download (never an error) -----
+  function showWait(on) {
+    if (!alive()) return;
+    waiting = on;
+    const dl = info.download, live = dl && !dl.done;
+    const w = $('#wait');
+    if (!on) { w.classList.remove('on'); return; }
+    if (live) {
+      $('#waitT').textContent = 'Waiting for download: ' + Math.floor(dl.percent) + '%';
+      $('#waitS').innerHTML = dl.running ? 'It carries on by itself as soon as the next part arrives.'
+        : dl.retryIn > 0 ? 'There was a connection problem. It is ' + esc(dlState(dl)) + '. <button class="btn" id="wResume">Try now</button>'
+        : dl.status === 'queued' ? 'The download is waiting its turn. It starts when another one finishes.'
+        : 'The download is paused. <button class="btn" id="wResume">Resume download</button>';
+      const b = $('#wResume'); if (b) b.onclick = () => act('resume').then(() => toast(dl.retryIn > 0 ? 'Trying again now' : 'Download resumed')).catch(fail);
+    } else {
+      $('#waitT').textContent = 'Loading…'; $('#waitS').textContent = '';
+    }
+    w.classList.add('on');
+  }
+  v.addEventListener('waiting', () => showWait(true));
+  v.addEventListener('stalled', () => { if (info.download && !info.download.done) showWait(true); });
+  for (const ev of ['playing', 'seeked', 'canplay']) v.addEventListener(ev, () => { if (!v.paused || ev !== 'playing') { if (!(sep && a2.readyState < 3 && want)) showWait(false); } });
+  v.addEventListener('playing', () => { everPlayed = true; retries = 0; showWait(false); });
+  if (live) showWait(true);
+  v.addEventListener('loadeddata', () => { if (v.paused) showWait(false); });
+
+  // ----- errors: damaged files say so -----
+  v.addEventListener('error', () => {
+    if (my !== gen) return;
+    const dl = info.download;
+    if (dl && !dl.done) { // still downloading: try again where we were (it's never "damaged" yet)
+      retries++;
+      showWait(true);
+      setTimeout(() => { if (my === gen) setSource(true); }, Math.min(1500 * retries, 6000));
+      return;
+    }
+    const code = v.error ? v.error.code : 0;
+    stop();
+    brokenPanel('This file could not be played', code === 4 ? "It's damaged, or it uses a format the built-in viewer can't play." : 'It looks damaged.');
+  });
+
+  // ----- tracks -----
+  const ready = () => {
+    if (!alive()) return;
+    // audio tracks inside the file
+    const at = v.audioTracks;
+    const sel = $('#cAudio');
+    const fileAudio = (info.tracks || []).filter(t => t.type === 'audio');
+    if (at && at.length > 1) {
+      sel.innerHTML = Array.from(at).map((t, i) => `<option value="${i}">${esc(t.label || (fileAudio[i] && (fileAudio[i].title || langName(fileAudio[i].lang))) || ('Sound ' + (i + 1)))}${t.language && !t.label ? ' (' + esc(t.language) + ')' : ''}</option>`).join('');
+      sel.value = String(Math.max(0, Array.from(at).findIndex(t => t.enabled)));
+      sel.hidden = false;
+      sel.onchange = () => { const t = v.currentTime; Array.from(at).forEach((x, i) => x.enabled = String(i) === sel.value); try { v.currentTime = t; } catch (e) {} };
+    } else if (fileAudio.length > 1) {
+      sel.innerHTML = '<option>Sound: track 1</option>'; sel.disabled = true; sel.hidden = false;
+      sel.title = 'This file has ' + fileAudio.length + ' sound tracks. To choose another one, use Open externally.';
+    }
+  };
+  v.addEventListener('loadedmetadata', ready, {once: true});
+  v.addEventListener('loadedmetadata', () => {
+    if (!alive()) return;
+    if (isVideo && v.videoWidth) { extraMeta = v.videoWidth + '×' + v.videoHeight + (v.duration && isFinite(v.duration) ? ' · ' + clock(v.duration) : ''); updateMeta(); }
+    else if (v.duration && isFinite(v.duration)) { extraMeta = clock(v.duration); updateMeta(); }
+  });
+
+  // subtitles
+  const subs = info.subs || [];
+  if (isVideo && subs.length) {
+    const sel = $('#cSubs');
+    sel.innerHTML = '<option value="-1">Subtitles: off</option>' + subs.map((s, i) => `<option value="${i}">${esc(s.label)}</option>`).join('');
+    sel.hidden = false;
+    subs.forEach((s, i) => {
+      const tr = document.createElement('track');
+      tr.kind = 'subtitles'; tr.label = s.label; tr.src = tok(s.url); if (s.lang) tr.srclang = s.lang;
+      tr.addEventListener('error', () => { const o = sel.querySelector(`option[value="${i}"]`); if (o) { o.disabled = true; o.textContent += ' (couldn\'t read)'; } });
+      v.appendChild(tr);
+    });
+    const pick = i => { Array.from(v.textTracks).forEach((t, k) => t.mode = k === i ? 'showing' : 'disabled'); sel.value = String(i); };
+    sel.onchange = () => pick(+sel.value);
+    // a matching subtitle file is switched on; ones inside the file wait to be chosen
+    const firstFile = subs.findIndex(s => !/\(in the file\)$/.test(s.label));
+    setTimeout(() => pick(prefs.subsOff ? -1 : firstFile), 0);
+    sel.addEventListener('change', () => { prefs.subsOff = sel.value === '-1'; savePrefs(); });
+  }
+  // warnings about tracks the player can't play
+  const warns = (info.warnings || []).slice();
+  if (warns.length) note(warns[0], 'Open externally', openExternally);
+  function note(text, btn, fn) {
+    const n = $('#note');
+    n.innerHTML = '<span>' + esc(text) + '</span>' + (btn ? '<button>' + esc(btn) + '</button>' : '') + '<button title="Hide">✕</button>';
+    const bs = n.querySelectorAll('button');
+    if (btn) bs[0].onclick = fn;
+    bs[bs.length - 1].onclick = () => n.classList.remove('on');
+    n.classList.add('on');
+  }
+
+  // ----- controls -----
+  $('#cPlay').onclick = toggle;
+  if (isVideo) {
+    $('#screen').addEventListener('click', e => { if (e.target.closest('.note,.wait')) return; toggle(); });
+    $('#screen').addEventListener('dblclick', e => { if (!e.target.closest('.note,.wait')) setFull(!isFull, player); });
+    $('#cFull').onclick = () => setFull(!isFull, player);
+    const onFull = () => { player.classList.toggle('full', isFull); $('#cFull').innerHTML = isFull ? SVG.unfull : SVG.full; $('#cFull').title = isFull ? 'Leave full screen (F)' : 'Full screen (F)'; };
+    document.addEventListener('tg-full', onFull);
+    cleanup.push(() => { document.removeEventListener('tg-full', onFull); if (isFull) setFull(false); });
+    // controls hide while watching
+    let idle;
+    const wake = () => { player.classList.remove('idle'); clearTimeout(idle); idle = setTimeout(() => { if (!v.paused && !seeking) player.classList.add('idle'); }, 2600); };
+    player.addEventListener('mousemove', wake); v.addEventListener('play', wake); v.addEventListener('pause', wake);
+    cleanup.push(() => clearTimeout(idle));
+  }
+  // 0 to 200%: above 100% the boost (boostGain) adds the rest
+  let level = Math.min(2, Math.max(0, prefs.volume ?? 1)), boost = null;
+  const applyVol = () => {
+    if (level > 1 && !boost && v.isConnected) boost = boostGain([v, a2], applyVol);
+    const l = boost ? level : Math.min(1, level);
+    v.volume = a2.volume = Math.min(1, l);
+    if (boost) boost.gain.value = Math.max(1, l);
+  };
+  const setVol = (x, mute) => {
+    level = Math.min(2, Math.max(0, x));
+    applyVol();
+    if (mute !== undefined) v.muted = a2.muted = mute;
+    $('#cVol').value = v.muted ? 0 : level;
+    $('#cMute').innerHTML = v.muted || level === 0 ? SVG.mute : SVG.vol;
+    $('#cVol').title = 'Volume ' + Math.round(level * 100) + '%' + (level > 1 ? ', boosted' : '') + ' (↑ ↓)';
+    prefs.volume = level; prefs.muted = v.muted; savePrefs();
+  };
+  setVol(level, v.muted); // a boost remembered from last time starts with your first click here
+  $('#cVol').oninput = e => setVol(+e.target.value, false);
+  $('#cMute').onclick = () => setVol(level || 1, !v.muted);
+  $('#cSpeed').onchange = e => { v.playbackRate = +e.target.value; };
+
+  // ----- the seek bar -----
+  const dur = () => (isFinite(v.duration) ? v.duration : 0);
+  const canJump = t => ranged || Array.from({length: v.seekable.length}, (_, i) => [v.seekable.start(i), v.seekable.end(i)]).some(([a, b]) => t >= a && t <= b);
+  let seeking = false;
+  const frac = e => { const r = seek.getBoundingClientRect(); return Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)); };
+  function paint() {
+    if (!alive()) return;
+    const d = dur();
+    const p = d ? v.currentTime / d : 0;
+    $('#sDone').style.width = (p * 100) + '%';
+    knob.style.left = (p * 100) + '%';
+    let b = 0;
+    for (let i = 0; i < v.buffered.length; i++) if (v.buffered.start(i) <= v.currentTime + 1) b = Math.max(b, v.buffered.end(i));
+    $('#sBuf').style.width = (d ? b / d * 100 : 0) + '%';
+    const dl = info.download;
+    $('#sReady').style.width = dl && !dl.done ? Math.max(0, Math.min(100, (dl.ready ?? dl.percent / 100) * 100)) + '%' : '0';
+    $('#cTime').textContent = clock(v.currentTime) + ' / ' + (d ? clock(d) : '…');
+  }
+  for (const ev of ['timeupdate', 'durationchange', 'progress', 'seeked', 'loadedmetadata']) v.addEventListener(ev, paint);
+  seek.addEventListener('pointerdown', e => {
+    if (!dur()) return;
+    seeking = true; seek.setPointerCapture(e.pointerId);
+    const go = ev => { const t = frac(ev) * dur(); if (canJump(t)) { v.currentTime = t; paint(); } else toast("You can jump there once it has downloaded."); };
+    go(e);
+    seek.onpointermove = go;
+    seek.onpointerup = () => { seeking = false; seek.onpointermove = null; };
+  });
+  // hovering shows the time (and a thumbnail for finished videos)
+  const tip = $('#tip');
+  let thumbV = null, thumbBusy = false, thumbWant = -1;
+  if (isVideo && !live) {
+    thumbV = document.createElement('video');
+    thumbV.muted = true; thumbV.preload = 'metadata'; thumbV.src = tok(info.url);
+    thumbV.addEventListener('seeked', () => {
+      thumbBusy = false;
+      const c = $('#thumb'); if (!c) return;
+      const w = 160, h = thumbV.videoWidth ? Math.round(160 * thumbV.videoHeight / thumbV.videoWidth) : 90;
+      c.width = w; c.height = Math.min(h, 120);
+      try { c.getContext('2d').drawImage(thumbV, 0, 0, c.width, c.height); tip.classList.add('thumbs'); } catch (e) {}
+      if (thumbWant >= 0 && Math.abs(thumbWant - thumbV.currentTime) > 1) { const t = thumbWant; thumbWant = -1; thumbBusy = true; thumbV.currentTime = t; }
+    });
+    thumbV.addEventListener('error', () => { thumbV = null; tip.classList.remove('thumbs'); });
+    cleanup.push(() => { if (thumbV) { thumbV.removeAttribute('src'); thumbV.load(); } });
+  }
+  seek.addEventListener('pointermove', e => {
+    const d = dur(); if (!d) return;
+    const f = frac(e), t = f * d;
+    tip.style.display = 'flex';
+    tip.style.left = Math.min(Math.max(f * seek.clientWidth, 84), seek.clientWidth - 84) + 'px';
+    $('#tipT').textContent = clock(t);
+    if (thumbV && thumbV.readyState >= 1) { if (thumbBusy) thumbWant = t; else { thumbBusy = true; thumbV.currentTime = t; } }
+  });
+  seek.addEventListener('pointerleave', () => { tip.style.display = 'none'; });
+
+  // ----- where you stopped -----
+  let lastSaved = -1;
+  savePosition = (final) => {
+    if (!info || info.download && !info.download.done || !info.settings.remember) return;
+    const d = dur(); if (!d) return;
+    let t = v.currentTime;
+    if (t < 5 || t > d - Math.max(5, d * 0.03)) t = 0; // the start or the end: nothing to remember
+    if (Math.abs(t - lastSaved) < 2 && !final) return;
+    lastSaved = t;
+    const body = JSON.stringify({f: F, pos: t});
+    if (final) { try { return fetch(tok('/viewer/api/pos'), {method: 'POST', headers: {'Content-Type': 'application/json'}, body, keepalive: true}).catch(() => {}); } catch (e) {} }
+    else api('/viewer/api/pos', {f: F, pos: t}).catch(() => {});
+  };
+  const posTimer = setInterval(() => { if (!v.paused) savePosition(); }, 5000);
+  cleanup.push(() => clearInterval(posTimer));
+  v.addEventListener('ended', () => { lastSaved = -1; savePosition(true); });
+  v.addEventListener('loadedmetadata', () => {
+    const p = info.position || 0;
+    if (p > 5 && dur() && p < dur() - 5 && !live) {
+      v.currentTime = p;
+      toast('Carrying on from ' + clock(p), 'Start over', () => { v.currentTime = 0; }, 6000);
+    }
+  }, {once: true});
+
+  // ----- the download finished (or moved on) while watching -----
+  onInfoUpdate = (j, replaced) => {
+    if (waiting) showWait(true);
+    paint();
+    if (replaced && j.download && j.download.done) {
+      // switch to the finished file without losing your place
+      info = Object.assign(j, {});
+      F = j.id;
+      setHeader();
+      const t = v.currentTime, playing = want;
+      sep = false; ranged = true;
+      a2.pause(); a2.removeAttribute('src'); a2.load();
+      v.src = tok(j.url);
+      v.addEventListener('loadedmetadata', () => { try { v.currentTime = t; } catch (e) {} if (playing) play(); }, {once: true});
+      toast('Download finished');
+    }
+  };
+
+  // autoplay; if the browser refuses, the big play button is there
+  play();
+  const onHide = () => { if (document.hidden) savePosition(true); };
+  document.addEventListener('visibilitychange', onHide);
+  cleanup.push(() => document.removeEventListener('visibilitychange', onHide));
+
+  keys = e => {
+    const k = e.key;
+    if (k === ' ' || k === 'k' || k === 'K') { toggle(); return true; }
+    if (k === 'ArrowLeft' || k === 'ArrowRight' || k === 'j' || k === 'l') {
+      const step = (k === 'j' || k === 'l') ? 10 : (e.shiftKey ? 30 : 5);
+      const t = Math.max(0, Math.min(dur() || 0, v.currentTime + ((k === 'ArrowLeft' || k === 'j') ? -step : step)));
+      if (canJump(t)) v.currentTime = t; else toast("You can jump there once it has downloaded.");
+      return true;
+    }
+    if (k === 'ArrowUp' || k === 'ArrowDown') { setVol(level + (k === 'ArrowUp' ? 0.05 : -0.05), false); toast('Volume ' + Math.round(level * 100) + '%' + (level > 1 ? ' (boosted)' : ''), null, null, 900); return true; }
+    if ((k === 'f' || k === 'F') && isVideo) { setFull(!isFull, player); return true; }
+    if (k === 'm' || k === 'M') { setVol(level || 1, !v.muted); return true; }
+    if (k === 'Home') { v.currentTime = 0; return true; }
+    if (k === '>' || k === '<') { const s = [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2]; let i = s.indexOf(v.playbackRate); if (i < 0) i = 2; i = Math.max(0, Math.min(s.length - 1, i + (k === '>' ? 1 : -1))); v.playbackRate = s[i]; $('#cSpeed').value = String(s[i]); toast('Speed ' + s[i] + '×', null, null, 900); return true; }
+    return false;
+  };
+}
+function langName(l) { const m = {eng: 'English', en: 'English', fre: 'French', fra: 'French', fr: 'French', spa: 'Spanish', es: 'Spanish', por: 'Portuguese', ger: 'German', deu: 'German', jpn: 'Japanese', kor: 'Korean', chi: 'Chinese', zho: 'Chinese', ara: 'Arabic', hin: 'Hindi', rus: 'Russian', ita: 'Italian'}; return l ? (m[l.toLowerCase()] || l.toUpperCase()) : ''; }
+
+// ---------- pictures ----------
+function imageView() {
+  const my = gen;
+  stage.innerHTML = `<div class="imgview" id="iv">
+      <img id="img" alt="" draggable="false">
+      <button class="edge l" id="eL" title="Previous (←)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+      <button class="edge r" id="eR" title="Next (→)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+      <div class="dock">
+        <button class="cb" id="zOut" title="Zoom out (−)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+        <span class="z mono" id="zPct">100%</span>
+        <button class="cb" id="zIn" title="Zoom in (+)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <button class="tb" id="zFit" title="Fit to window (0)">Fit</button>
+        <button class="tb" id="z1" title="Actual size (1)">1:1</button>
+        <button class="cb" id="zRot" title="Rotate (R)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
+      </div></div>`;
+  const iv = $('#iv'), img = $('#img');
+  $('#eL').disabled = !info.prev; $('#eR').disabled = !info.next;
+  $('#eL').onclick = () => info.prev && load(info.prev.id);
+  $('#eR').onclick = () => info.next && load(info.next.id);
+  let s = 1, rot = 0, tx = 0, ty = 0, nw = 0, nh = 0, fitted = true;
+  const box = () => iv.getBoundingClientRect();
+  const fitScale = () => { const b = box(); const w = rot % 180 ? nh : nw, h = rot % 180 ? nw : nh; return Math.min((b.width - 24) / w, (b.height - 24) / h); };
+  function apply() {
+    img.style.width = nw + 'px'; img.style.height = nh + 'px';
+    img.style.transform = `translate(-50%,-50%) translate(${tx}px,${ty}px) rotate(${rot}deg) scale(${s})`;
+    img.classList.toggle('px', s >= 3);
+    $('#zPct').textContent = Math.round(s * 100) + '%';
+  }
+  function fit(noEnlarge) { const f = fitScale(); s = noEnlarge ? Math.min(1, f) : f; tx = ty = 0; fitted = true; apply(); }
+  function zoomAt(ns, cx, cy) {
+    ns = Math.min(40, Math.max(0.02, ns));
+    const b = box(); const ox = (cx ?? b.width / 2) - b.width / 2, oy = (cy ?? b.height / 2) - b.height / 2;
+    tx = ox - (ox - tx) * ns / s; ty = oy - (oy - ty) * ns / s; s = ns; fitted = false; apply();
+  }
+  img.onload = () => {
+    if (my !== gen) return;
+    nw = img.naturalWidth || 800; nh = img.naturalHeight || 600;
+    if (/\.(png|gif|webp|svg|ico|avif)$/i.test(info.name)) img.classList.add('checker');
+    extraMeta = nw + ' × ' + nh; updateMeta();
+    fit(true);
+  };
+  img.onerror = () => { if (my === gen) brokenPanel('This picture could not be shown', "It's damaged, or it uses a format the built-in viewer can't show."); };
+  img.src = tok(info.url);
+  const onResize = () => { if (fitted && nw) fit(true); };
+  addEventListener('resize', onResize);
+  cleanup.push(() => removeEventListener('resize', onResize));
+  iv.addEventListener('wheel', e => { e.preventDefault(); const b = box(); zoomAt(s * Math.pow(1.0018, -e.deltaY), e.clientX - b.left, e.clientY - b.top); }, {passive: false});
+  iv.addEventListener('pointerdown', e => {
+    if (e.target.closest('button')) return;
+    iv.setPointerCapture(e.pointerId); iv.classList.add('drag');
+    const x0 = e.clientX - tx, y0 = e.clientY - ty;
+    iv.onpointermove = ev => { tx = ev.clientX - x0; ty = ev.clientY - y0; fitted = false; apply(); };
+    iv.onpointerup = () => { iv.onpointermove = null; iv.classList.remove('drag'); };
+  });
+  iv.addEventListener('dblclick', e => { if (e.target.closest('button')) return; const b = box(); if (fitted && s < 1) zoomAt(1, e.clientX - b.left, e.clientY - b.top); else fit(true); });
+  $('#zIn').onclick = () => zoomAt(s * 1.25);
+  $('#zOut').onclick = () => zoomAt(s / 1.25);
+  $('#zFit').onclick = () => fit(false);
+  $('#z1').onclick = () => { s = 1; tx = ty = 0; fitted = false; apply(); };
+  $('#zRot').onclick = () => { rot = (rot + 90) % 360; if (fitted) fit(true); else apply(); };
+  keys = e => {
+    const k = e.key;
+    if (k === 'ArrowLeft') { if (info.prev) load(info.prev.id); return true; }
+    if (k === 'ArrowRight' || k === ' ') { if (info.next) load(info.next.id); return true; }
+    if (k === '+' || k === '=') { zoomAt(s * 1.25); return true; }
+    if (k === '-' || k === '_') { zoomAt(s / 1.25); return true; }
+    if (k === '0') { fit(false); return true; }
+    if (k === '1') { $('#z1').click(); return true; }
+    if (k === 'r' || k === 'R') { $('#zRot').click(); return true; }
+    return false;
+  };
+}
+
+// ---------- PDF (read-only, locked down) ----------
+let pdfLib = null;
+async function loadPdfJs() {
+  if (pdfLib) return pdfLib;
+  const css = document.createElement('link');
+  css.rel = 'stylesheet'; css.href = '/viewer/pdfjs/web/pdf_viewer.css';
+  document.head.appendChild(css);
+  const lib = await import('/viewer/pdfjs/pdf.min.mjs');
+  globalThis.pdfjsLib = lib;
+  lib.GlobalWorkerOptions.workerSrc = '/viewer/pdfjs/pdf.worker.min.mjs';
+  await import('/viewer/pdfjs/web/pdf_viewer.min.mjs');
+  pdfLib = {lib, v: globalThis.pdfjsViewer};
+  return pdfLib;
+}
+
+async function pdfView() {
+  const my = gen;
+  stage.innerHTML = `<div class="pdf">
+    <div class="ptools">
+      <button class="cb" id="pSide" title="Page thumbnails"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg></button>
+      <button class="cb" id="pUp" title="Previous page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+      <button class="cb" id="pDown" title="Next page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+      <input class="pg mono" id="pNum" value="1" title="Go to page"> <span class="fcount" id="pOf">of …</span>
+      <span class="grow"></span>
+      <button class="cb" id="pOut" title="Zoom out (Ctrl −)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+      <select class="sel" id="pZoom" title="Zoom">
+        <option value="page-width">Fit width</option><option value="page-fit">Whole page</option><option value="auto">Automatic</option>
+        <option value="0.5">50%</option><option value="0.75">75%</option><option value="1">100%</option><option value="1.25">125%</option><option value="1.5">150%</option><option value="2">200%</option><option value="3">300%</option><option value="4">400%</option>
+        <option value="custom" hidden id="pZc"></option>
+      </select>
+      <button class="cb" id="pIn" title="Zoom in (Ctrl +)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+      <span class="grow"></span>
+      <input class="find" id="pFind" placeholder="Find in document" title="Find (Ctrl F)">
+      <span class="fcount" id="pFc"></span>
+      <button class="cb" id="pFp" title="Previous match (Shift Enter)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+      <button class="cb" id="pFn" title="Next match (Enter)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+    </div>
+    <div class="pbody"><div class="side" id="pThumbs"></div><div class="pdfmain"><div id="pdfWrap"><div id="pdfViewer" class="pdfViewer"></div></div>
+      <div class="center" id="pLoading"><div class="spin"></div></div></div></div></div>`;
+  let doc = null, task = null;
+  cleanup.push(() => { try { task && task.destroy(); } catch (e) {} });
+  let P;
+  try { P = await loadPdfJs(); } catch (e) { if (my === gen) brokenPanel('The PDF reader could not start', e.message); return; }
+  if (my !== gen) return;
+  const {lib, v: V} = P;
+  const container = $('#pdfWrap');
+  const eventBus = new V.EventBus();
+  const linkService = new V.PDFLinkService({eventBus, externalLinkTarget: V.LinkTarget.NONE});
+  const findController = new V.PDFFindController({eventBus, linkService});
+  const viewer = new V.PDFViewer({
+    container, viewer: $('#pdfViewer'), eventBus, linkService, findController,
+    textLayerMode: 1,                                   // text can be selected and copied
+    annotationMode: lib.AnnotationMode.ENABLE,          // links and form looks; forms can't be filled or sent
+    annotationEditorMode: lib.AnnotationEditorType.DISABLE, // view only
+    imageResourcesPath: '/viewer/pdfjs/web/images/',
+    enablePrintAutoRotate: false, removePageBorders: true,
+  });
+  linkService.setViewer(viewer);
+  // Links in the PDF are never followed silently: you see the full address first.
+  const onLink = async e => {
+    const a = e.target.closest && e.target.closest('a');
+    if (!a || !container.contains(a)) return;
+    const href = a.getAttribute('href') || '';
+    if (!href || href.startsWith('#')) return; // a link to another page of the PDF
+    e.preventDefault(); e.stopImmediatePropagation();
+    if (e.type !== 'click') return;
+    let url = href;
+    try { url = new URL(href, location.href).href; } catch (err) {}
+    if (!/^(https?:|mailto:)/i.test(url)) { toast("Jasqet doesn't open this kind of link."); return; }
+    const ok = await dialog('<h3>Open this link?</h3><p>The PDF links to:</p><div class="addr">' + esc(url) + '</div><p>Only open it if you trust where it goes. It opens in your web browser.</p>', [{label: 'Cancel', value: false}, {label: 'Open link', value: true, primary: true}]);
+    if (ok) act('openurl', {url}).catch(fail);
+  };
+  for (const ev of ['click', 'auxclick', 'dblclick', 'contextmenu', 'dragstart']) container.addEventListener(ev, onLink, true);
+
+  task = lib.getDocument({
+    url: tok(info.url),
+    isEvalSupported: false,            // no running code from the PDF
+    enableXfa: false,
+    cMapUrl: '/viewer/pdfjs/cmaps/', cMapPacked: true,
+    standardFontDataUrl: '/viewer/pdfjs/standard_fonts/',
+    disableAutoFetch: true,
+  });
+  task.onPassword = async (update, reason) => {
+    const pw = await dialog('<h3>This PDF is protected</h3><p>' + (reason === 2 ? 'That password didn\'t work. Try again:' : 'Type its password to open it:') + '</p><input type="password" autocomplete="off">', [{label: 'Cancel', value: null}, {label: 'Open', value: 'input', primary: true}]);
+    if (pw === null) { task.destroy(); if (my === gen) panel('', 'This PDF is protected', 'It needs a password to open.', [{label: 'Open externally', fn: openExternally}]); return; }
+    update(pw);
+  };
+  try { doc = await task.promise; }
+  catch (e) {
+    if (my !== gen || /destroy|PasswordException/i.test(String(e && e.name) + e)) return;
+    brokenPanel('This PDF could not be opened', /Invalid PDF|corrupt|bad XRef|Missing PDF/i.test(String(e && e.message)) ? "It's damaged or isn't a complete PDF." : (e && e.message) || "It may be damaged.");
+    return;
+  }
+  if (my !== gen) { doc.destroy(); return; }
+  $('#pLoading').remove();
+  eventBus.on('pagesinit', () => { viewer.currentScaleValue = prefs.pdfZoom || 'page-width'; $('#pZoom').value = prefs.pdfZoom || 'page-width'; });
+  viewer.setDocument(doc);
+  linkService.setDocument(doc, null);
+  $('#pOf').textContent = 'of ' + doc.numPages;
+  extraMeta = doc.numPages + (doc.numPages === 1 ? ' page' : ' pages'); updateMeta();
+  eventBus.on('pagechanging', e => { $('#pNum').value = e.pageNumber; markThumb(e.pageNumber); });
+  eventBus.on('scalechanging', e => {
+    const preset = e.presetValue || '';
+    const zsel = $('#pZoom');
+    if (preset && zsel.querySelector(`option[value="${preset}"]`)) zsel.value = preset;
+    else { const opt = $('#pZc'); opt.textContent = Math.round(e.scale * 100) + '%'; opt.value = 'custom'; zsel.value = 'custom'; }
+  });
+  const zoomBy = f => { const ns = Math.min(10, Math.max(0.1, viewer.currentScale * f)); viewer.currentScale = Math.round(ns * 100) / 100; prefs.pdfZoom = ''; savePrefs(); };
+  $('#pIn').onclick = () => zoomBy(1.2);
+  $('#pOut').onclick = () => zoomBy(1 / 1.2);
+  $('#pZoom').onchange = e => { if (e.target.value === 'custom') return; viewer.currentScaleValue = e.target.value; prefs.pdfZoom = isNaN(+e.target.value) ? e.target.value : ''; savePrefs(); };
+  $('#pUp').onclick = () => viewer.previousPage();
+  $('#pDown').onclick = () => viewer.nextPage();
+  $('#pNum').onchange = e => { const n = parseInt(e.target.value, 10); if (n >= 1 && n <= doc.numPages) viewer.currentPageNumber = n; else e.target.value = viewer.currentPageNumber; };
+  $('#pNum').onfocus = e => e.target.select();
+  // find
+  const fc = $('#pFc');
+  const find = (again, prev) => {
+    const q = $('#pFind').value;
+    if (!q) { fc.textContent = ''; eventBus.dispatch('find', {source: null, type: '', query: '', caseSensitive: false, entireWord: false, highlightAll: false, findPrevious: false, matchDiacritics: false}); return; }
+    eventBus.dispatch('find', {source: null, type: again ? 'again' : '', query: q, caseSensitive: false, entireWord: false, highlightAll: true, findPrevious: !!prev, matchDiacritics: false});
+  };
+  let ft;
+  $('#pFind').oninput = () => { clearTimeout(ft); ft = setTimeout(() => find(false), 250); };
+  $('#pFind').onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); find(true, e.shiftKey); } if (e.key === 'Escape') { e.target.value = ''; find(false); e.target.blur(); e.stopPropagation(); } };
+  $('#pFn').onclick = () => find(true, false);
+  $('#pFp').onclick = () => find(true, true);
+  eventBus.on('updatefindmatchescount', e => { const m = e.matchesCount || {}; fc.textContent = m.total ? (m.current + ' of ' + m.total) : ''; });
+  eventBus.on('updatefindcontrolstate', e => { if (e.state === 1) fc.textContent = 'Not found'; const m = e.matchesCount; if (m && m.total) fc.textContent = m.current + ' of ' + m.total; });
+
+  // thumbnails, drawn as they scroll into view
+  const side = $('#pThumbs');
+  if (prefs.pdfSideOff) side.classList.add('off');
+  $('#pSide').onclick = () => { side.classList.toggle('off'); prefs.pdfSideOff = side.classList.contains('off'); savePrefs(); };
+  const ob = new IntersectionObserver(entries => {
+    for (const en of entries) {
+      if (!en.isIntersecting) continue;
+      const el = en.target; ob.unobserve(el);
+      const n = +el.dataset.n;
+      doc.getPage(n).then(page => {
+        if (my !== gen) return;
+        const vp0 = page.getViewport({scale: 1});
+        const vp = page.getViewport({scale: 110 / vp0.width * 1.5});
+        const c = document.createElement('canvas');
+        c.width = Math.round(vp.width); c.height = Math.round(vp.height);
+        c.style.height = Math.round(110 * vp0.height / vp0.width) + 'px';
+        return page.render({canvasContext: c.getContext('2d'), viewport: vp, annotationMode: lib.AnnotationMode.DISABLE}).promise.then(() => { const ph = el.querySelector('.ph'); if (ph) ph.replaceWith(c); });
+      }).catch(() => {});
+    }
+  }, {root: side, rootMargin: '300px'});
+  cleanup.push(() => ob.disconnect());
+  const maxThumbs = Math.min(doc.numPages, 2000);
+  for (let n = 1; n <= maxThumbs; n++) {
+    const b = document.createElement('button');
+    b.className = 'th' + (n === 1 ? ' on' : ''); b.dataset.n = n; b.title = 'Page ' + n;
+    b.innerHTML = '<div class="ph"></div><span>' + n + '</span>';
+    b.onclick = () => { viewer.currentPageNumber = n; };
+    side.appendChild(b); ob.observe(b);
+  }
+  function markThumb(n) {
+    const old = side.querySelector('.th.on'); if (old) old.classList.remove('on');
+    const el = side.querySelector(`.th[data-n="${n}"]`);
+    if (el) { el.classList.add('on'); const r = el.getBoundingClientRect(), sr = side.getBoundingClientRect(); if (r.top < sr.top || r.bottom > sr.bottom) el.scrollIntoView({block: 'nearest'}); }
+  }
+  keys = e => {
+    if (e.target.closest && e.target.closest('input,select')) return false;
+    const k = e.key;
+    if ((e.ctrlKey || e.metaKey) && (k === 'f' || k === 'F')) { $('#pFind').focus(); $('#pFind').select(); return true; }
+    if ((e.ctrlKey || e.metaKey) && (k === '=' || k === '+')) { zoomBy(1.2); return true; }
+    if ((e.ctrlKey || e.metaKey) && k === '-') { zoomBy(1 / 1.2); return true; }
+    if ((e.ctrlKey || e.metaKey) && k === '0') { viewer.currentScaleValue = 'page-width'; return true; }
+    if (k === 'ArrowLeft' && !e.altKey) { viewer.previousPage(); return true; }
+    if (k === 'ArrowRight' && !e.altKey) { viewer.nextPage(); return true; }
+    if (k === 'Home' && e.ctrlKey) { viewer.currentPageNumber = 1; return true; }
+    if (k === 'End' && e.ctrlKey) { viewer.currentPageNumber = doc.numPages; return true; }
+    return false;
+  };
+  container.focus();
+}
+
+// ---------- keys ----------
+let keys = () => false;
+document.addEventListener('keydown', e => {
+  if ($('#scrim').classList.contains('on')) return;
+  if (e.key === 'Escape') {
+    if (document.activeElement && document.activeElement.matches('input') && document.activeElement.value) return;
+    e.preventDefault();
+    if (isFull || document.fullscreenElement || Date.now() - lastFullExit < 400) { setFull(false); return; }
+    closeViewer();
+    return;
+  }
+  if (e.key === 'PageUp' && info && info.prev && !(info.kind === 'pdf')) { e.preventDefault(); load(info.prev.id); return; }
+  if (e.key === 'PageDown' && info && info.next && !(info.kind === 'pdf')) { e.preventDefault(); load(info.next.id); return; }
+  if (e.target.closest && e.target.closest('input[type=text],input:not([type]),select') && !(e.ctrlKey && e.key === 'f')) return;
+  if (e.ctrlKey && (e.key === 'w' || e.key === 'W')) { e.preventDefault(); closeViewer(); return; }
+  if (e.key === 'Delete' && info && !$('#bDel').disabled) { e.preventDefault(); deleteFile(); return; }
+  if (keys(e)) e.preventDefault();
+}, true);
+
+// ---------- the app tells us what to show next ----------
+(async function waitForFiles() {
+  if (EMBED) return;
+  let fails = 0;
+  for (;;) {
+    try {
+      const r = await api('/viewer/api/wait');
+      fails = 0;
+      if (r.f) { if (NATIVE && window.tgFront) window.tgFront(); else window.focus(); load(r.f); }
+    } catch (e) {
+      if (++fails >= 4) {
+        pauseAll(); stop(); info = null; setHeader();
+        panel('', 'Jasqet was closed', 'Start Jasqet again to open your files.', [{label: 'Close', primary: true, fn: () => NATIVE ? window.tgClose() : window.close()}]);
+        return;
+      }
+      await new Promise(r => setTimeout(r, 1500));
+    }
+  }
+})();
+addEventListener('pagehide', () => savePosition(true));
+if (F) load(F); else panel('', 'Nothing to show', '', []);
+</script>
+</body>
+</html>

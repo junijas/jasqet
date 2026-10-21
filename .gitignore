@@ -1,0 +1,11 @@
+# Build outputs: they go on the Releases page, not in git
+/Jasqet.exe
+/jasqet
+/Jasqet-mac-*
+/extension-firefox/
+/installer/Jasqet-Setup.exe
+/installer/payload/
+/store-packages/
+/windows-arm/
+*.test
+*.prof

@@ -1,0 +1,1748 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jasqet</title>
+<link rel="icon" href="data:image/png;base64,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">
+<style>
+/* Jasqet's colours, from its logo: navy #052044, blue #006fef, sky #01abfd, cyan #00d8fd */
+:root{
+  --bg:#f4f5f7; --panel:#ffffff; --panel2:#f0f2f5; --line:#e2e5ea; --text:#052044; --muted:#68707d;
+  --accent:#006fef; --accent-ink:#ffffff; --accent-soft:#e3f1ff; --good:#13955b; --bad:#d23c3c; --info:#2f6fe0;
+  --bar:#e7e9ee; --seg:#006fef; --seg-done:#13955b; --toast-link:#5cc8ff; --shadow:0 1px 2px rgba(20,24,32,.06),0 4px 16px rgba(20,24,32,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1116; --panel:#161a21; --panel2:#1c212a; --line:#262c37; --text:#e9ecf1; --muted:#8c94a3;
+    --accent:#3daeff; --accent-ink:#ffffff; --accent-soft:#0d2440; --good:#35c483; --bad:#ff6b6b; --info:#6aa1ff;
+    --bar:#232934; --seg:#006fef; --seg-done:#35c483; --toast-link:#0055c6; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1116; --panel:#161a21; --panel2:#1c212a; --line:#262c37; --text:#e9ecf1; --muted:#8c94a3;
+  --accent:#3daeff; --accent-ink:#ffffff; --accent-soft:#0d2440; --good:#35c483; --bad:#ff6b6b; --info:#6aa1ff;
+  --bar:#232934; --seg:#006fef; --seg-done:#35c483; --toast-link:#0055c6; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+}
+/* thin scrollbars in the page's own colours, light or dark (Firefox: the @supports line) */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track,::-webkit-scrollbar-corner{background:transparent}
+::-webkit-scrollbar-button{display:none;width:0;height:0}
+::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--muted) 35%,transparent);border-radius:6px}
+::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--muted) 60%,transparent)}
+@supports not selector(::-webkit-scrollbar){*{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--muted) 35%,transparent) transparent}}
+/* the logo's mark (the J with the arrow), without the word */
+.logo{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAqLklEQVR42uy9CbRlV1kn/vv2Pufe+4Z6Q1WlhowYQoEh/INMgRDwL4girQmD3ct29WpbFoitC0QWsVtstFsc6CwHOmiDMyBNMAJiFGNaAgiYAYKxMxAgSVVCpZJK5VXVm+9wzt5fr733t/fZ91WhIVXUQJ+ddXLucO6t+843/b5xK7Tr/+nVMkDLAO1qGaBdLQO0q2WAdrUM0K6WAdrVMkC7WgZoV8sA7WoZoF0tA7SrZYB2tQzQrpYB2tUyQLu+/VbR3oLjuN7Xh9LFM5TGFVar50HhfKXsBUwc7rMiQDFIEbMCefHTLAc5ajA0/GMqYFEoSxpWE6qCuC6IbeGfk1UKIGKwIqoJuiLSNaEYErpsrWZjFMj9W2rIRJ8q94/ePnj29O0bfzK1VDsO6396wl8ObX8BpXouCkVMgDv8HSaCI4ZnABK9u/F8tENn1/jr2D8nLcxEnK7l+Ny9VzgGIpBiWK6hPncf6E9vX+d6/mX2715xU6sBjud61+BJGvQeKHq5pQIwDOYo7Q0BSRHYCsFseI+sIxwA3nC464jC+7mh9lwFsA085f7HnjM4XEjZY8vQhQH++Bbw394D7nQni97ab1jg0pYBjsd69yJo2P0eBf64ZT3jiUqBQAQCey6goGJVIJpjCmIORLWiEWz8Qm4UsrzOlDNG877/Z8aYRZjMMYRjHPePLS+hvuqvgPtXwN1JoOyCi+L5LQY4XujZTF5OBT5ilSo9EYxInhJSeonPiCg09tLrrnHEYjQSK4fT4iw0ZZvZahW+iEULxOvCA5KvZ887+Noe8FXXgVdGQG8S0Aooe0AxQS0DHIdF7xxcSgbXWK3LCKUCsTiZa6/CI8ERVT2LdsjVv+ACkXJHYMoYxV9sCUmfaGEQzmFcZD4L/vhNoGtuDh92RNddQBeA1qCJydYLOOb139c2K8aHLGPSS74jKIlUW2EGCEInUfkite5CzuiFJMHRvtMYBvCYAQL+OOh9hy45UyppVWugqz4G3L4H7KW9BJUT4HJCpL8Eep2WAY51aXTfwYrPg9hxb9GTJFNS5RGoMWXqOqruaO9tcPnCB1jeD3Y8XhIkncDpU/ENOTkd9NBe0DuvBS+sgotOkHjPAB1Qtwfu9AIG6PZaBjgmu/+OtV3E9g1W6QydBSkPkptpdAoM4oFZUtYcjIQSU5zst4BFzwecNAHJl3HUEMhcS3fqWuDGW0F/eEPQFroDFN10cNnxhKeyC3hmaDXAMS3m4kq2Vge/vpFQb7dFExAhSXeUfghROUf8qiGq1wQqmoVoNpCZjiZe4BjKmQTuDIB3fxT02XvASoMd0cseSHfAnQnAIX93LkqwU/9FAe6ULQM84fUrq93Cmh+uuACJ6xXp5yXaEy766RxQu80kNsYAGJmER/eQwVaihCy+PWcYT8cgEAEFA4uPgK76M2DfY7C6BBUdL+XO9nviO5vfyY9OOIqiZYAnjPxH5aW2Q3NBuh3A4xThoxzUOduvqfHqBcV76Y2mQoAhW27CfIrHsEJ4ORCdHPJ3WKHHwC1fAv3+9eBqBHZOSNEBOxVfBGJTZyLZfIjq90fRMsAxrULbl1qrmsheUt/UBOFi0CcifuZkArw6txEPBJPBlLmAljKvLjKXMIHzJnoj4A//EnTjbQL0hKD+3PPq3qN+xwSlAL9OJH4wAaRbBjgG+692eQhnM8BPEQA2aptEC0TNMKbuISo+2ncaw5JgZHH/mEPQDKwfAH71WuCBh8G6AKsiIPyiKxG+rpf+hPad5Hcy6S/LwAQ+idAywBNjAK3OYmODVKsI9LgRfcWC4mksshe1AIua4AwUNq6f+AiqkfiA8hl81z8Cv/cXwIg98cmpfQf0nNRHW18IwaPNL0U7OML7Q7SAahngiS8DDZNLqgA95ASlZOPJBq1A0X+P7r6YD860Q/w+yfAE6Z+sQB/5G9Df3hIyfY74hRDXqX2H+KPEe/XfuH1HSL4HiY4BVMsAT1gD1AGyk7hvnn42aANPbBqP5YdwLR+hDTwOyCJ7wb2jRpM4ipgF0K9eA37wYU809oGdjrftXuqFwMH1mxA/vwvqCBMUZQb+xAUsi9YEHBsHCJizgdI+wKMaqR5L0CTgF6SdMg2RckPJTYjgzwE9C+y+C/iDjwL9PqBEeouOBHZCUMcTOgZ8kuRHYpdAJ6r+rpx1SAgRtwxwDCiwSb0K2m9UeQR88prNUrsx2mcjlhDVr3j8uycq4Pr/DVz/OaklcKq+DAg/Sr1z+Toi7UU3uXqOAUhrsNbB9heBGajQQfLLIiaW7m4Z4Fg0gM0ieBLwiXHfBO4kqhc8AYjGyKOGMZYf3TwL2IOg//EBYPfDnvDOzSNViNRPeFvPHtRJaDf6+bqRfP++1wDCBN5EFIFRFaEodG10+baWAY5FA3Cens0KOja4c5Syfhs8ghjei25kl0G77wR9+OPgwRDoTAPdaVBnMqD6bg+qNwWecIBPgyY6wOQE1NQEpicKbN+k8fCSrdYGauglXpUMrckBRkd8pwFAsFTbL7LqvNP+bPeTLQMcsxmgsfSsD+pYIS5J+FfeH5P4RHk0KP/660B//3nvLTAsyGjAVsBwKeSXvVov/dkHmHTpMYDVGqswqIoaZmA+YD/71tc94QBXS9VvDgTGx8Hmq1D1ozI7rzag/iaYHIC+E8qpCurDH4L50s0hkROKBsFQIFtJTaECoQCzAawOIFHV4NHQM5BhRp8Iuh7WxxThbCn7OJflsYTOmJuXggNNeRbyip0o9SXQVQNs2b2KpaVVrJEFwwE0DSZJJZKki91rSof3Qg24hI6FkUj5oJBqUlItA5wIDNC4epxphCysSxLu9YEd1WiMnsWm4Rp2rlfYNN/FcLKHVdUN6V0v3eQJ7iXfaQMlsXtHaM8UKkTy3HsUrnGMwgYtA5wYDZCh/JgMiv695TE1z1kRqBfsKYMzllZwBjPmt5TYNtfBwmQPC76kMBT/OYLDH0Lo+Nz574n42p8pahXvVpYtA5xQLYC8VJvGU8ES/Ik6n0qgNznCmctr2DpRYHZTiflZhS0zGr2eksu0ELwMEh9Vv3PxRP17H1+FSB5lxSjBq+hxywAnCgVGAsdiEM5quNFE9Tx9esDmzjrOGoyweXMHW2ZLzEwpTE8oTHQJpbZewoPaF4kXBiCf8SulmndcO/gMJFHKSJJSLQOciEWWQ+yfmpi+T/WorJjTR3QVying7HINO0pgfnMPm2cKzE8rTPUIPYnVdEsSKZdeLx2ZIJyd1AcGCAc76XcMIIAwlZ4dY3dfywCPV/6Nc8eMSKAS162p3/Bp30Jh05zBBZ0Rtk5pzE1rzE9rzDrJ7xEmnBfgQ/OMiY5IeGQApTImkEIPiQMk00ABD3izkKpIbcsAJwYEWs8AwV+X4sxYFawU1KTC2VsMnjxhMbepxJxjgEnCzARhqqfQK9jnaHoFoVcAE6VIO4IJYK1C+NcTv2xAYAKDwQNoAGFApsxWtQxwIkxAtP8icWykXYsIk3MKT99ucPY0MDtVYmaSMDuhMFU64gNdzegUQMepfkd8DfQE1XMCgQ3y9y6ggMHmddESXmNELGAzl6NlgG+tCXDSHyuAYhyAGNt2aDz3bMaWKe3tvJP46Q5hquMIHwjujkKFrKxnAgI61Lh2pCL6l5y9dwvD6xwDQYkBtMQJRAMVpzsG2PMwbS27lxVGPYtrBRhFxoBsDUJNMDWRqUlRxWdYQ5PWkLIGha2huCbNhrU7w5LyFTs1iA0RWd5MtZ1mA80GBWpoMqxRW6KaFQxRuN4QG+4DuM7W/Gv4rfnBURmgNoCpUlkV6RKdknD5RYRNExrTXcJMF5jqsAd6XUdwIbo/lCTqPPEhgZwCROLqUfTzi6QRUiSQlADA6AlIEMgnpE5nL+CRQ/hO4OdmoH59xH7SBSwxrKNNpI+vxmJURP6xf+7MMVOIztpwZsNeLXt07i6onckmoGb3BWD/QUJgMgYZSeca5ZgAqh5drBnfYd5x6N/j7ZuPuKnK/S5rQ/gXFuivY/t8F085Y8a33DmAN1EAPU1eyn38hoXoKhxaUSjt95HcIM0sEx9Y1DtJpA8pNKwyoithCJJcAYIZOF0ZoMfmzCndeYe1wYeKdfQ+wWIxVkBJEoZVNqbmOWumzLtvJFon3wF5TjF/bwMHsWMSxzDGc1Eo5oT+EVpVVzKw/wgMIKFddmDQDEB1H5vIYn6aMCVqvudsvQ7tfioW9ZIQnwITOfCYGCASOnvM+esp7KsTU3C6nsZLyU5HBlA179CKSsNN62OMjXMqv2r+QEKTaGlarpqGDO+np7LrLH5vI/HzIyJ7ee4LOSvNQzuHozCArSqgHjRxYaUwNVFi6wSjUISOYm/zSxWHg4SCUC3Ej1XeKnR4p/g+IRKZGhdTYv5RC7BIfmKQ6AX4f6g4fU2AIbt7jezhkjEfCR2lNN6wKM2+G8dmTRTZ6+OtVkJcbj7LsZwrVvVsOKf2TWO/zjTac1QMUA0AMwxBGLl+qgTmu+Gfd7a9FGlXYjISjeQzMdmnY5kwhYa/yPRNlZAwQjQBzQgQyQNIcogQbMyxCOHJZIDhOTsWl6z9SQteUo7AplHXNFZcyWNTNmJYlmyUcHks53T4Wj3bPHfo0n/OStNNID5Zhzp5vy06P4rfPm94VDdQScuPMeDaaYOh/5yz+9MFMKkJPYfylUP6TiNQAH5eA3DAAUTQcYpHJGwaIiUZPkiEMTEIJbeP0TBKxAHQ5entBezdufna5d0HPqNrutChfTYexcOhfFs5yfOPia0K55qIwzkAPKcNPFpkOVOw6x5FyuiWGhzed48t0mPDUbMYlPpWXL1l6XH4g950EI88luiqZh4UpTMnycpyN4IjSJpLSZC8SHXUK3ldQEwVA4kheMN7R2v2OO3iAEvnbzsA4MApHQioHcFHgisCQi2IUQqy99qEmklwdBQGiERW0Q10Us+U1Y7Q+Fk0RDNzINMKftQMhbLvNhB0IgJBtTAAEsAolEWpONUBKAF3cXhbAq7U2C/3XG3I4WQ5xDT6jSgfA5M1jqJhAo8dOm09wIkJBTs/xUbfMrkdYcJLqObzKr4hZjYmLtYDbhgLlFhC0rsNMOSkCMZUP7IxNCQjqXqnCgPsPah2luYHJi1dSLawVQ1ljPJROWfT65qUx2C1j/KADc6ta2gTIj6Knc0PARtlDWnUTKgtoQaRQYgM1SxRPPec/WvexasBjEyIELHvoxvYQr+v/sWJ64+jDgigqzYhEcCVzxDqJPHcdP0kl7ZpBqe87T8yCWPMxWU0rutYOWkqOczqDyJonOycAibgoQN0UYd+YxM6b7bMJBFZ8cbcmTzuqmzAYCbgKH82hhEyrSRngPxrHCJ3DhD6CF4G9IQGJI/dl7LVIKskRK9R1vzD+q2LrzW/Mff+4+OzjsKP81W6deA6a0QDSPtXBHqNuxIzSQA342MCFqSGNdJsID81SgJiua0f6zlLXOHjA5s6fNLdwHmN75xR6k0OlVhmT9w42yAEdGxjF9n6585fz/8mloKLeAQNKx03NnBMep9jXCBE8cCNOvWfG1WoBiOl6vq/HjcFUA1DIMgMReXY4GKKeSCp1Gn+y6Q9zQ+ghhGUGiOuv0IejxUab1QHTT1Y8Bgmy0dOugboMnaSZW3lBypqYJCxcRyK+PfIhihYbAjKSJ2dzaN3eUiXkt8/9l7swZfoHgnDgM324xe1GjLqvhAL2ShPHoNxQKwaaqZ3NtdvGAe7YWYg5ZCPm9FxjWdA2DhWtJjWS8OTzQBrMPdaKgcFU8/9MK/ifXImDE5SkrgJxKPUOhfj/jHWr/Jq6zgU0TaTuELwJ7vv3DRtjuXqiSTW3vnHf/HH/8Qd56q6fiWIXsikOvIj2GOK0YCwvsYY9RXXw12SdQrVP+4vMHWy7pTDdo4oPg59yvoFiLMUPks4mLIYlwS+EIJYiYEYKWbA2QSpiUkM1042A6ycufPrywcWfn4T9FXWojQi0SphAE7qjjNiNrqOm8abdBN5fHq2RRP54yMZIEi8gC+tUdj6oGH7s9/Q9r3pnp5ard5u++tvZuZJ/xscCKnrcIs9s1pwHW1/LSXg1kcAPQi0RgjdNIY0Hd+c1YrK3x4zCWlihGoGQ46NHQtc7usAox5J8QfJMpCGKjUG63b3KeEF3L1t67vm9u6/YTOrFzKTCnl7ImOs8wDI1IqcwFjrPAP2+X5/+Mifu78+sqe4ZrKGGN57gPLAL0TyQmTPQtB/iORx7dvqPGAMKV5/w5ZqRR+xv7l14ag/9k1fK2ht9cPW4ArrbnodAF2ONXz9X3xNQsAQNzCMfQn1AUHKkU2HbIwCp/p9zkZ8C96XQVDJcZSEGI1NHA7z5qN2S9oEMnWsLNCvcOiUiQMsnrPjnkXgnhMSmPlnXvuXYLEu6acxHF1hPWYwqd7PS3yUNCtMwVn7L5smgygN/34ABHEzNURsPWc1g8z5fH/2iaMQ97dpQwFOSiB2Bkkm0L9smwBR1AjEoG5hzWG797RNBp2U9aGFLvXMzxlVBmLWUbKz+J27uVKgEw7yrda+3don9kM6WBelT/jk/X9R1TcWKtcHAROEyfLW1xT6Q4deAD/wsVOEHT+UjJ/RUjgSS8U4mgiPs9S28/WT20jgN/UXd3W5fXPXLNTeXUzTvoILgbLs4PLnbsFTznKwwKY6guhyOmCmJMt4wbkzqbQghviSkhexj5UuHDEQBSv2fc87G+dsm0ShO0HGfWq/SKVeQccQ/uEra7hpz3rSRgSZM8/W1yjYWXspgM898Qjnqb7e+nAJa6dCZND54zWhsuRdjcoQqloigHFWO/Vx3cWr/9xXbr529WWr+wbvtA8tfVf92CJhsOYDPRo13vZvn4o3XXGuyCundsBYdDQWxs/UegS0makfs0WcPYkzhVSOd7Okkc0+WhrGj119Dz55x0J4Uesw+7fThdo0hc6rtrx98MKtv3JcNcDOR/c/b8YWrymNcgBue7/G4UOW3r+ya+6fjrAhNy9MbSrL102SfgHVoNGI1HCEwgM4H+JlZSsoW9OkrbGZR6zgjhqKK9awRO4ahBCvOzuQqGAckd3rpiCret6ndDY4tM1HP5y8/fXpVe0LBdmYgXrlrZ8xrH6G//K5Dxzt71sf0d2kcV1vrrdrdaU77YcyGAVMdHDFpTt8/WGK11MO0sYHgsSaAk5FItwMgEwxAGqGR3DuLnLzXWMd5U1MwbjfqgkvfcYcbrxrAZazEnJhFVOtHd9cwPmHFq44w9KfKULXc78Cev6Jev3Ulxdfsf/Cuc+mi29d6mwv1XWTpF7izKKVL+xIwU5Iv1MQXjGKXon5LVM4VE3a7A+PkbAYCDIyjiWr82uqgHg8KsYC5EzVMfXocs31xfX3/8NFuOGFY9pg07v3XVTd/eAnq32L24f9IbwGcepVhTr7f7xvFedt63plw7nPTeOR/iZAJ2Fgimo/ayIVF5hS5C53B2lMK+RBnsgC7j6WzLh990qoYYyt57FgskPgaojjCgJniK7SQDfFsH0NG2MSPDWt9VhodXupr5jV6iWKg420ho/w33kscJXN1eempaoJBdtka5savpg0EPQtRRxB7XNyzXzJtg0RB18+XXTOK8ryxzb+ff0v73vdaM+B7XZ1HRisg0Z9oBqAhmswK4v4xQ/eiwcPDNPmDCT+OW+IyEbfPTpvCfxtAIH5Zg/hvaQrUvg6K0prqn6EMn/1pUV87NbHGi8leiHuB82okFw5ngygmM/OI5HWETa6RsZemF9bKjwtRu9M+l2UAjWc3bzUxmazcq4snEtJyuN7ecGmlcggN0SPN4FtwwSc4sYSCa52HQF6Dq7ugAN/VQVyHoA7qhEwGoAHa3h0/2N47dVfxtq6GSfsWC5PNnBKYI1hM/kd3wWOjzhv/J5YL2BFY8TE2V171/HmD+9Gbe1Y9jCUsTEwm9mP48UAlu1jcWRtuJeBiA5v9WvcMWZL2T5Ypax3M/6UpVrF2vHq3DFmyO3dxgGLESnl8fA8+WOzCGA0uBK8CRqjBlUr4MHyEVVG5IhdVyGI47XGKDyuK2c+wMMB7vraY/iZP9oNa6zvUbBjxBzfvCULVMpP5THskEv4kUwR/+TsuySLurJc4yc+8ABWF9f97/P5DX+vJCnmrt5CzRSS48UAq9a8xTLWlfwiIxDVghaHjLePXTvCtYZxUyxPsuLjeo0d7X02SCHx71g4N3/O4yHejUcKwkStYMa7YzlW3nqGXLGkrzmCwasBw6l9zwQ12NSS3pUw8KgPXjuMv/2HB/Db1x1IoV2Wv6VpNeB8TkRWhExjledHEPsIZqAxpvB/TWXxhg/uxt4HD4HX14DRMEQlY0jYXTVTAlN01Pm/xwQC7ztj58eGD+2/t8P8klFN2tYKyhaj5ZH5q6WLz3gwv3Z0yczgoZsXv29WqZ82Rn8XG5DP5dc4p65QskFpDbmz9wrsiBWPLKHymmWz8wRQWa1qo8mhfe85ONRowQ49GunHMyEHH29CCNMG8JaCrypO5nZfivut7rwen/qeI+PkA4f8stEuOXOxFd6q/Xdd/ZG78ZSdJV5xyZYk1QnopR2Amv3/iCiz7Zxy/43bQEd435yVivlqAGb852v34ov/9Ch4ddWbpzh3AHkS6awi3JfyW1AQsvfsHXcCuPPxfMHoBXNrjwFXfVP/6rsPuz9pItgOqzjYGZXyyEMLDGrn54O6tBO17TgmIosOjNWw4mI6N9GK7xVavRxkHdSq+AI+8fzRUf/tun4oqU0bAytWgj4hpuC7ftnALAJXvvcOnHPG8/Cd508i1v5Y/gaBZ+am9icNjKBmA4iNceosoGBlZ5j3f+YAPvLpPTCrawGnOJOoVFYwElrCcFZXmkNPx6rgN857QP44Y/6HH0/8H48zD2CG5naa0CCn+sV1DIkWYYTYBexfZ6wdZPzU79yJv/zFZ2N6rhwL76YhDdm/TWkfX8koIhspnyjO2TCpZtL4F76yjF/76B6YlRVgOAi/Q+sU+QuRQAK2ToJnNWg0CpqrzQV8E0kk27+5MOuGrQOBI/izb0AwGVAwvvHDYQVeX8ZDD+zDf3zPV1FXNmJir+Ib9E/JmhipWrOcAz5K4I7lM1a8pNDWwNj36ABv/JN7UR0+HCaFO09FmDCNg4n9j7umfZPL42P5lgE2qID+I2ZYfYmqQaj1D10nErPIbqZPFI18rICXD+ILt30Vv/SBByQiGHL4vqfVA19OAJBTDUSD6psxwwybzAglRhiuGvzk738Nh/c9CqyuBE+Fc9CXNc52GTizCB8MQ6G5ZYBvZt32FsZw+YOqXvVjWUNxhwRm7YaJG8aA6iG4vwq7fBAfveFO/OkN+8IucUJgT/xYqyqPx5A/C8JJMbBgGgwFf9+B5iuveQD33fcQeHU5xCMi2GXOikHYN5LSxVuzmkIOffKnBQb40HBH0be3WKJNKMB+ThopRsWEkSEMDcjh8yEz+hWwvAqsrBLxcDj5punR7Fl6ROL/9q19YMS83gVtL6Cmlq25Xxxy0lATk6SfZImUVJC5G61qhrbGKjMaFVjoD8wvfAa8hiYsmew3S8mXqNe6DhG4voVRCld96C485cxpPOcZczAY394v9XwmKNjsBpXCvrFoxJfKAb/5iX349M27wUtLwGAQCmh9rF+aQ5FtIz7TBZ42E6J/EjzxMPg0AYFLpDuzGNKc7fvJHN6OceznqwhUVd728XAIDKvgFA8s+u9/FPSWM1ArGxCx4adaZgxsKjG7uHHEDdZlx8Y0qz8KlA9QEGhqEvTDzwTef4e4kkaaL6XyBjymCRxWoJEF1DKqQwfw5vfejQ+97VnYduZEagOPgI+Rg/7GLczr/txRMPCJWx7D+//6K7CHDoL7a8GtE/NC0I2LGecTXbYdNJLYh1NDZQH0eo+cHibgR7t9zPAfUrqxqkmkSCWv35XLmCySFMqu6vv7sDethnFpcQtWs6F13MhhmxhRKBnj8L21FZxHftsOftF5UGdPNF6ANakKKKhgm5JAnnSmBo0GwOphLO59AG941+3oL4/GgCCLuo4DLKyYBCs4IZkLBu64dxn/7YN3o144CKwHfz+aIGLb9AJE7XTBLGjntOw5HzSEdgxe6D2nDQao5qv3Um9Yh25o8g1VoUBU3K8wJ132YpeQov/rO1j/iyWo9SKLvcZgDnmpdgxBkSFMxiAm1Av60TF+roAK9Z2DCvTj3xUCSE4T2VGY1Z+DL0+IrJW7ruBrB5YXsPcr9+Otv3snbNUkeGwCd5xVvVP6yUHXAEsHB3jLH9yO/iMPAytLPtJHbKS5JI8Jcig3myyAF58L9K1kT9PGxbVh/vLpAwK/Z+J+bC5/V5Ft9tmJFjQfhBCfq2anK3t4iMEHHpTmHJay8ywa7BlBCTNQ1iouR63CfKAK4ag17BmboV71tODyZUWf/nGUwizg48PGwz7QXwYvLeALt9yD3/7gfShjXSoj8wZy1y9kD91PGq7XeOPv/BMe3b0PvOqIvx4Yy2ap4FQBHGoB6RW7gEqFRhkbgCMqC1N074WpD5xWXkC9lX5db6KVFC7Nt8uUujcf7fLEj2PTQoq0+vxh8G1LQYrdEQkd28WkOjhKffO8YQzPBLUG6gIYEPhFF4IuOTchbp904ZAbSGmcPFTszIRPH6+CVw7h2r+5A//r+oeaCneK7l6TN4hgcdIyfvl99+CeO+4HLx8GDYT43DQ78BgTMPDSJwNzM7K1LIWRMqx8WSJp/B0u2XaauYGXFo/arfwrpHkcQ6eBSTpMx04zcsIkbYj9r/7kfvCSu03aTwhj6R9km59FWuog+ZAzReK792v3vgb6BfjfvRR4+g6pQzBZd1HUCiafWhU0RDX0mqA+/Aje9b5bcNvtC9InKJXrWaLISMbz9657ADd+/l7w2jJo2A89B5ynjDC+rdzzzwV2nQUaUbM1jZFgUNkFT3aPufn1pMQB6q38O2pzfR9ikkPq32P7E2fj0VIJlIxQ5VUN856vAdwJzaBJxWsZ+aaSyifTPE5MkLSAe08DtgDWNei1Lwc9bUfTnWs3ZByzQVbBPRw5fQ5aX8To0AH8l6tvxv6H1nwlUfT7I+BzxL/x8/vwex/+AsyhA4BD/HXV9AJyU9vA0hFFL/gO4JKnAssy/s7ErKryh+6Vj1mNvz8tGQDPKdftOfrNepq4GYOyYQiCbJsS5uSWYR89v/9tF3x/DVzzQNiEz6px4ntCy1GNM0S8hmryzBGYQa5b6wCvvRz0nCcLMUyYBxS1ALJdw2IOwTNBH1g7jMNffxBvesensLg0CBIvZXEDBu66cz9++epPo35sP7ByOHzGmvFSM0lI+fvwsguB518EWqQYbRIQq0LOzBLqid4H8Lwt/WMlhT5pMfkrf+ne0tCT6BCeGcCc3TC6DUep+uFEHN59GJhWwNnzHg94aRczQCag/cb2K3ku2kIec3zfBmbAqAAu3gWaIOCreyRbiFT3T5KKRlYiElxV4zuHFw8u4f77F/G9Lz4fndAwgIf2HMRbf/7PsXRgwWsMrkbB5fRDH1TWUaxAk5PAf7gM2HkuaK2pHh5rP3XXT5QVz3Zejz/69YVjpcNJLQtXXxxtVvfQnebrOJPT8CYbCjV92dbIu0jhGPjkTDivBfSMIegNFwMXbJEBEZw8ArJNY2kYK0fZiLl8zBylXb9Jdv7ikoFD+4A//Wvg4FrTCcyxNh9NhC5G6XTY6JG6M9h59nZc9tydWF7p47M3PYj1tbWAGXzhCfsdPuNmUGFOcAe46Bzwa14MWtCBKTWycWlSYSybQKqtvT+vX7753xwPGpz0vgD16eHL6E6+3hzW2rs3tQE7BvCHY4BRuHljTNAHqnX/PmkL/NQzgW1TYYPn5O9vILCVTZ4tpa7jpt08ziGgVCjiaT4L4OZbQDfc6tU2px2aRDRjJZH/csEoqhSpNpK8K6SCW8bMxji+Fg9ndgL4kZeAz3kK6JFaWsRs7B1teguldlBNFyPePv1s++Kpu47H/dcnPT37n962W2ut1UH13d77spz1939jE5DuSVWDv/Qg6KlnAE6FOttug8pnsfM+/CtxggAM5Zpc/UfTIMEi4gK0XoK2PQm47OlAZwjsWwjmRJpD4+CL8W3jqzBNROoNSKKMqUA8ejYzU8CrLgF+6AeAwVZgibNxcpRNGKKxhhTa0nuv/d6Z9x2v+39qdAbdNii6u4s/q7+CV5th5SuB/OEHMoYK3sYcDLwfHo4hUPXDoWvQ6y4Fb5sDVdzEBUTyo/r3ql7MQxxGMTaBNDnzqpkk6sx+R4Hna9C9d4I/90Xg3nsbyY8TD2zdtI7k4DZOAS+7wMVPBV5wEXDeU4CHAVQsW8xxKsMP+xDI62zTbAi9udxdby+fiRfNrHx7MYD7IZ8azhYP0KfqPfwsdkxQRwYIpdtUjUIThGOCahDStI4ZasEFtZiDH30OcNa2ZhikVRkuiICbUtUz8Tg+iFiAsxnEnhkSdmBgmgG9BDzyVdCB/X7qOT+6ACwvgobDoFg7XWBmEtgxB5yzE3jS+eCzLwA5b+OQDSHobCQqRYKLB8yUlYwSQU2QwVkTLzcvm/7kcb3vp1KqXt9QbVNfq2+tv149idOUz1oYoQ5ul5f6eOSawDHFCOAB+F9dDLroAvCIG/WfjaRJU0ciHhAfu2GEptiGOASVEvGTPy6qWRlgwoJnZIMA1TSRsmOcgQJWBdzGenuVzcqJhFZoilvRaAP3TLvv3dH7JXPF9C8fd8E71eo16OP9XeX99u+qh+lcX7fvCV8Hm5ozQT3MiD+Er/Cp+jLUeQBcsgv4/58DjGSamOUEBJsxf5Sex8dxR7CmUJ82PJe2Nc7b0vL2sQy4kU0xLmRqnjLpD5IPOdMGjRD2g6Ct5cfNlolX42Vd/rZnAF+k8NHqydht/8Y8PNjl3UOfIhavwAgTbNQGvoZvPeABMwxFn+dtA//giwDqptnAXqIjIf1ZNb2IORbgmF2MfQuUBlLFaeZhG3mMB3QQiR3bfbPpWMIIJFqA42Qo0QhhMCQnTeCJP9e90Wzt/BBe0e1/SwTulC3duma4pfMIXVfvHV1qnV01VaMFIhO415z0OzyQmQLHBGTk/Z4Gv+Iy0I6zwKNmUBVEir0HwNkGE9ENzPBClp1t9gi0G8e5NMQngQ2QQCcTxqQ9EDyH9uyLo1iYxBNFMdR8eaOZ1ZfjVZPr3zKNeyqX79Ef1x19uHqP3bv+43ZgQq+ZkRCsMIEjNCctMErMQA4cVu7xOsgMwc++EHjBZcBIC8onGTTJWQxAGlhtEyegbIwdj20enXc7oZHmMRMQAV2075z8+/y1YCYaLeH3gJgrP2Hn9L/GKyf639J7jFN9/cEAqs+vVY9U7zaH+5PscYBU70iPn1f//qg8EGQp6fYeQtVPXoP3vb//+0DbzoMdWNk7iMcQP6Xu5cZFJNukZ1nmAsXP5E3jqTNofEpkBvhStjsbBNowgW8K7jJjW/lbZra4Ej94/G3+6ccA8Ye+u/80tdD/I/todSmPxAxEs2ArwQVDOVdNfKB2AFFMQ6y2veAc4NkvAMrNYegnZxVG4v+PdS/nwywh0p+nbfNW140T36KaSBJO4zbfh3cDE6gZHOYtndfbM9VH8d3dE3NfcRot+uNBSQv0WnW4/w5zYOUMrqpUvZMYwAgDRC+hHqT3KIJFMwz51QufBn7684FiPmQPOVV0iJsYElNjMYNUALqxJSPzBAjZNK9ME6TMt1zjvlgDalIxz+tr1FZ1Zf3KzsMn9J7idFxXr87SinkLHRi+kZf6834LF6nUiV2/vtW7HohXIJFEhwe8mxiZZQCyI/BT/z/QM14ETO8AD2RHsdQ0mmmH2OwZzQHxURo+xRRsHBodJT8S30l+l4B5/Sme12/nzbgJP1CeeKHC6bzesz6rFu2PYLH/RiyuPd0ur4dIoRHN4Andz7DCIJmFwCxSCyj5Btq+A3TBheDtuwA96UvVWTKEFPv4YrF3Vi9IcZsXbOguymy/DwvLVsE0qUY8ra/DZrqap9Xn8OqTN6zt9GaAuN61CtR8kVrBq7G4+kqsLj3Tro6IfOVNkPjQEzBsQseSsAmaYth4FuxeGwBz88C5u8A7ngG95VywLWAHlbgCccOnRu2Pbd/nFYSUhrpLu9oTHV36DKbUR8wkfwyzdBCvKU++WcW323rXEkDldqxUzyoG1TPtyvqFvLZynqpGZ2HYn+XRukZVE9kwyAD1iFAPyTeCDldDmtkwE9fsS8VVQX7Lr9k5wvQ0MDkDTG0nTG1jTM4D5YSFdkrfR24sKbKkfVPZfeiqPeja/2Mn9G3YTLdC2XW8poN2teuUWaq9BS0DtKtlgHa1DNCulgHa1TJAu1oGaFfLAO1qGaBdLQO0q2WAdrUM0K6WAdrVMkC7WgZoV8sA7WoZoF3fXuv/BgAA//8xoMrfuO4BjQAAAABJRU5ErkJggg==") center/contain no-repeat}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--text);font:14px/1.45 "Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+input,textarea,select{font:inherit;color:var(--text)}
+.mono{font-family:"Cascadia Mono",ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums}
+
+/* layout */
+.app{display:grid;grid-template-columns:220px 1fr;grid-template-rows:60px 1fr;height:100vh}
+header{grid-column:1/3;display:flex;align-items:center;gap:12px;padding:0 16px;background:var(--panel);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-.01em;width:188px}
+.brand .logo{width:30px;height:30px}
+.brand .et{color:var(--accent)}
+.search{flex:1;max-width:420px;position:relative}
+.search input{width:100%;height:36px;border-radius:9px;border:1px solid var(--line);background:var(--panel2);padding:0 12px 0 34px;outline:none}
+.search input:focus{border-color:var(--accent)}
+.search svg{position:absolute;left:11px;top:10px;opacity:.55}
+.speed{margin-left:auto;display:flex;align-items:baseline;gap:6px;padding:0 6px;color:var(--muted);white-space:nowrap}
+.speed b{color:var(--text);font-size:16px}
+.btn{height:36px;padding:0 14px;border-radius:9px;display:inline-flex;align-items:center;gap:7px;font-weight:600;white-space:nowrap}
+.btn.primary{background:var(--seg);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.06)}
+.btn.ghost{border:1px solid var(--line);background:var(--panel)}
+.btn.ghost:hover{background:var(--panel2)}
+.btn.danger{color:var(--bad);border:1px solid var(--line)}
+.icon-btn{width:36px;height:36px;border-radius:9px;display:grid;place-items:center;color:var(--muted)}
+.icon-btn:hover{background:var(--panel2);color:var(--text)}
+/* Jasqet's own title bar (its Windows window): the window buttons, top right */
+.winctl{position:fixed;top:0;right:0;z-index:40;display:none}
+html.framed .winctl{display:flex}
+html.framed header{padding-right:154px}
+html.winfull .winctl{display:none}
+.wbtn{width:46px;height:40px;display:grid;place-items:center;color:var(--text);font:10px "Segoe Fluent Icons","Segoe MDL2 Assets"}
+.wbtn:hover{background:color-mix(in srgb,var(--text) 10%,transparent)}
+.wbtn:active{background:color-mix(in srgb,var(--text) 16%,transparent)}
+.wbtn.x:hover{background:#c42b1c;color:#fff}
+.wbtn.x:active{background:#c83c31;color:#fff}
+html.viewing .wbtn{color:#e9ecf1}
+html.viewing .wbtn:not(.x):hover{background:rgba(255,255,255,.1)}
+
+aside{background:var(--panel);border-right:1px solid var(--line);padding:14px 10px;overflow:auto}
+.navlabel{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:14px 10px 6px}
+.nav{display:flex;align-items:center;gap:10px;width:100%;padding:8px 10px;border-radius:8px;color:var(--muted);text-align:left}
+.nav:hover{background:var(--panel2);color:var(--text)}
+.nav.on{background:var(--accent-soft);color:var(--text);font-weight:600}
+.nav .n{margin-left:auto;font-size:12px;opacity:.8}
+.nav svg{flex:none}
+
+main{overflow:auto;padding:16px 20px 40px}
+.toolbar{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.toolbar h2{font-size:15px;margin:0 auto 0 2px}
+
+/* rows */
+.list{display:flex;flex-direction:column;gap:8px}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+.row .top{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center}
+.tile{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--panel2)}
+.name{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.meta{color:var(--muted);font-size:12.5px;display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:1px}
+.meta .err{color:var(--bad)}
+.meta .ok{color:var(--good)}
+.acts{display:flex;gap:2px}
+.bar{position:relative;height:8px;border-radius:5px;background:var(--bar);overflow:hidden;margin:10px 0 0 52px}
+.bar i{position:absolute;top:0;bottom:0;background:var(--seg)}
+.bar i.act{opacity:.45}
+.row.merging .bar i{background:var(--info)}
+.bar i.live::after{content:"";position:absolute;right:0;top:0;bottom:0;width:2px;background:var(--text);opacity:.55}
+.row.done .bar i{background:var(--seg-done)}
+.row.err .bar i{background:var(--bad);opacity:.7}
+.bar.indet i{width:30%!important;animation:slide 1.2s infinite linear}
+@keyframes slide{from{left:-30%}to{left:100%}}
+.detail{margin:12px 0 0 52px;padding-top:12px;border-top:1px dashed var(--line);display:none;font-size:13px}
+.row.open .detail{display:block}
+.kv{display:grid;grid-template-columns:110px 1fr;gap:4px 12px;color:var(--muted)}
+.kv span:nth-child(even){color:var(--text);word-break:break-all}
+.detail .btns{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.pill{font-size:11px;font-weight:600;padding:1px 7px;border-radius:20px;background:var(--panel2);color:var(--muted)}
+
+.empty{text-align:center;padding:70px 20px;color:var(--muted)}
+.empty .big{width:64px;height:64px;margin:0 auto 18px}
+.empty h3{color:var(--text);font-size:18px;margin:0 0 6px}
+.empty kbd{border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 5px;font-size:12px;background:var(--panel)}
+
+/* modal */
+.scrim{position:fixed;inset:0;background:rgba(10,12,16,.5);display:none;align-items:flex-start;justify-content:center;padding:8vh 16px 16px;z-index:10}
+.scrim.show{display:flex}
+.modal{width:100%;max-width:560px;background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);max-height:84vh;overflow:auto}
+.modal h3{margin:0;padding:18px 20px 4px;font-size:17px}
+.modal .body{padding:10px 20px 4px;display:flex;flex-direction:column;gap:14px}
+.modal .foot{display:flex;justify-content:flex-end;gap:8px;padding:14px 20px 18px}
+label.f{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:13px}
+label.f small{font-weight:400;color:var(--muted)}
+.field{height:38px;border-radius:9px;border:1px solid var(--line);background:var(--panel2);padding:0 11px;outline:none;width:100%}
+textarea.field{height:auto;min-height:84px;padding:9px 11px;resize:vertical}
+.field:focus{border-color:var(--accent)}
+.inline{display:flex;gap:8px;align-items:center}
+.inline .field{flex:1}
+input[type=range]{accent-color:var(--accent);flex:1}
+.rv{min-width:34px;text-align:right;font-weight:700}
+.switch{display:flex;align-items:center;justify-content:space-between;gap:16px;font-weight:600;font-size:13px}
+.switch small{display:block;font-weight:400;color:var(--muted)}
+.switch input{width:40px;height:22px;accent-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{padding:4px 10px;border-radius:20px;border:1px solid var(--line);font-size:12px}
+.chip.on{background:var(--accent-soft);border-color:var(--accent)}
+.note{background:var(--panel2);border-radius:10px;padding:10px 12px;font-size:12.5px;color:var(--muted)}
+.note b{color:var(--text)}
+.formerr{color:var(--bad);font-size:13px;min-height:1px}
+.quals{display:flex;flex-direction:column;gap:6px}
+.qopt{display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;cursor:pointer;background:var(--panel2)}
+.qopt:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.qopt input{accent-color:var(--accent);margin:0}
+.qopt b{flex:1}
+.qopt small{color:var(--muted)}
+.qopt.over small{color:var(--bad)}
+/* what Jasqet has learned about your internet's hours (learn.go) */
+.learn{display:flex;flex-direction:column;gap:6px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel2)}
+.learn .bars{display:flex;align-items:flex-end;gap:2px;height:46px}
+.learn .bars i{flex:1;background:color-mix(in srgb,var(--muted) 40%,transparent);border-radius:2px 2px 0 0;min-height:2px}
+.learn .bars i.best{background:var(--seg)}
+.learn .axis{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.learn small{color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+.sched-btn{position:relative}
+.sched-btn .dot{position:absolute;top:7px;right:7px;width:8px;height:8px;border-radius:50%;background:var(--good);display:none;border:2px solid var(--panel)}
+.sched-btn.on .dot{display:block}
+.banner{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;margin-bottom:10px;background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);font-size:13.5px}
+.banner.info{background:var(--panel);border-color:var(--line)}
+.banner .grow{flex:1}
+.banner .btn{height:30px;padding:0 12px}
+.live{display:grid;grid-template-columns:110px 1fr;gap:10px 12px;align-items:center;margin-top:12px;color:var(--muted)}
+.live .inline{gap:8px}
+.live input[type=number]{max-width:110px}
+.days{display:flex;gap:6px;flex-wrap:wrap}
+.days .chip{min-width:44px;text-align:center}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sw-inline{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--muted);cursor:pointer}
+.sw-inline input{accent-color:var(--accent);margin-top:2px}
+details.adv summary{cursor:pointer;color:var(--muted);font-size:13px;font-weight:600}
+details.adv[open] summary{margin-bottom:10px}
+.toasts{position:fixed;bottom:16px;right:16px;display:flex;flex-direction:column;gap:8px;z-index:20}
+.toast{background:var(--text);color:var(--bg);padding:10px 14px;border-radius:10px;font-size:13px;box-shadow:var(--shadow);max-width:360px}
+.offline{position:fixed;inset:0;background:var(--bg);display:none;place-items:center;text-align:center;z-index:30;color:var(--muted)}
+.offline.show{display:grid}
+.drop{position:fixed;inset:10px;border:3px dashed var(--accent);border-radius:20px;display:none;place-items:center;font-size:20px;font-weight:700;background:color-mix(in srgb,var(--bg) 85%,transparent);z-index:15}
+.drop.show{display:grid}
+
+/* v1.3 */
+.tabs{display:flex;gap:2px;padding:6px 16px 0;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{padding:8px 9px;border-radius:8px 8px 0 0;color:var(--muted);font-weight:600;font-size:13px;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tab.on{color:var(--text);border-bottom-color:var(--accent)}
+.pane{display:none;flex-direction:column;gap:14px}
+.pane.on{display:flex}
+.modal.wide{max-width:680px}
+.badge{font-size:11.5px;font-weight:600;padding:1px 8px;border-radius:20px;display:inline-flex;align-items:center;gap:4px}
+.badge.ok{background:color-mix(in srgb,var(--good) 14%,transparent);color:var(--good)}
+.badge.warn{background:color-mix(in srgb,var(--accent) 22%,transparent);color:color-mix(in srgb,var(--accent) 70%,var(--text))}
+.badge.danger{background:color-mix(in srgb,var(--bad) 15%,transparent);color:var(--bad)}
+.badge.info{background:color-mix(in srgb,var(--info) 14%,transparent);color:var(--info)}
+.safe{margin-top:10px;padding:10px 12px;border-radius:10px;font-size:13px;border:1px solid var(--line);background:var(--panel2)}
+.safe.danger{border-color:color-mix(in srgb,var(--bad) 45%,transparent);background:color-mix(in srgb,var(--bad) 7%,var(--panel))}
+.safe.warn{border-color:color-mix(in srgb,var(--accent) 50%,transparent);background:var(--accent-soft)}
+.safe ul{margin:6px 0 0;padding-left:18px}
+.flist{display:flex;flex-direction:column;gap:2px;max-height:240px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:6px;margin-top:10px;background:var(--panel2)}
+.flist label{display:grid;grid-template-columns:20px 1fr auto;gap:8px;align-items:center;padding:4px 6px;border-radius:6px;font-size:13px;cursor:pointer}
+.flist label:hover{background:var(--panel)}
+.flist input{accent-color:var(--accent);margin:0}
+.flist small{color:var(--muted)}
+.flist .dz{color:var(--bad);font-weight:600}
+.card{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--panel2);display:flex;flex-direction:column;gap:10px}
+.card .head{display:flex;align-items:center;gap:10px}
+.card .head b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card .sub{color:var(--muted);font-size:12.5px}
+.checks{display:flex;flex-wrap:wrap;gap:6px 16px}
+.checks label{display:flex;gap:6px;align-items:center;font-size:13px;cursor:pointer}
+.checks input{accent-color:var(--accent);margin:0}
+.datapill{font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;background:var(--panel2);border:1px solid var(--line);white-space:nowrap;cursor:pointer}
+.datapill.low{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 40%,transparent)}
+.clip{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+/* the built-in viewer, shown inside this window */
+.vlayer{position:fixed;inset:0;z-index:15;background:#0b0d11;display:none}
+#openScrim{z-index:17}
+.vlayer.show{display:block}
+.vlayer iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#0b0d11}
+.vlayer .vcrash{position:absolute;inset:0;display:none;place-items:center;padding:24px;color:#e9ecf1}
+.vlayer.crashed .vcrash{display:grid}
+.vlayer.crashed iframe{display:none}
+.vcrash .box{max-width:480px;text-align:center;background:#14181f;border:1px solid #272d38;border-radius:14px;padding:24px}
+.vcrash h2{margin:8px 0 6px;font-size:18px}
+.vcrash p{margin:0 0 16px;color:#97a0ae}
+.vcrash .btns{display:flex;gap:8px;justify-content:center}
+.vcrash .btn.ghost{background:#232a36;border-color:#323b4a;color:#e9ecf1}
+.vcrash .btn.ghost:hover{background:#2c3442}
+.ctx{position:fixed;z-index:30;min-width:210px;background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 34px rgba(0,0,0,.28);padding:5px;display:none}
+.ctx.show{display:block}
+.ctx button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:7px 10px;border-radius:7px;font-size:13.5px}
+.ctx button:hover,.ctx button:focus-visible{background:var(--panel2);outline:none}
+.ctx button svg{flex:none;opacity:.75}
+.ctx button.red{color:var(--bad)}
+.ctx hr{border:0;border-top:1px solid var(--line);margin:5px 4px}
+.toast button{margin-left:10px;font-weight:700;color:var(--toast-link);text-decoration:underline}
+.warnbox{display:flex;gap:12px;align-items:flex-start;background:color-mix(in srgb,var(--bad) 10%,transparent);border:1px solid color-mix(in srgb,var(--bad) 35%,transparent);border-radius:12px;padding:12px 14px}
+.warnbox svg{flex:none;color:var(--bad)}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice button{border:1px solid var(--line);border-radius:12px;padding:14px;text-align:left;background:var(--panel2)}
+.choice button:hover{border-color:var(--accent)}
+.choice b{display:block;margin-bottom:2px}
+.choice small{color:var(--muted)}
+.vtable{display:grid;grid-template-columns:1fr auto;gap:8px 14px;align-items:center}
+.sbtn{height:28px;padding:0 10px;border-radius:8px;font-size:12.5px;font-weight:600;border:1px solid var(--line);background:var(--panel);white-space:nowrap;flex:none}
+.sbtn:hover:not(:disabled){background:var(--panel2)}
+.sbtn:disabled{opacity:.5;cursor:default}
+.steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.blist{display:flex;flex-direction:column;gap:6px}
+.brow{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel2)}
+.brow b{flex:1}
+.brow{flex-wrap:wrap}
+.brow .bhint{flex-basis:100%;color:var(--muted);line-height:1.45}
+.brow .bhint:empty{display:none}
+@media (max-width:760px){
+  .clip,.row2{grid-template-columns:1fr}
+  .app{grid-template-columns:1fr;grid-template-rows:auto auto 1fr}
+  header{grid-column:1;flex-wrap:wrap;padding:10px 16px;gap:8px}
+  .brand{width:auto}
+  .search{order:5;max-width:none;flex-basis:100%}
+  aside{display:flex;overflow-x:auto;padding:8px 10px;border-right:0;border-bottom:1px solid var(--line);gap:4px}
+  .navlabel{display:none}
+  .nav{width:auto;white-space:nowrap}
+  main{padding:12px 16px 40px}
+  .bar,.detail{margin-left:0}
+  .hide-sm{display:none}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="brand"><div class="logo"></div><span>Jasq<span class="et">et</span></span></div>
+    <div class="search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" placeholder="Search downloads"></div>
+    <div class="speed hide-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 4v14M6 12l6 6 6-6"/></svg><b class="mono" id="total">0 B/s</b></div>
+    <span class="datapill" id="dataPill" style="display:none" title="Data budget"></span>
+    <button class="btn primary" id="addBtn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M12 5v14M5 12h14"/></svg>Add link</button>
+    <button class="icon-btn sched-btn" title="Scheduler" id="schedBtn"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M5 3 2 6M19 3l3 3"/></svg><i class="dot"></i></button>
+    <button class="icon-btn" title="Watch rules: follow channels, podcasts, releases and pages" id="watchBtn"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
+    <button class="icon-btn" title="Settings" id="setBtn"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+    <button class="icon-btn" title="Quit Jasqet" id="quitBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v9M6.4 6.4a8 8 0 1 0 11.2 0"/></svg></button>
+  </header>
+  <div class="winctl" id="winctl">
+    <button class="wbtn" data-win="min" title="Minimise" aria-label="Minimise">&#xE921;</button>
+    <button class="wbtn" data-win="max" id="winMax" title="Maximise" aria-label="Maximise">&#xE922;</button>
+    <button class="wbtn x" data-win="close" title="Close (Jasqet keeps running by the clock)" aria-label="Close">&#xE8BB;</button>
+  </div>
+  <aside id="nav"></aside>
+  <main>
+    <div id="banners"></div>
+    <div class="toolbar">
+      <h2 id="viewTitle">All downloads</h2>
+      <button class="btn ghost" id="resumeAll">Resume all</button>
+      <button class="btn ghost" id="pauseAll">Pause all</button>
+      <button class="btn ghost hide-sm" id="clearDone" title="Remove finished items from the list (files stay on disk)">Clear finished</button>
+    </div>
+    <div class="list" id="list"></div>
+  </main>
+</div>
+
+<!-- Add dialog -->
+<div class="scrim" id="addScrim"><div class="modal" role="dialog" aria-label="Add download">
+  <h3>Add download</h3>
+  <div class="body">
+    <label class="f">Link(s)<textarea class="field mono" id="aUrl" placeholder="https://example.com/file.zip&#10;One link per line to add several at once.&#10;Numbered files: https://site.com/part[1-20].zip&#10;Magnet links and .torrent links work too."></textarea></label>
+    <div class="inline" style="gap:10px;flex-wrap:wrap;margin-top:-6px">
+      <label class="sw-inline" id="aMirrorWrap" style="display:none"><input type="checkbox" id="aMirrors"> These links are copies of the <b>same file</b>: download from all of them at once</label>
+      <button class="sbtn" id="aZip" type="button" style="display:none">📦 Look inside the ZIP first</button>
+      <label class="sbtn" style="display:inline-flex;align-items:center;cursor:pointer">Open a .torrent file…<input type="file" id="aTorrentFile" accept=".torrent,application/x-bittorrent" style="display:none"></label>
+    </div>
+    <label class="f" id="aNameWrap">File name <small>Leave empty to use the name the server gives</small><input class="field" id="aName" placeholder="Automatic"></label>
+    <label class="f">Save to <small id="aDirHint">Default folder, sorted by file type</small>
+      <div class="inline"><input class="field" id="aDir" placeholder="Default"><button class="btn ghost" id="aBrowse" type="button">Browse…</button></div></label>
+    <label class="f">Connections <small>More connections = faster on most servers. 8 to 16 is the sweet spot.</small>
+      <div class="inline"><input type="range" min="1" max="32" id="aConn"><span class="rv mono" id="aConnV"></span></div></label>
+    <label class="sw-inline" id="aHelperWrap"><input type="checkbox" id="aHelper"> It's a page with a video (use the site helper, which works for YouTube, Facebook, Vimeo and 1,000+ sites)</label>
+    <details class="adv" id="aAdv"><summary>Login (only if the site or FTP server asks for one)</summary>
+      <div class="row2"><input class="field" id="aUser" placeholder="Username" autocomplete="off"><input class="field" id="aPass" type="password" placeholder="Password" autocomplete="new-password"></div>
+    </details>
+    <details class="adv" id="aAdv2"><summary>Checksum (if the site shows one)</summary>
+      <input class="field mono" id="aSum" placeholder="SHA-256, SHA-1 or MD5 (Jasqet also looks for it by itself)">
+    </details>
+    <div id="aQualWrap" style="display:none"><div style="display:flex;flex-direction:column;gap:2px;font-weight:600;font-size:13px;margin-bottom:8px">Video quality <small id="aQualHint" style="font-weight:400;color:var(--muted)"></small></div><div class="quals" id="aQual"></div>
+      <div id="aClipWrap" style="display:none;margin-top:12px">
+        <div style="font-weight:600;font-size:13px;margin-bottom:6px">Only part of the video? <small style="font-weight:400;color:var(--muted)">Saves data: only that part is downloaded</small></div>
+        <div class="clip"><input class="field mono" id="aFrom" placeholder="From (e.g. 2:30)"><input class="field mono" id="aTo" placeholder="To (e.g. 5:00), empty = end"></div>
+        <div style="color:var(--muted);font-size:12.5px;margin-top:6px" id="aClipEst"></div>
+      </div>
+      <label class="f" id="aSubsWrap" style="display:none;margin-top:12px">Subtitles <small>Saved as an .srt file next to the video</small><select class="field" id="aSubs"><option value="">None</option></select></label>
+    </div>
+    <div class="formerr" id="aErr"></div>
+  </div>
+  <div class="foot">
+    <button class="btn ghost" data-close>Cancel</button>
+    <button class="btn ghost" id="aLater" title="Starts at the scheduled time">Download later</button>
+    <button class="btn primary" id="aGo">Start download</button>
+  </div>
+</div></div>
+
+<!-- Settings dialog -->
+<div class="scrim" id="setScrim"><div class="modal wide" role="dialog" aria-label="Settings">
+  <h3>Settings</h3>
+  <div class="tabs" id="sTabs">
+    <button class="tab on" data-t="gen">General</button><button class="tab" data-t="data">Data saver</button><button class="tab" data-t="safe">Safety</button><button class="tab" data-t="viewer">Viewer</button>
+    <button class="tab" data-t="after">After downloading</button><button class="tab" data-t="notif">Notifications</button><button class="tab" data-t="net">Network</button><button class="tab" data-t="about">About</button>
+  </div>
+  <div class="body">
+   <div class="pane on" data-p="gen">
+    <label class="f">Download folder
+      <div class="inline"><input class="field" id="sDir"><button class="btn ghost" id="sBrowse" type="button">Browse…</button></div></label>
+    <div class="switch"><div>Sort into folders by type<small>Video, Music, Compressed, Programs, Documents…</small></div><input type="checkbox" id="sCat"></div>
+    <div class="switch"><div>Tidy video names<small>"Some.Movie.2021.1080p.WEBRip.x264.mp4" is saved as "Some Movie (2021).mp4"; TV episodes get a folder per series</small></div><input type="checkbox" id="sTidy"></div>
+    <div class="switch"><div>Find the fastest number of connections by itself<small>Starts with 8, adds more while it helps, backs off when a server says "too many". The slider below is the most it will use.</small></div><input type="checkbox" id="sAuto"></div>
+    <label class="f">Connections per download <small id="sConnHint"></small>
+      <div class="inline"><input type="range" min="1" max="32" id="sConn"><span class="rv mono" id="sConnV"></span></div></label>
+    <label class="f">Downloads at the same time
+      <div class="inline"><input type="range" min="1" max="10" id="sMax"><span class="rv mono" id="sMaxV"></span></div></label>
+    <label class="f">Speed limit <small>Cap Jasqet so browsing stays smooth. 0 = no limit. Applies right away.</small>
+      <div class="inline"><input class="field mono" id="sLimit" type="number" min="0" step="50" style="max-width:140px"><span style="color:var(--muted)">KB/s</span></div>
+      <div class="chips" id="limitChips"></div></label>
+    <div class="switch"><div>Smooth mode<small>Downloads at full speed, but eases off the moment browsing, WhatsApp calls or games would start to lag (it watches your ping).</small></div><input type="checkbox" id="sSmooth"></div>
+    <div class="switch"><div>Theme</div><select class="field" id="sTheme" style="max-width:160px"><option value="">Match system</option><option value="light">Light</option><option value="dark">Dark</option></select></div>
+    <div class="note" id="toolsBox"></div>
+    <div class="note"><b>Browser extension:</b> catches downloads from Chrome, Edge, Firefox and others, with your login cookies, and adds a <b>Download video</b> button to video players. <button class="btn ghost" id="sConnect" type="button" style="height:28px;margin-top:6px">Connect my browser…</button></div>
+   </div>
+   <div class="pane" data-p="data">
+    <div class="note" id="dUsage"></div>
+    <label class="f">Data budget <small>"I have this much data left." Jasqet will never go over it. Leave empty for no budget.</small>
+      <div class="inline"><input class="field mono" id="dLeft" type="number" min="0" step="0.1" style="max-width:140px" placeholder="No budget"><select class="field" id="dUnit" style="max-width:90px"><option value="1024">GB</option><option value="1">MB</option></select>
+      <span style="color:var(--muted);font-size:13px">starts again on day</span><select class="field" id="dReset" style="max-width:110px"></select></div></label>
+    <label class="f">On a metered connection (phone hotspot, capped Wi-Fi) <small id="dNet">Windows says which networks are metered. Android hotspots say so by themselves.</small>
+      <select class="field" id="dMetered"><option value="pause">Pause downloads (recommended)</option><option value="slow">Download slowly</option><option value="ignore">Download as normal</option></select></label>
+    <label class="f" id="dSlowWrap">Slow speed on metered networks <div class="inline"><input class="field mono" id="dSlowKB" type="number" min="10" step="10" style="max-width:140px"><span style="color:var(--muted)">KB/s</span></div></label>
+    <div class="switch"><div>Check for files I already have<small>Before downloading, Jasqet compares a few small pieces of the file with what's on your computer (about 200 KB instead of the whole file).</small></div><input type="checkbox" id="dDup"></div>
+    <label class="f">Also look in these folders <small>One per line, e.g. D:\Movies (your download folder is always checked)</small><textarea class="field mono" id="dLib" style="min-height:64px"></textarea></label>
+   </div>
+   <div class="pane" data-p="safe">
+    <div class="note">After each download Jasqet checks that the file <b>really is what its name says</b> (a "movie.mp4" that is really a program gets blocked), looks for the <b>checksum</b> the site publishes and compares it, and marks the file as coming from the internet so Windows SmartScreen and Office Protected View check it too.</div>
+    <div class="switch"><div>Scan finished files with Windows Defender<small>Programs, archives and documents always; other files under 300 MB</small></div><input type="checkbox" id="fScan"></div>
+    <div class="switch"><div>Look for published checksums<small>Next to the file (.sha256, SHA256SUMS, checksums.txt) and on the download page</small></div><input type="checkbox" id="fSums"></div>
+    <label class="f">VirusTotal key (optional) <small>Free from virustotal.com → your profile → API key. Only the file's fingerprint (SHA-256) is sent, never the file.</small><input class="field mono" id="fVT" placeholder="Not set" autocomplete="off"></label>
+   </div>
+   <div class="pane" data-p="viewer">
+    <div class="note">The built-in viewer shows finished <b>videos, music, pictures and PDFs</b> inside Jasqet, so you can quickly check a file is the right one without trusting another program with it. It never runs anything: a "video" that's really a program is blocked.</div>
+    <label class="f">When I click Open
+      <select class="field" id="vOpen"><option value="viewer">Built-in viewer</option><option value="default">Default program</option><option value="ask">Ask each time</option></select></label>
+    <label class="f">Show files <small>Either way the viewer runs separately from your downloads, so a broken file can't stop them</small>
+      <select class="field" id="vWin"><option value="inside">Inside the Jasqet window</option><option value="window">In a window of their own</option></select></label>
+    <div class="f">For each type <small>Send some types straight to your own program</small>
+      <div class="vtable" style="margin-top:6px">
+        <span>Videos <small style="color:var(--muted)">MP4, MKV, WebM, MOV, TS, FLV…</small></span><select class="field" id="vVideo" style="max-width:190px"><option value="viewer">Built-in viewer</option><option value="default">Default program</option></select>
+        <span>Music <small style="color:var(--muted)">MP3, M4A, FLAC, WAV, OGG, Opus</small></span><select class="field" id="vAudio" style="max-width:190px"><option value="viewer">Built-in viewer</option><option value="default">Default program</option></select>
+        <span>Pictures <small style="color:var(--muted)">JPG, PNG, GIF, WebP, BMP, SVG</small></span><select class="field" id="vImage" style="max-width:190px"><option value="viewer">Built-in viewer</option><option value="default">Default program</option></select>
+        <span>PDFs</span><select class="field" id="vPdf" style="max-width:190px"><option value="viewer">Built-in viewer</option><option value="default">Default program</option></select>
+      </div></div>
+    <div class="switch"><div>Open automatically when a download finishes<small>Videos, music, pictures and PDFs pop up in the viewer as soon as they're done</small></div><input type="checkbox" id="vAuto"></div>
+    <div class="switch"><div>Preview while downloading<small>A Preview button on downloads in progress. While you watch, Jasqet downloads from the start onward so it plays straight away.</small></div><input type="checkbox" id="vPrev"></div>
+    <div class="switch"><div>Hardware video decoding<small>Uses your graphics chip for smoother, cooler playback. Turn off if videos look wrong. Applies after Jasqet restarts.</small></div><select class="field" id="vHW" style="max-width:120px"><option value="auto">Auto</option><option value="off">Off</option></select></div>
+    <div class="switch"><div>Load matching subtitle files<small>A .srt, .vtt or .ass file with the same name next to the video</small></div><input type="checkbox" id="vSubs"></div>
+    <div class="switch"><div>Remember where I stopped<small>Videos and music carry on from the same place next time</small></div><input type="checkbox" id="vPos"></div>
+   </div>
+   <div class="pane" data-p="after">
+    <div class="note">Rules run when a download finishes. For example, they can <b>unzip</b> every archive, keep the <b>sound</b> of lecture videos, or <b>move</b> PDFs to your documents. Files that fail a safety check are left alone.</div>
+    <div id="rules" style="display:flex;flex-direction:column;gap:10px"></div>
+    <div><button class="btn ghost" id="ruleAdd" type="button">+ Add a rule</button></div>
+   </div>
+   <div class="pane" data-p="notif">
+    <div class="switch"><div>Windows notification when a download finishes</div><input type="checkbox" id="nDesk"></div>
+    <div class="note"><b>Telegram:</b> get a message on your phone when downloads finish. It's handy for downloads that run at dawn.
+      <ol class="steps" style="margin-top:8px"><li>In Telegram, open <b>@BotFather</b>, send <span class="mono">/newbot</span> and follow the steps. Copy the token it gives you.</li><li>Paste the token below, then send any message (like "hi") to your new bot.</li><li>Click <b>Find my chat</b>, then <b>Send a test</b>.</li></ol></div>
+    <label class="f">Bot token<input class="field mono" id="nTok" placeholder="123456789:AA…" autocomplete="off"></label>
+    <div class="inline"><input class="field mono" id="nChat" placeholder="Chat ID"><button class="btn ghost" id="nFind" type="button">Find my chat</button><button class="btn ghost" id="nTest" type="button">Send a test</button></div>
+    <div class="checks"><label><input type="checkbox" id="nTgAll"> Message me for every finished download</label><label><input type="checkbox" id="nTgErr"> …and when one fails</label></div>
+   </div>
+   <div class="pane" data-p="net">
+    <label class="f">Proxy <small>Optional. HTTP: <span class="mono">127.0.0.1:8080</span> · SOCKS: <span class="mono">socks5://127.0.0.1:1080</span> · with login: <span class="mono">http://user:pass@host:port</span></small><input class="field mono" id="sProxy" placeholder="None"></label>
+    <div class="card">
+      <div class="switch"><div>Share downloads with Jasqet on other computers here<small>On the same Wi-Fi or office network: if another computer already downloaded a file, copy it from there, with no internet data used.</small></div><input type="checkbox" id="lOn"></div>
+      <div class="checks"><label><input type="checkbox" id="lShare"> Let others copy my finished downloads</label><label><input type="checkbox" id="lUse"> Copy from others when they have it</label></div>
+      <label class="f">Group code <small>Only computers with the same code share files. Jasqet makes one when you turn this on: type it on your other computers. A code you choose needs at least 12 letters or digits.</small><div class="inline"><input class="field mono" id="lCode" autocomplete="off" spellcheck="false"><button class="btn ghost" id="lShow" type="button">Show code</button><button class="btn ghost" id="lCopy" type="button">Copy</button></div></label>
+      <label class="f">Other computers <small>Only if they aren't found by themselves, e.g. 192.168.1.20</small><input class="field mono" id="lPeers"></label>
+      <div class="sub" id="lStatus"></div>
+    </div>
+    <div class="card">
+      <b>Torrents</b>
+      <label class="f">Upload speed limit <small>Torrents share pieces back while downloading. Keep it low on a data bundle. 0 = no limit.</small><div class="inline"><input class="field mono" id="tUp" type="number" min="0" step="10" style="max-width:140px"><span style="color:var(--muted)">KB/s</span></div></label>
+      <div class="switch"><div>Keep sharing after a torrent finishes<small>Until you've uploaded as much as you downloaded (at most 12 hours). Off saves data.</small></div><input type="checkbox" id="tSeed"></div>
+    </div>
+   </div>
+   <div class="pane" data-p="about">
+    <div class="note"><b>Jasqet <span id="abVer"></span></b><br>Free and open source (MIT licence). No ads, no bundled software, no tracking: it never sends anything about you anywhere. The full source code comes with it, so anyone can check what it does.</div>
+    <div class="note">What it talks to: the sites you download from; GitHub, to set up and update the YouTube helper tools (only if you use YouTube); GitHub and Hugging Face, to set up automatic subtitles the first time you make them (the listening itself happens on this computer); VirusTotal and Telegram only if you set them up.</div>
+   </div>
+   <div class="formerr" id="sErr"></div>
+  </div>
+  <div class="foot"><button class="btn ghost" data-close>Cancel</button><button class="btn primary" id="sSave">Save</button></div>
+</div></div>
+
+<!-- Watch rules -->
+<div class="scrim" id="wScrim"><div class="modal wide" role="dialog" aria-label="Watch rules">
+  <h3>Watch rules</h3>
+  <div class="body">
+    <div class="note">Jasqet keeps an eye on these and downloads what's new, either straight away or at your scheduled time when data is cheaper. Paste a <b>YouTube channel or playlist</b>, a <b>podcast feed</b>, a <b>GitHub project</b> (for new releases) or <b>any web page</b> (for new files on it).</div>
+    <div id="wList" style="display:flex;flex-direction:column;gap:10px"></div>
+    <div><button class="btn ghost" id="wAdd" type="button">+ Watch something new</button></div>
+    <div class="formerr" id="wErr"></div>
+  </div>
+  <div class="foot"><button class="btn ghost" data-close>Close</button><button class="btn primary" id="wSave">Save</button></div>
+</div></div>
+
+<!-- ZIP contents -->
+<div class="scrim" id="zScrim"><div class="modal wide" role="dialog" aria-label="Inside the ZIP">
+  <h3>Inside the ZIP</h3>
+  <div class="body">
+    <div class="note" id="zInfo">Reading the ZIP's table of contents…</div>
+    <input class="field" id="zFilter" placeholder="Filter files">
+    <div class="flist" id="zList" style="max-height:340px"></div>
+    <div class="formerr" id="zErr"></div>
+  </div>
+  <div class="foot"><button class="btn ghost" data-close>Cancel</button><button class="btn ghost" id="zWhole">Download the whole ZIP</button><button class="btn ghost" id="zLater">Later</button><button class="btn primary" id="zGo">Download selected</button></div>
+</div></div>
+
+<!-- Connect browser -->
+<div class="scrim" id="cScrim"><div class="modal" role="dialog" aria-label="Connect your browser">
+  <h3>Connect your browser</h3>
+  <div class="body">
+    <div class="note" id="cStatus"></div>
+    <div class="note">Browsers don't let programs install extensions by themselves, so this takes a minute, once:</div>
+    <ol class="steps">
+      <li>Click your browser below. It opens, and the address of its extensions page is copied: click the address bar, press <b>Ctrl+V</b> and <b>Enter</b>.</li>
+      <li>Turn on <b>Developer mode</b> (a switch at the top right in Chrome and Edge).</li>
+      <li>Click <b>Load unpacked</b> and choose Jasqet's extension folder: <button class="sbtn" id="cFolderCopy" type="button">Copy its address</button> and paste it into the address bar at the top of the folder window (it's in a hidden folder, so clicking through won't find it), or <button class="sbtn" id="cFolder" type="button">Show the folder</button>.</li>
+      <li>Pin the blue Jasqet icon. That's it. This window says <b>Connected</b> when it works.</li>
+    </ol>
+    <div class="blist" id="cList"></div>
+    <div style="color:var(--muted);font-size:12.5px" id="cFF">Firefox: open <span class="mono">about:debugging</span> → This Firefox → Load Temporary Add-on → pick <span class="mono">manifest.json</span> in the Firefox extension folder (<button class="sbtn" id="cFolderFF" type="button">Show it</button>). See the README to keep it permanently.</div>
+    <div style="color:var(--muted);font-size:12.5px" id="cPairBox">The Jasqet icon in your browser says <b>Not paired</b>? <button class="sbtn" id="cPair" type="button">Pair again</button> <span id="cPairMsg"></span></div>
+  </div>
+  <div class="foot"><button class="btn ghost" data-close>Done</button></div>
+</div></div>
+
+<!-- Scheduler dialog -->
+<div class="scrim" id="schScrim"><div class="modal" role="dialog" aria-label="Scheduler">
+  <h3>Scheduler</h3>
+  <div class="body">
+    <div class="switch"><div>Run scheduled downloads<small id="schNext">Downloads you add with "Download later" wait for this time.</small></div><input type="checkbox" id="schOn"></div>
+    <div class="row2">
+      <label class="f">Start at <small>when your cheap data begins</small><input class="field mono" type="time" id="schStart"></label>
+      <label class="f">Stop at <small>optional, when it ends</small><input class="field mono" type="time" id="schStop"></label>
+    </div>
+    <div class="note">Match your <b>night data bundle</b>, e.g. start 00:05, stop 04:55. At the stop time Jasqet pauses and carries on the next night, so nothing downloads at the day rate.</div>
+    <div class="learn" id="schLearn"></div>
+    <label class="f">Days<div class="days" id="schDays"></div></label>
+    <details class="adv" id="schMore"><summary>More time windows (e.g. a weekend bundle)</summary>
+      <div id="schExtra" style="display:flex;flex-direction:column;gap:8px"></div>
+      <button class="btn ghost" id="schAddWin" type="button" style="margin-top:8px">+ Add a time window</button>
+    </details>
+    <div class="switch"><div>Only the next time<small>Then the scheduler switches itself off</small></div><input type="checkbox" id="schOnce"></div>
+    <div class="switch"><div>Also continue paused and failed downloads<small>Not just the ones you marked "Download later"</small></div><input type="checkbox" id="schResume"></div>
+    <div class="switch"><div>Keep the computer awake<small>Stops Windows sleeping while downloads are waiting or running (the screen can still turn off)</small></div><input type="checkbox" id="schAwake"></div>
+    <div class="switch"><div>When finished</div><select class="field" id="schDone" style="max-width:170px"><option value="">Do nothing</option><option value="sleep">Sleep</option><option value="shutdown">Shut down</option></select></div>
+    <div class="formerr" id="schErr"></div>
+  </div>
+  <div class="foot"><button class="btn ghost" data-close>Cancel</button><button class="btn primary" id="schSave">Save</button></div>
+</div></div>
+
+<!-- Refresh link dialog -->
+<div class="scrim" id="refScrim"><div class="modal" role="dialog" aria-label="Refresh link">
+  <h3>Refresh link</h3>
+  <div class="body">
+    <div class="note">Many sites give download links that stop working after a while. Get a fresh link and Jasqet continues from where it stopped. Nothing already downloaded is lost.</div>
+    <label class="f">Paste the new link<input class="field mono" id="refUrl" placeholder="https://…"></label>
+    <div style="color:var(--muted);font-size:13px">…or let Jasqet catch it: click <b>Catch from browser</b>, then open the site and click the download link again (the extension must be installed).</div>
+    <div class="formerr" id="refErr"></div>
+  </div>
+  <div class="foot"><button class="btn ghost" data-close>Cancel</button><button class="btn ghost" id="refCatch">Catch from browser</button><button class="btn primary" id="refGo">Use this link</button></div>
+</div></div>
+
+<div class="drop" id="drop">Drop the link to download it</div>
+<div class="vlayer" id="vLayer" aria-label="Viewer">
+  <div class="vcrash"><div class="box"><h2>This file could not be displayed</h2><p>It made the viewer stop working. It may be damaged. Your downloads are fine.</p>
+    <div class="btns"><button class="btn ghost" id="vcBack">Back to downloads</button><button class="btn primary" id="vcExt">Open externally</button></div></div></div>
+</div>
+<div class="scrim" id="openScrim"><div class="modal" role="dialog" aria-label="Open" id="openModal"></div></div>
+<div class="ctx" id="ctx" role="menu"></div>
+<div class="toasts" id="toasts"></div>
+<div class="offline" id="offline"><div><h3 style="color:var(--text)">Jasqet isn't running</h3><p>Start Jasqet again, then this window will reconnect.</p></div></div>
+<div class="offline" id="nokey"><div><h3 style="color:var(--text)">This window isn't connected to Jasqet</h3><p>Jasqet was started again, or this page was opened outside Jasqet. Close it and open Jasqet from its icon.</p></div></div>
+
+<script>
+const $ = s => document.querySelector(s);
+// The key to Jasqet's API (apikey.go). Jasqet's own window is handed it before
+// this page starts; a browser window swaps the one-time code in its address
+// for it, and keeps it for reloads (this tab only).
+const KEY = (async () => {
+  const given = window.jasqetKey; delete window.jasqetKey;
+  if (given) return given;
+  const code = new URLSearchParams(location.search).get('code');
+  if (code) {
+    history.replaceState(null, '', location.pathname + location.hash);
+    try {
+      const r = await fetch('/api/session', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({code})});
+      const j = await r.json();
+      if (j.key) { try { sessionStorage.setItem('tg-key', j.key); } catch {} return j.key; }
+    } catch {}
+  }
+  try { return sessionStorage.getItem('tg-key') || ''; } catch { return ''; }
+})();
+const api = async (path, body) => {
+  const headers = {'X-Jasqet-Key': await KEY};
+  const r = await fetch('/api/' + path, body === undefined ? {headers} : {method:'POST', headers:{...headers, 'Content-Type':'application/json'}, body:JSON.stringify(body)});
+  const j = await r.json().catch(() => ({}));
+  if (r.status === 401) $('#nokey').classList.add('show'); // Jasqet was restarted, or this isn't its window
+  if (!r.ok) throw new Error(j.error || r.statusText);
+  return j;
+};
+const fmtB = n => { if (n < 0 || n == null) return '?'; const u=['B','KB','MB','GB','TB']; let i=0; while(n>=1024&&i<4){n/=1024;i++} return (i?n.toFixed(n<10?2:n<100?1:0):n)+' '+u[i]; };
+const fmtT = s => { if(!isFinite(s)||s<0) return '?'; s=Math.round(s); if(s<60) return s+'s'; if(s<3600) return Math.floor(s/60)+'m '+(s%60)+'s'; return Math.floor(s/3600)+'h '+Math.floor(s%3600/60)+'m'; };
+const timeLeft = s => isFinite(s) && s >= 0 ? fmtT(s) + ' left' : 'time left unknown';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const toast = (msg, btn, fn, ms) => { const t=document.createElement('div'); t.className='toast'; t.textContent=msg; if (btn) { const b=document.createElement('button'); b.textContent=btn; b.onclick=()=>{ t.remove(); fn(); }; t.append(b); } $('#toasts').append(t); setTimeout(()=>t.remove(), ms || (btn ? 7000 : 3500)); };
+try { const th = localStorage.getItem('tg-theme'); if (th) document.documentElement.dataset.theme = th; } catch {}
+
+// Jasqet's own title bar, in its Windows window (titlebar_windows.go): the top
+// bar moves the window (drag it; double-click to maximise), its top edge sizes it.
+const FRAMED = typeof window.tgWin === 'function';
+const winFull = on => { document.documentElement.classList.toggle('winfull', on); if (window.tgFullscreen) window.tgFullscreen(on); };
+if (FRAMED) {
+  const root = document.documentElement;
+  root.classList.add('framed');
+  window.tgWinState = max => {
+    root.classList.toggle('winmax', max);
+    const b = $('#winMax'); b.innerHTML = max ? '&#xE923;' : '&#xE922;'; b.title = max ? 'Restore' : 'Maximise'; b.setAttribute('aria-label', b.title);
+  };
+  tgWin('state').then(s => tgWinState(s === 'max'));
+  $('#winctl').addEventListener('click', e => { const b = e.target.closest('[data-win]'); if (b) tgWin(b.dataset.win); });
+  const edge = e => root.classList.contains('winmax') || e.clientY > 3 ? '' : e.clientX < 8 ? 'topleft' : e.clientX > innerWidth - 8 ? 'topright' : 'top';
+  let lastDown = 0;
+  const titleDown = e => {
+    if (e.button !== 0) return;
+    const ed = edge(e);
+    if (ed) { e.preventDefault(); tgWin(ed); return; }
+    if (e.target.closest && e.target.closest('button,input,select,textarea,a,label,.datapill')) return;
+    e.preventDefault();
+    if (Date.now() - lastDown < 450) { lastDown = 0; tgWin('max'); return; }
+    lastDown = Date.now();
+    tgWin('drag');
+  };
+  const head = $('header');
+  head.addEventListener('mousedown', titleDown);
+  head.addEventListener('mousemove', e => { const ed = edge(e); head.style.cursor = ed === 'top' ? 'ns-resize' : ed === 'topleft' ? 'nwse-resize' : ed === 'topright' ? 'nesw-resize' : ''; });
+}
+
+const ICON = {
+  Video:'<path d="M4 6h11v12H4zM15 10l5-3v10l-5-3"/>',
+  Music:'<path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>',
+  Compressed:'<path d="M5 3h14v18H5zM12 3v2m0 2v2m0 2v2"/><rect x="10" y="13" width="4" height="4"/>',
+  Programs:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13l3 2-3 2"/>',
+  Documents:'<path d="M6 2h9l5 5v15H6zM14 2v6h6M9 13h8M9 17h8"/>',
+  Images:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 17-5-5-9 8"/>',
+  General:'<path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/>',
+};
+const CATC = {Video:'#e25b45',Music:'#a35cf0',Compressed:'#e89a00',Programs:'#2f86e0',Documents:'#13955b',Images:'#d2477e',General:'#7a8494'};
+const svg = (p, c, s=19) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="${c||'currentColor'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const I = {
+  pause:'<path d="M8 5v14M16 5v14"/>', play:'<path d="M7 4v16l13-8z"/>', open:'<path d="M14 3h7v7M21 3l-9 9M19 14v6H4V5h6"/>',
+  folder:'<path d="M3 6h6l2 2h10v11H3z"/>', retry:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/>', x:'<path d="M6 6l12 12M18 6 6 18"/>',
+  all:'<path d="M4 6h16M4 12h16M4 18h16"/>', active:'<path d="M12 4v12m-5-5 5 5 5-5M5 20h14"/>', done:'<path d="m5 12 5 5 9-10"/>', unfinished:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+};
+
+let state = {downloads:[], settings:{}}, view = 'all', open = new Set(), prevStatus = {}, rows = {};
+I.clock = '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/>';
+I.trash = '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/>';
+I.eye = '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>';
+I.ext = '<path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>';
+I.apps = '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>';
+I.link = '<path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/>';
+I.shield = '<path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6z"/><path d="M12 8v4M12 16h.01"/>';
+I.later = '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M5 3 2 6M19 3l3 3"/>';
+const FILTERS = [['all','All downloads',I.all],['active','Downloading',I.active],['scheduled','Scheduled',I.clock],['done','Finished',I.done],['unfinished','Unfinished',I.unfinished]];
+const CATS = ['Video','Music','Compressed','Programs','Documents','Images','General'];
+const match = (d, v) => v==='all' || (v==='active' && ['downloading','connecting','queued','merging'].includes(d.status)) || (v==='scheduled' && d.status==='scheduled') || (v==='done' && d.status==='completed') || (v==='unfinished' && d.status!=='completed') || d.category===v;
+
+function renderNav() {
+  const c = v => state.downloads.filter(d => match(d, v)).length;
+  let h = FILTERS.map(([k,l,ic]) => `<button class="nav ${view===k?'on':''}" data-v="${k}">${svg(ic,null,17)}${l}<span class="n">${c(k)||''}</span></button>`).join('');
+  h += '<div class="navlabel">By type</div>';
+  h += CATS.map(k => `<button class="nav ${view===k?'on':''}" data-v="${k}">${svg(ICON[k],CATC[k],17)}${k}<span class="n">${c(k)||''}</span></button>`).join('');
+  $('#nav').innerHTML = h;
+  $('#viewTitle').textContent = (FILTERS.find(f=>f[0]===view)||[0,view])[1];
+}
+$('#nav').onclick = e => { const b = e.target.closest('.nav'); if (b) { view = b.dataset.v; renderNav(); renderList(); } };
+
+const isStream = d => d.kind === 'media' || d.kind === 'yt';
+const isYTUrl = u => { try { return /(^|\.)youtube(-nocookie)?\.com$|^youtu\.be$/i.test(new URL(u.trim()).hostname); } catch { return false; } };
+const nextRunText = () => state.extras?.nextRun ? 'starts ' + state.extras.nextRun : 'turn on the scheduler (clock button) to set a time';
+function safetyBadge(d) {
+  const s = d.safety; if (!s || d.status !== 'completed') return '';
+  if (s.checking) return '<span class="badge info">Checking…</span>';
+  if (s.level === 'danger') return `<span class="badge danger">⛔ ${s.hashMatch === 'bad' ? "Checksum doesn't match" : 'Dangerous'}</span>`;
+  if (s.level === 'warn') return '<span class="badge warn">⚠ Check this file</span>';
+  if (s.hashMatch === 'ok') return '<span class="badge ok">✓ Checksum matches</span>';
+  return '<span class="badge ok">✓ Checked</span>';
+}
+function statusLine(d) {
+  const pct = d.size > 0 ? Math.min(99, Math.floor(d.downloaded / d.size * 100)) : 0;
+  if (d.status === 'cancelled') return [d.quality ? `<span class="pill">${esc(d.quality)}</span>` : '', '<span class="badge warn">Cancelled</span>', d.downloaded > 0 ? `<span class="mono">${d.size > 0 ? pct + '% · ' : ''}${fmtB(d.downloaded)} kept${d.size > 0 ? ' of ' + (d.estimated ? '~' : '') + fmtB(d.size) : ''}</span>` : '', 'press ▶ to continue, or remove it'];
+  if (d.status === 'duplicate') return ['<span class="badge info">You already have this file</span>', d.dupPath ? `<span class="mono">${esc(d.dupPath)}</span>` : '', 'nothing was downloaded'];
+  if (d.kind === 'torrent') {
+    const peers = d.note && /people|web servers|Looking/.test(d.note) ? `<span>${esc(d.note)}</span>` : '';
+    switch (d.status) {
+      case 'connecting': return ['<span class="pill">Torrent</span>', esc(d.note || 'Starting…')];
+      case 'downloading': {
+        const eta = d.speed > 0 && d.size > 0 ? (d.size - d.downloaded) / d.speed : NaN;
+        return ['<span class="pill">Torrent</span>', d.size > 0 ? `<b class="mono">${pct}%</b>` : '', `<span class="mono">${fmtB(d.downloaded)}${d.size>0?' of '+fmtB(d.size):''}</span>`, `<span class="mono">${fmtB(d.speed)}/s</span>`, d.size>0 ? timeLeft(eta) : '', peers];
+      }
+      case 'paused': return ['<span class="pill">Torrent</span>', d.error ? `<span class="err">${esc(d.error)}</span>` : (d.stopping ? 'Pausing…' : 'Paused'), d.size>0 ? `<span class="mono">${pct}% · ${fmtB(d.downloaded)} of ${fmtB(d.size)}</span>` : ''];
+      case 'completed': return ['<span class="pill">Torrent</span>', '<span class="ok">Finished</span>', safetyBadge(d), `<span class="mono">${fmtB(d.size)}</span>`, d.files ? d.files + ' files' : ''];
+    }
+  }
+  if (d.status === 'scheduled') return [d.quality ? `<span class="pill">${esc(d.quality)}</span>` : '', `<span style="color:var(--info)">Scheduled · ${nextRunText()}</span>`, d.downloaded > 0 ? `<span class="mono">${fmtB(d.downloaded)}${d.size>0?' of '+(d.estimated?'~':'')+fmtB(d.size):''} so far</span>` : ''];
+  const q = d.quality ? `<span class="pill">${esc(d.quality)}</span>` : '';
+  const tilde = d.estimated ? '~' : '';
+  if (d.status === 'queued' && d.retryIn > 0) return [q, `<span class="err">${esc(d.error || 'Connection problem')}</span>`, `Trying again by itself in ${fmtT(d.retryIn)}`, d.downloaded>0 && d.size>0 ? `<span class="mono">${fmtB(d.downloaded)} of ${tilde}${fmtB(d.size)}</span>` : ''];
+  if (isStream(d)) {
+    switch (d.status) {
+      case 'downloading': {
+        if (!(d.size > 0)) return [q, `<span class="mono">${fmtB(d.downloaded)} downloaded</span>`, `<span class="mono">${fmtB(d.speed)}/s</span>`, `${d.active} connection${d.active==1?'':'s'}`];
+        const eta = d.speed > 0 ? Math.max(0, d.size - d.downloaded) / d.speed : NaN;
+        return [q, `<b class="mono">${pct}%</b>`, `<span class="mono">${fmtB(d.downloaded)} of ${tilde}${fmtB(d.size)}</span>`, `<span class="mono">${fmtB(d.speed)}/s</span>`, timeLeft(eta), `${d.active} connection${d.active==1?'':'s'}`];
+      }
+      case 'merging': return [q, `Joining video… <b class="mono">${Math.round((d.mergePct||0)*100)}%</b>`];
+      case 'connecting': return [q, d.kind === 'yt' ? 'Getting fresh video links…' : 'Reading the video playlist…'];
+      case 'queued': return [q, 'Waiting in queue', d.downloaded>0 && d.size>0 ? `<span class="mono">${fmtB(d.downloaded)} of ${tilde}${fmtB(d.size)}</span>` : ''];
+      case 'paused': return [q, d.stopping ? 'Pausing…' : 'Paused', d.downloaded>0 ? `<span class="mono">${d.size>0?pct+'% · ':''}${fmtB(d.downloaded)}${d.size>0?' of '+tilde+fmtB(d.size):''}</span>` : ''];
+      case 'completed': return [q, `<span class="ok">Finished</span>`, safetyBadge(d), `<span class="mono">${fmtB(d.size)}</span>`, new Date(d.completedAt).toLocaleString([], {dateStyle:'medium', timeStyle:'short'}), d.note ? `<span>${esc(d.note)}</span>` : '', subsBadge(d)];
+      case 'error': return [q, `<span class="err">${esc(d.error)}</span>`];
+    }
+  }
+  switch (d.status) {
+    case 'downloading': {
+      if (!(d.size > 0)) return [`<span class="mono">${fmtB(d.downloaded)} downloaded</span>`, `<span class="mono">${fmtB(d.speed)}/s</span>`, 'size unknown'];
+      const eta = d.size > 0 && d.speed > 0 ? (d.size - d.downloaded) / d.speed : NaN;
+      return [`<b class="mono">${pct}%</b>`, `<span class="mono">${fmtB(d.downloaded)} of ${fmtB(d.size)}</span>`, `<span class="mono">${fmtB(d.speed)}/s</span>`, timeLeft(eta), `${d.active} connection${d.active==1?'':'s'}${d.autoConns?' (auto)':''}`, d.note ? `<span>${esc(d.note)}</span>` : ''];
+    }
+    case 'connecting': return ['Connecting…'];
+    case 'queued': return ['Waiting in queue', d.size>0 ? `<span class="mono">${fmtB(d.downloaded)} of ${fmtB(d.size)}</span>` : ''];
+    case 'paused': return [d.stopping ? 'Pausing…' : 'Paused', d.size>0 ? `<span class="mono">${pct}% · ${fmtB(d.downloaded)} of ${fmtB(d.size)}</span>` : '', d.size>0 && !d.resumable ? '<span class="err">This server can\'t resume, so it will start over</span>' : ''];
+    case 'completed': return [`<span class="ok">Finished</span>`, safetyBadge(d), `<span class="mono">${fmtB(d.size)}</span>`, new Date(d.completedAt).toLocaleString([], {dateStyle:'medium', timeStyle:'short'}), d.note && /ZIP|servers|expired|changed|network/.test(d.note) ? `<span>${esc(d.note)}</span>` : '', subsBadge(d)];
+    case 'error': return [`<span class="err">${esc(d.error)}</span>`];
+  }
+  return [d.status];
+}
+
+// Automatic subtitles for this download (aisubs.go): setting up, listening, ready
+function subsBadge(d) {
+  const j = (state.extras?.subs || {})[d.id]; if (!j) return '';
+  if (j.state === 'done') return `<span class="ok">Subtitles ready</span>`;
+  if (j.state === 'error') return `<span class="err">Subtitles: ${esc(j.message || 'failed')}</span>`;
+  const pct = j.state !== 'waiting' && j.progress > 0 ? ` <b class="mono">${Math.round(j.progress * 100)}%</b>` : '';
+  return `<span>${j.state === 'listening' ? (j.translate ? 'Listening and translating…' : 'Listening and writing subtitles…') : esc(j.message || 'Making subtitles…')}${pct}</span>`;
+}
+
+function actions(d) {
+  const b = (a, ic, t) => `<button class="icon-btn" data-a="${a}" title="${t}">${svg(ic,null,18)}</button>`;
+  if (d.status === 'scheduled') return b('resume', I.play, 'Start now') + b('remove', I.x, 'Remove');
+  if (d.status === 'duplicate') return `<button class="btn ghost" data-a="openexisting" style="height:32px">Show it</button><button class="btn ghost" data-a="dupok" style="height:32px">Download anyway</button>` + b('remove', I.x, 'Remove');
+  if (d.status === 'completed') return b('open', I.open, 'Open (double-click the row) · right-click for more') + b('folder', I.folder, 'Show in folder');
+  if (d.status === 'error') return b('resume', I.retry, 'Try again') + b('remove', I.x, 'Remove');
+  const pv = previewable(d) ? b('preview', I.eye, 'Preview: watch it while it downloads') : '';
+  if (['downloading','connecting','queued','merging'].includes(d.status)) return pv + b('pause', I.pause, 'Pause') + b('cancel', I.x, 'Cancel (stops it; it stays in the list)');
+  if (d.status === 'cancelled') return b('resume', I.play, 'Continue from where it stopped') + b('remove', I.trash, 'Remove from the list');
+  return pv + b('resume', I.play, 'Resume') + b('cancel', I.x, 'Cancel (stops it; it stays in the list)');
+}
+
+function barHTML(d) {
+  if (d.status === 'completed') return '<i style="left:0;width:100%"></i>';
+  if (isStream(d)) {
+    if (d.status === 'merging') return `<i style="left:0;width:${Math.round((d.mergePct||0)*100)}%"></i>`;
+    const t = d.barTotal;
+    if (!(t > 0)) return ['downloading','connecting'].includes(d.status) ? '<i></i>' : (d.size > 0 && d.downloaded > 0 ? `<i style="left:0;width:${Math.min(100, d.downloaded/d.size*100)}%"></i>` : '');
+    return d.segments.map(([s, e, p]) => p > e
+      ? `<i style="left:${s/t*100}%;width:${(e+1-s)/t*100}%"></i>`
+      : `<i class="act" style="left:${s/t*100}%;width:${Math.max(1/t*100, .4)}%"></i>`).join('');
+  }
+  if (!(d.size > 0)) return d.status === 'downloading' || d.status==='connecting' ? '<i></i>' : '';
+  return d.segments.map(([s, e, p]) => {
+    const end = e >= 0 ? Math.min(p, e + 1) : p;
+    const w = (end - s) / d.size * 100;
+    const live = d.status === 'downloading' && e >= 0 && p <= e;
+    return w > 0 || live ? `<i class="${live ? 'live' : ''}" style="left:${s / d.size * 100}%;width:${Math.max(w, 0)}%"></i>` : '';
+  }).join('');
+}
+
+function rowEl(d) {
+  let el = rows[d.id];
+  if (!el) {
+    el = document.createElement('div');
+    el.className = 'row';
+    el.dataset.id = d.id;
+    el.innerHTML = `<div class="top"><div class="tile"></div><div style="min-width:0"><div class="name"></div><div class="meta"></div></div><div class="acts"></div></div><div class="bar"></div><div class="detail"></div>`;
+    rows[d.id] = el;
+  }
+  const key = JSON.stringify([d.status, d.downloaded, d.speed, d.active, d.fileName, d.error, d.stopping, open.has(d.id), d.segments.length, d.mergePct, d.size, d.connections, d.limitKB, state.extras?.nextRun, d.safety, d.note, d.checksum, d.mirrorsOK, tfiles[d.id]?.length, d.retryIn, (state.extras?.subs || {})[d.id]]);
+  if (el._k && open.has(d.id) && el.contains(document.activeElement) && document.activeElement.matches('input')) return el; // don't redraw while typing
+  if (el._k === key) return el;
+  el._k = key;
+  el.className = 'row' + (d.status==='completed'?' done':'') + (d.status==='error'?' err':'') + (d.status==='merging'?' merging':'') + (open.has(d.id)?' open':'');
+  el.querySelector('.tile').innerHTML = svg(ICON[d.category], CATC[d.category], 20);
+  const nm = el.querySelector('.name'); nm.textContent = d.fileName || 'Getting file name…'; nm.title = d.fileName;
+  el.querySelector('.meta').innerHTML = statusLine(d).filter(Boolean).map(x => `<span>${x}</span>`).join('');
+  el.querySelector('.acts').innerHTML = actions(d);
+  const bar = el.querySelector('.bar');
+  bar.className = 'bar' + ((isStream(d) ? !(d.barTotal > 0) : !(d.size > 0)) && ['downloading','connecting'].includes(d.status) ? ' indet' : '');
+  bar.innerHTML = barHTML(d);
+  if (open.has(d.id)) {
+    const full = d.dir ? d.dir + (d.dir.includes('\\') ? '\\' : '/') + d.fileName : 'Unknown';
+    el.querySelector('.detail').innerHTML = `<div class="kv">
+      <span>Link</span><span class="mono">${esc(d.url)}</span>
+      <span>Saved to</span><span class="mono">${esc(full)}</span>
+      <span>Size</span><span>${d.size>0?fmtB(d.size)+' <span class="mono" style="color:var(--muted)">('+d.size.toLocaleString()+' bytes)</span>':'Unknown until the server says'}</span>
+      ${isStream(d)
+        ? `<span>Type</span><span>${d.kind === 'yt' ? 'Video page (YouTube / site helper)' : 'Video stream'}${d.quality ? ' · ' + esc(d.quality) : ''}</span>
+           <span>Connections</span><span>${d.connections} max${d.barTotal ? ' · ' + d.barTotal + ' chunks' : ''}</span>`
+        : d.kind === 'torrent' ? `<span>Type</span><span>Torrent${d.files ? ' · ' + d.files + ' files' : ''} · every piece is checked against its fingerprint</span>`
+        : `<span>Connections</span><span>${d.connections} max${d.autoConns ? ' (picked by itself)' : ''} · ${d.segments.length} piece${d.segments.length==1?'':'s'}</span>`}
+      ${d.kind === 'torrent' ? '' : `<span>Resume</span><span>${d.size<0?'Unknown':d.resumable?'<span class="pill" style="color:var(--good)">Supported</span>':'<span class="pill" style="color:var(--bad)">Not supported by this server</span>'}</span>`}
+      <span>Added</span><span>${new Date(d.addedAt).toLocaleString()}</span>
+      ${d.page && d.page !== d.url ? `<span>From page</span><span class="mono">${esc(d.page)}</span>` : ''}
+      ${d.mirrors ? `<span>Mirrors</span><span>${d.mirrors} other link${d.mirrors==1?'':'s'}${d.mirrorsOK ? ' · ' + d.mirrorsOK + ' in use' : ''}</span>` : ''}
+      ${d.zipName ? `<span>From ZIP</span><span class="mono">${esc(d.zipName)}</span>` : ''}
+      ${d.clip ? `<span>Clip</span><span>${esc(d.clip.replace(/(\d+)h/,'$1:').replace(/(\d+)m(\d+)s/g,'$1:$2'))}</span>` : ''}
+      ${d.subs ? `<span>Subtitles</span><span>${esc(d.subs)}</span>` : ''}
+      ${d.watch ? `<span>Watch rule</span><span>${esc(d.watch)}</span>` : ''}
+      ${d.checksum ? `<span>Checksum</span><span class="mono">${esc(d.checksum.slice(0, 24))}… <span style="color:var(--muted);font-family:inherit">(${esc(d.checksumFrom || '')})</span></span>` : ''}
+      ${d.fixedChunks ? `<span>Repaired</span><span>${d.fixedChunks} damaged chunk${d.fixedChunks==1?'':'s'} fetched again</span>` : ''}
+      ${d.note && d.status !== 'completed' && !isStream(d) ? `<span>Note</span><span>${esc(d.note)}</span>` : ''}</div>
+      ${safetyBox(d)}
+      ${d.kind === 'torrent' ? torrentBox(d) : ''}
+      ${d.status !== 'completed' ? `<div class="live">
+        ${d.kind !== 'torrent' ? `<span>Connections</span><div class="inline"><input type="range" min="1" max="32" value="${d.connections}" data-live="conn"><span class="rv mono">${d.connections}${d.autoConns ? ' auto' : ''}</span></div>` : ''}
+        <span>Speed limit</span><div class="inline"><input class="field mono" type="number" min="0" step="50" value="${d.limitKB||0}" data-live="limit"><span>KB/s for this download (0 = no limit)</span></div>
+      </div>` : ''}
+      <div class="btns">
+        <button class="btn ghost" data-a="copy">Copy link</button>
+        ${!['completed','scheduled'].includes(d.status) ? '<button class="btn ghost" data-a="later">Download later</button>' : ''}
+        ${d.status !== 'completed' && d.kind !== 'yt' && d.kind !== 'torrent' ? '<button class="btn ghost" data-a="refreshdlg">Refresh link</button>' : ''}
+        ${d.status === 'completed' && d.kind !== 'torrent' ? '<button class="btn ghost" data-a="sumdlg">Check a checksum</button>' : ''}
+        ${d.status!=='completed' && d.dir ? '<button class="btn ghost" data-a="folder">Open folder</button>' : ''}
+        <button class="btn ghost" data-a="restart" ${['downloading','connecting'].includes(d.status)?'disabled style="opacity:.5"':''}>Download again</button>
+        <button class="btn ghost" data-a="remove">Remove from list</button>
+        ${d.status==='completed' ? '<button class="btn danger" data-a="deletefile">Delete file</button>' : ''}
+      </div>`;
+  }
+  return el;
+}
+
+function safetyBox(d) {
+  const s = d.safety; if (!s || s.checking || !(s.notes && s.notes.length) && !s.scan && !s.vt) return '';
+  const lv = s.level === 'danger' ? 'danger' : s.level === 'warn' ? 'warn' : '';
+  return `<div class="safe ${lv}"><b>${s.level === 'danger' ? '⛔ Be careful with this file' : s.level === 'warn' ? '⚠ Have a look before opening' : 'Safety check'}</b>
+    ${s.realType ? `<div style="margin-top:4px">It really is ${esc(s.realType)}.</div>` : ''}
+    ${(s.notes||[]).length ? '<ul>' + s.notes.map(n => `<li>${esc(n)}</li>`).join('') + '</ul>' : ''}
+    ${s.scan ? `<div style="margin-top:4px">${esc(s.scan)}</div>` : ''}${s.vt ? `<div>VirusTotal: ${esc(s.vt)}</div>` : ''}
+    ${s.renamed ? `<div style="margin-top:6px">Jasqet renamed it to <b class="mono">${esc(s.renamed)}</b> so it can't be opened by mistake. <button class="sbtn" data-a="unblock">I trust it: restore the name</button></div>` : ''}
+    ${d.kind === 'torrent' && d.status === 'paused' && s.level === 'danger' ? `<div style="margin-top:6px">Untick the dangerous files below and press Resume, or <button class="sbtn" data-a="allow">download everything anyway</button></div>` : ''}</div>`;
+}
+const tfiles = {};
+function torrentBox(d) {
+  const f = tfiles[d.id];
+  if (!f) { loadTFiles(d.id); return '<div class="flist"><small>Loading the file list…</small></div>'; }
+  if (!f.length) return '';
+  const risky = p => /\.(exe|scr|lnk|bat|cmd|vbs|js|msi|pif|hta|ps1)$/i.test(p);
+  const done = d.status === 'completed';
+  return `<div class="flist">${f.map((x, i) => `<label><input type="checkbox" data-tf="${i}" ${x.wanted ? 'checked' : ''} ${done ? 'disabled' : ''}><span class="${risky(x.path) ? 'dz' : ''}">${esc(x.path)}</span><small class="mono">${x.size ? (x.done && x.done < x.size ? Math.floor(x.done/x.size*100) + '% of ' : '') + fmtB(x.size) : ''}</small></label>`).join('')}</div>
+    ${d.status !== 'completed' ? '<div class="btns" style="margin-top:8px"><button class="sbtn" data-a="tfapply">Download only the ticked files</button></div>' : ''}`;
+}
+async function loadTFiles(id) {
+  try { const r = await api('torrent/files?id=' + id); tfiles[id] = r.files || []; if (rows[id]) rows[id]._k = ''; renderList(); } catch {}
+}
+function renderList() {
+  const q = $('#q').value.trim().toLowerCase();
+  const items = state.downloads.filter(d => match(d, view) && (!q || (d.fileName + ' ' + d.url).toLowerCase().includes(q))).reverse();
+  const list = $('#list');
+  if (!items.length) {
+    list.innerHTML = state.downloads.length && view !== 'all' || q ? `<div class="empty">Nothing here.</div>` :
+      `<div class="empty"><div class="big logo"></div><h3>Ready when you are</h3>
+      <p>Click <b>Add link</b>, press <kbd>Ctrl</kbd>+<kbd>V</kbd> with a link copied, or drag a link onto this window.<br>
+      With the browser extension installed, downloads you start in Chrome or Edge land here automatically,<br>and video players get a <b>Download video</b> button.</p></div>`;
+    return;
+  }
+  if (list.querySelector('.empty')) list.innerHTML = '';
+  const els = items.map(rowEl);
+  els.forEach((el, i) => { if (list.children[i] !== el) list.insertBefore(el, list.children[i] || null); });
+  while (list.children.length > els.length) list.lastChild.remove();
+}
+
+$('#list').addEventListener('input', e => {
+  const t = e.target.closest('[data-live="conn"]'); if (t) t.nextElementSibling.textContent = t.value;
+});
+$('#list').addEventListener('change', async e => {
+  const t = e.target.closest('[data-live]'); if (!t) return;
+  const id = t.closest('.row').dataset.id;
+  const body = t.dataset.live === 'conn' ? {id, action:'set', connections: +t.value} : {id, action:'set', limitKB: Math.max(0, +t.value || 0)};
+  try { await api('action', body); toast(t.dataset.live === 'conn' ? `Now using up to ${t.value} connections` : (+t.value ? `Limited to ${t.value} KB/s` : 'No speed limit for this download')); t.blur(); poll(); } catch (err) { toast(err.message); }
+});
+$('#list').onclick = async e => {
+  const row = e.target.closest('.row'); if (!row) return;
+  const id = row.dataset.id, d = state.downloads.find(x => x.id === id);
+  const btn = e.target.closest('[data-a]');
+  if (!btn) {
+    if (e.target.closest('.top') || e.target.closest('.bar')) { open.has(id) ? open.delete(id) : open.add(id); row._k = ''; renderList(); }
+    if (e.target.closest('[data-tf]') && tfiles[id]) { const c = e.target.closest('[data-tf]'); tfiles[id][+c.dataset.tf].wanted = c.checked; }
+    return;
+  }
+  const a = btn.dataset.a;
+  if (a === 'copy') { navigator.clipboard.writeText(d.url).then(() => toast('Link copied')); return; }
+  if (a === 'unblock' || a === 'allow') { try { await api('safety', {id, action: a}); toast(a === 'allow' ? 'Downloading it anyway' : 'Name restored'); poll(); } catch (err) { toast(err.message); } return; }
+  if (a === 'sumdlg') { const v = prompt('Paste the checksum the website shows for this file (SHA-256, SHA-1 or MD5):'); if (v) { try { await api('safety', {id, action: 'checksum', value: v}); toast('Checking…'); poll(); } catch (err) { toast(err.message); } } return; }
+  if (a === 'tfapply') {
+    const skip = [...row.querySelectorAll('[data-tf]')].filter(c => !c.checked).map(c => +c.dataset.tf);
+    if (tfiles[id] && skip.length === tfiles[id].length) { toast('Tick at least one file'); return; }
+    try { await api('torrent/files', {id, skip}); tfiles[id] = null; toast('Got it. Only the ticked files will be downloaded'); if (d.status === 'paused') await api('action', {id, action: 'resume'}); poll(); } catch (err) { toast(err.message); }
+    return;
+  }
+  if (a === 'refreshdlg') { openRefresh(d); return; }
+  if (a === 'open') { openDownload(d, 'auto'); return; }
+  if (a === 'preview') { openDownload(d, 'preview'); return; }
+  if (a === 'deletefile' && !confirm(`Delete "${d.fileName}" from your computer?`)) return;
+  if (a === 'remove' && d.status !== 'completed' && d.downloaded > 0 && !confirm(`Remove "${d.fileName}" from the list? The ${fmtB(d.downloaded)} downloaded so far will be deleted.`)) return;
+  try { await api('action', {id, action:a}); poll(); } catch (err) { toast(err.message); }
+};
+
+// ---------- Open, Preview and the built-in viewer ----------
+const PLAYABLE = /\.(mp4|m4v|mov|mkv|webm|3gp|ogv|mp3|m4a|aac|flac|wav|ogg|oga|opus|mka|weba)$/i;
+const SPEECH = /\.(mp4|m4v|mov|mkv|webm|avi|wmv|3gp|flv|ts|mp3|m4a|aac|wav|flac|wma|ogg|oga|opus|mka)$/i; // Automatic subtitles (aisubs.go)
+I.subs = '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 12h3M12 12h5M7 15.5h7"/>';
+function previewable(d) {
+  if ((state.settings.viewer || {}).preview === false) return false;
+  if (!['downloading','connecting','queued','paused','merging'].includes(d.status)) return false;
+  if (d.kind === 'yt' || d.kind === 'media') return !/\.(srt|vtt)$/i.test(d.fileName || '');
+  if (d.kind === 'torrent') return true;
+  return (!d.kind || d.kind === 'zipentry') && PLAYABLE.test(d.fileName || '') && d.size > 0;
+}
+// The viewer page runs in a frame on the app's other local address
+// (localhost vs 127.0.0.1), so the browser engine keeps it in a process of
+// its own: a file that crashes it can't take this window down with it.
+const VIEW_ORIGIN = location.protocol + '//' + (location.hostname === 'localhost' ? '127.0.0.1' : 'localhost') + ':' + location.port;
+let viewing = '', viewFile = '', vSeen = 0, vWatch = null;
+function openViewer(path) {
+  const layer = $('#vLayer');
+  closeViewerLayer(true);
+  viewing = path; viewFile = new URLSearchParams(path.split('?')[1] || '').get('f') || '';
+  const fr = document.createElement('iframe');
+  fr.allow = 'fullscreen; autoplay; clipboard-write';
+  fr.allowFullscreen = true;
+  fr.referrerPolicy = 'origin';
+  fr.title = 'Viewer';
+  fr.src = VIEW_ORIGIN + path + (FRAMED ? '&framed=1' : ''); // its top bar leaves room for the window buttons
+  layer.classList.remove('crashed');
+  layer.prepend(fr);
+  layer.classList.add('show');
+  document.documentElement.classList.add('viewing');
+  $('#ctx').classList.remove('show');
+  fr.addEventListener('load', () => { try { fr.focus(); } catch (e) {} });
+  vSeen = Date.now();
+  // the viewer says "I'm fine" every 2 s; silence means it crashed or froze
+  vWatch = setInterval(() => {
+    if (document.visibilityState !== 'visible') { vSeen = Date.now(); return; }
+    if (Date.now() - vSeen > 15000) viewerCrashed();
+  }, 1000);
+}
+function viewerCrashed() {
+  clearInterval(vWatch); vWatch = null;
+  const fr = $('#vLayer iframe'); if (fr) fr.remove(); // drop the broken page
+  $('#vLayer').classList.add('crashed');
+  winFull(false);
+}
+function closeViewerLayer(quiet) {
+  clearInterval(vWatch); vWatch = null;
+  const fr = $('#vLayer iframe'); if (fr) fr.remove();
+  $('#vLayer').classList.remove('show', 'crashed');
+  document.documentElement.classList.remove('viewing');
+  if (!quiet) winFull(false);
+  viewing = ''; viewFile = '';
+  if (!quiet) poll();
+}
+$('#vcBack').onclick = () => closeViewerLayer();
+$('#vcExt').onclick = async () => {
+  const t = new URLSearchParams(viewing.split('?')[1] || '').get('t');
+  try {
+    const r = await fetch('/viewer/api/act?t=' + encodeURIComponent(t), {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({f: viewFile, action: 'external'})});
+    const j = await r.json(); if (!r.ok) throw new Error(j.error || 'Could not open it');
+    if (j.confirm) toast(j.confirm);
+  } catch (err) { toast(err.message); }
+};
+addEventListener('message', e => {
+  const fr = $('#vLayer iframe');
+  if (!fr || e.source !== fr.contentWindow || e.origin !== VIEW_ORIGIN || !e.data || typeof e.data !== 'object') return;
+  const m = e.data;
+  if (m.tg === 'alive') { vSeen = Date.now(); if (m.f) viewFile = m.f; }
+  else if (m.tg === 'close') closeViewerLayer();
+  else if (m.tg === 'full') winFull(!!m.on);
+  else if ((m.tg === 'drag' || m.tg === 'max') && FRAMED) tgWin(m.tg); // its top bar moves the window too
+});
+// Jasqet's window checks the page answers (see desktop_windows.go)
+window.tgPing = () => { if (window.tgPong) window.tgPong(viewing ? viewing.replace(/([?&]f=)[^&]*/, '$1' + encodeURIComponent(viewFile)) : ''); };
+async function showInViewer(fileID) {
+  try { const r = await api('viewurl', {f: fileID}); openViewer(r.url); } catch (err) { toast(err.message); }
+}
+
+async function openDownload(d, how) {
+  let r;
+  try { r = await api('open', {id: d.id, how}); } catch (err) { toast(err.message); return; }
+  if (r.result === 'viewer') { if (r.view) openViewer(r.view); return; }
+  if (r.result === 'external' || r.result === 'folder') { if (r.message) toast(r.message); return; }
+  if (r.result === 'blocked') return showBlocked(d, r);
+  if (r.result === 'confirm') return confirmRun(d, r);
+  if (r.result === 'ask') return askHow(d, r);
+}
+function miniModal(title, html, buttons) {
+  const box = $('#openModal');
+  box.innerHTML = `<h3>${esc(title)}</h3><div class="body">${html}</div><div class="foot"></div>`;
+  const foot = box.querySelector('.foot');
+  for (const b of buttons) {
+    const el = document.createElement('button');
+    el.className = 'btn ' + (b.cls || 'ghost'); el.textContent = b.label;
+    el.onclick = () => { show('#openScrim', false); if (b.fn) b.fn(); };
+    foot.append(el);
+  }
+  show('#openScrim', true);
+  setTimeout(() => (foot.querySelector('.primary, .danger') || foot.lastChild).focus(), 30);
+}
+function showBlocked(d, r) {
+  miniModal('Jasqet blocked this file', `<div class="warnbox">${svg(I.shield, null, 22)}<div><b>${esc(r.name || d.fileName)}</b><div style="margin-top:4px">${esc(r.message || '')}</div>${r.realType ? `<div style="margin-top:6px;color:var(--muted);font-size:12.5px">What it really is: ${esc(r.realType)}</div>` : ''}</div></div>
+    <div style="color:var(--muted);font-size:13px">It was not opened. Files that pretend to be videos or PDFs are a common way viruses spread.</div>`,
+    [{label: 'Show in folder', fn: () => api('action', {id: d.id, action: 'folder'}).catch(e => toast(e.message))},
+     {label: 'Delete it', cls: 'danger', fn: async () => { try { await api('action', {id: d.id, action: 'deletefile'}); toast('Deleted'); poll(); } catch (e) { toast(e.message); } }},
+     {label: 'Close', cls: 'primary'}]);
+}
+function confirmRun(d, r) {
+  miniModal('Run this program?', `<div class="warnbox">${svg(I.shield, null, 22)}<div>${esc(r.message || '')}</div></div>
+    <div style="color:var(--muted);font-size:13px">Open never runs programs by itself. Running it gives it the same access to your computer as you have.</div>`,
+    [{label: 'Show in folder', fn: () => api('action', {id: d.id, action: 'folder'}).catch(e => toast(e.message))},
+     {label: 'Cancel', cls: 'primary'},
+     {label: 'Run it', cls: 'danger', fn: () => api('open', {id: d.id, how: 'run'}).catch(e => toast(e.message))}]);
+}
+function askHow(d, r) {
+  miniModal('Open ' + (r.name || d.fileName), `<div class="choice">
+      <button data-how="viewer"><b>Built-in viewer</b><small>Quick look inside Jasqet</small></button>
+      <button data-how="external"><b>Your default program</b><small>The app Windows uses for this type</small></button></div>
+    <label style="display:flex;gap:8px;align-items:center;font-size:13px"><input type="checkbox" id="askRemember"> Always do this (you can change it in Settings → Viewer)</label>`, [{label: 'Cancel'}]);
+  $('#openModal').querySelectorAll('[data-how]').forEach(b => b.onclick = async () => {
+    show('#openScrim', false);
+    if ($('#askRemember').checked) {
+      const v = {...defaultViewer(), ...(state.settings.viewer || {}), openWith: b.dataset.how === 'viewer' ? 'viewer' : 'default'};
+      try { await api('settings', {viewer: v}); state.settings.viewer = v; } catch (e) {}
+    }
+    openDownload(d, b.dataset.how);
+  });
+}
+const defaultViewer = () => ({openWith: 'viewer', video: 'viewer', audio: 'viewer', image: 'viewer', pdf: 'viewer', autoOpen: false, preview: true, hwDecode: 'auto', subs: true, remember: true, window: 'inside'});
+
+// double-click a row: Open when finished, Preview while downloading
+$('#list').addEventListener('dblclick', e => {
+  const row = e.target.closest('.row'); if (!row || e.target.closest('button,input,select,label,.detail')) return;
+  const d = state.downloads.find(x => x.id === row.dataset.id); if (!d) return;
+  getSelection().removeAllRanges();
+  if (d.status === 'completed') openDownload(d, 'auto'); else if (previewable(d)) openDownload(d, 'preview');
+});
+// right-click a row
+function ctxMenu(d, x, y) {
+  const m = $('#ctx'), done = d.status === 'completed';
+  const it = (a, ic, label, cls) => `<button data-c="${a}" class="${cls || ''}">${svg(ic, null, 16)}<span>${label}</span></button>`;
+  let h = '';
+  if (done) h += it('open', I.open, '<b>Open</b>') + it('external', I.ext, 'Open externally') + it('with', I.apps, 'Open with…') + it('folder', I.folder, 'Show in folder') + '<hr>';
+  if (done && SPEECH.test(d.fileName || '')) h += it('subs', I.subs, 'Make subtitles') + it('subsen', I.subs, 'Make English subtitles') + '<hr>';
+  else {
+    if (previewable(d)) h += it('preview', I.eye, '<b>Preview</b>');
+    if (['downloading','connecting','queued','merging'].includes(d.status)) h += it('pause', I.pause, 'Pause');
+    else if (d.status !== 'scheduled') h += it('resume', I.play, d.status === 'error' ? 'Try again' : 'Resume');
+    h += it('folder', I.folder, 'Show in folder') + '<hr>';
+  }
+  h += it('copy', I.link, 'Copy link');
+  h += done ? it('remove', I.x, 'Remove from list') + it('deletefile', I.trash, 'Delete file', 'red') : it('remove', I.trash, 'Remove', 'red');
+  m.innerHTML = h;
+  m.classList.add('show');
+  const r = m.getBoundingClientRect();
+  m.style.left = Math.min(x, innerWidth - r.width - 8) + 'px';
+  m.style.top = Math.min(y, innerHeight - r.height - 8) + 'px';
+  m.onclick = async e => {
+    const b = e.target.closest('[data-c]'); if (!b) return;
+    m.classList.remove('show');
+    const c = b.dataset.c;
+    if (c === 'open') return openDownload(d, 'auto');
+    if (c === 'preview') return openDownload(d, 'preview');
+    if (c === 'external') return openDownload(d, 'external');
+    if (c === 'with') return openDownload(d, 'with');
+    if (c === 'copy') return navigator.clipboard.writeText(d.url).then(() => toast('Link copied'));
+    if (c === 'subs' || c === 'subsen') { try { await api('action', {id: d.id, action: c}); toast(c === 'subsen' ? 'Making English subtitles (this runs on your computer)' : 'Making subtitles (this runs on your computer)'); poll(); } catch (err) { toast(err.message); } return; }
+    if (c === 'deletefile' && !confirm(`Delete "${d.fileName}" from your computer?`)) return;
+    if (c === 'remove' && d.status !== 'completed' && d.downloaded > 0 && !confirm(`Remove "${d.fileName}" from the list? The ${fmtB(d.downloaded)} downloaded so far will be deleted.`)) return;
+    try { await api('action', {id: d.id, action: c}); poll(); } catch (err) { toast(err.message); }
+  };
+  setTimeout(() => (m.querySelector('button') || m).focus(), 0);
+}
+$('#list').addEventListener('contextmenu', e => {
+  const row = e.target.closest('.row'); if (!row || e.target.closest('input,textarea')) return;
+  const d = state.downloads.find(x => x.id === row.dataset.id); if (!d) return;
+  e.preventDefault(); ctxMenu(d, e.clientX, e.clientY);
+});
+document.addEventListener('mousedown', e => { if (!e.target.closest('#ctx')) $('#ctx').classList.remove('show'); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') $('#ctx').classList.remove('show'); });
+addEventListener('blur', () => $('#ctx').classList.remove('show'));
+
+let failures = 0, timer, prevSubs = {};
+async function poll() {
+  clearTimeout(timer);
+  try {
+    state = await api('state');
+    state.downloads.forEach(d => { d.segments = d.segments || []; });
+    syncTheme();
+    failures = 0; $('#offline').classList.remove('show');
+    for (const d of state.downloads) {
+      if (prevStatus[d.id] && prevStatus[d.id] !== 'completed' && d.status === 'completed') notify(d);
+      prevStatus[d.id] = d.status;
+    }
+    const subs = state.extras?.subs || {};
+    for (const [id, j] of Object.entries(subs)) {
+      const was = prevSubs[id]; prevSubs[id] = j.state;
+      if (!was || was === j.state) continue;
+      const d = state.downloads.find(x => x.id === id);
+      if (j.state === 'done') toast(`Subtitles ready: ${j.file}`, d ? 'Open' : '', () => d && openDownload(d, 'auto'));
+      else if (j.state === 'error') toast(`Subtitles: ${j.message}`);
+    }
+    const making = Object.values(subs).some(j => j.state !== 'done' && j.state !== 'error');
+    $('#total').textContent = fmtB(state.totalSpeed) + '/s';
+    const active = state.downloads.some(d => ['downloading','connecting','merging'].includes(d.status));
+    document.title = active ? `${fmtB(state.totalSpeed)}/s · Jasqet` : 'Jasqet';
+    renderNav(); renderList(); renderBanners();
+    if (state.openPage) handleOpenPage(state.openPage);
+    timer = setTimeout(poll, active || making || state.extras?.power || state.extras?.refreshId ? 500 : 1500);
+  } catch (e) { console.error(e); if (++failures > 2) $('#offline').classList.add('show'); timer = setTimeout(poll, 2000); }
+}
+
+function renderBanners() {
+  const x = state.extras || {}; let h = '';
+  if (x.power) {
+    const secs = Math.max(0, Math.round((new Date(x.power.at) - Date.now()) / 1000));
+    h += `<div class="banner">${svg('<path d="M12 3v9M6.4 6.4a8 8 0 1 0 11.2 0"/>',null,18)}<span class="grow">Downloads are done. Your computer will <b>${x.power.action === 'shutdown' ? 'shut down' : 'go to sleep'}</b> in <b class="mono">${secs}s</b>.</span><button class="btn ghost" data-b="cancelpower">Cancel</button></div>`;
+  }
+  if (x.refreshId) {
+    const d = state.downloads.find(d => d.id === x.refreshId);
+    h += `<div class="banner">${svg('<path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/>',null,18)}<span class="grow">Waiting for a fresh link for <b>${esc(d ? d.fileName : 'the download')}</b>. Open the page where you got it and click its download link again.</span><button class="btn ghost" data-b="cancelrefresh">Stop waiting</button></div>`;
+  }
+  if (x.schedActive) {
+    h += `<div class="banner info">${svg(I.clock,null,18)}<span class="grow">Scheduled downloads are running${x.stopAt ? ` until <b>${x.stopAt}</b>` : ''}.</span></div>`;
+  }
+  const holds = x.holds || [];
+  if (holds.includes('metered')) h += `<div class="banner">${svg('<path d="M2 20h.01M7 20v-4M12 20v-8M17 20V8M22 4v16"/>',null,18)}<span class="grow">Paused: <b>${esc(x.network || 'this network')}</b> is a metered connection (like a phone hotspot), so Jasqet isn't using your data.</span><button class="btn ghost" data-b="meteredok">Download anyway on this network</button></div>`;
+  if (holds.includes('budget')) h += `<div class="banner">${svg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>',null,18)}<span class="grow">Paused: your <b>data budget is used up</b>. Downloads continue when you add more.</span><button class="btn ghost" data-b="budget">Change budget</button></div>`;
+  if (holds.includes('quiet')) h += `<div class="banner info">${svg(I.pause,null,18)}<span class="grow">Quiet mode is on. Nothing downloads until you turn it off.</span><button class="btn ghost" data-b="unquiet">Turn off</button></div>`;
+  if (holds.includes('network')) h += `<div class="banner info">${svg(I.retry,null,18)}<span class="grow">Your connection changed. Reconnecting downloads…</span></div>`;
+  const sp = x.speeds;
+  if (sp && sp.suggest) h += `<div class="banner info">${svg('<path d="M13 2 3 14h9l-1 8 10-12h-9z"/>',null,18)}<span class="grow">Your internet is usually <b>${sp.factor}× faster from ${hourText(sp.from)} to ${hourText(sp.to)}</b>. Start scheduled downloads then?</span><button class="btn ghost" data-b="besthours">Use ${hourText(sp.from)} to ${hourText(sp.to)}</button><button class="icon-btn" data-b="besthoursno" title="Not now">${svg(I.x,null,16)}</button></div>`;
+  if (x.smooth && x.smooth.cap > 0) h += `<div class="banner info">${svg('<path d="M3 12h4l3-8 4 16 3-8h4"/>',null,18)}<span class="grow">Smooth mode: easing off to <b class="mono">${fmtB(x.smooth.cap)}/s</b> so browsing stays quick (ping ${x.smooth.rtt} ms, normally ${x.smooth.base} ms).</span></div>`;
+  if (state.extAsk) h += `<div class="banner">${svg('<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>',null,18)}<span class="grow">A browser extension in <b>${esc(state.extAsk.browser)}</b> wants to send downloads to Jasqet. Allow it only if you've just added Jasqet's extension to that browser.</span><button class="btn ghost" data-b="extallow">Allow</button><button class="btn ghost" data-b="extno">Not now</button></div>`;
+  if (state.pairAsk) h += `<div class="banner">${svg('<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>',null,18)}<span class="grow">Jasqet's extension in <b>${esc(state.pairAsk.browser)}</b> wants to pair again. That happens when it was removed and added back, or its data was cleared. Pair it only if you just did that.</span><button class="btn ghost" data-b="pairyes">Pair</button><button class="btn ghost" data-b="pairno">Not now</button></div>`;
+  if (!state.extConnected && !state.extAsk && !dismissed('connect') && state.downloads.length < 40) h += `<div class="banner info">${svg('<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>',null,18)}<span class="grow"><b>Connect your browser</b> so downloads and videos come to Jasqet by themselves.</span><button class="btn ghost" data-b="connect">Connect</button><button class="icon-btn" data-b="dismiss-connect" title="Hide">${svg(I.x,null,16)}</button></div>`;
+  const b = $('#banners'); if (b.innerHTML !== h) b.innerHTML = h;
+  const pill = $('#dataPill');
+  if (x.budgetLimit > 0) {
+    pill.style.display = ''; pill.textContent = fmtB(x.budgetLeft) + ' left';
+    pill.classList.toggle('low', x.budgetLeft < x.budgetLimit * 0.1);
+    pill.title = `Data budget: ${fmtB(x.budgetLeft)} of ${fmtB(x.budgetLimit)} left · used today ${fmtB(x.usedToday)}`;
+  } else pill.style.display = 'none';
+  $('#schedBtn').classList.toggle('on', !!state.settings.schedule?.enabled);
+  $('#schedBtn').title = state.settings.schedule?.enabled ? `Scheduler on. Next run: ${x.nextRun || 'not set'}` : 'Scheduler';
+}
+const dismissed = k => { try { return localStorage.getItem('tg-hide-' + k) === '1'; } catch { return false; } };
+$('#banners').onclick = async e => {
+  const b = e.target.closest('[data-b]'); if (!b) return;
+  const k = b.dataset.b;
+  if (k === 'connect') return openConnect();
+  if (k === 'budget') return openSettings('data');
+  if (k === 'pairyes' || k === 'pairno') { await api('extension', k === 'pairyes' ? {pairAgain: true} : {pairNo: true}).then(() => { if (k === 'pairyes') toast('The browser pairs by itself in a few seconds'); }).catch(err => toast(err.message)); poll(); return; }
+  if (k === 'extallow' || k === 'extno') { if (state.extAsk) await api('extension', {origin: state.extAsk.origin, allow: k === 'extallow'}).catch(err => toast(err.message)); poll(); return; }
+  if (k.startsWith('dismiss-')) { try { localStorage.setItem('tg-hide-' + k.slice(8), '1'); } catch {} renderBanners(); return; }
+  await api('action', {action: k});
+  if (k === 'besthours') { const sp = state.extras?.speeds; if (sp) toast(`Scheduled downloads now start at ${hourText(sp.from)}`); }
+  poll();
+};
+$('#dataPill').onclick = () => openSettings('data');
+
+function notify(d) {
+  if ((state.settings.viewer || {}).autoOpen && /\.(mp4|m4v|mov|mkv|webm|mp3|m4a|flac|wav|ogg|opus|jpe?g|png|gif|webp|bmp|svg|pdf)$/i.test(d.fileName)) { toast(`Finished: ${d.fileName}`); return; } // it opens by itself
+  toast(`Finished: ${d.fileName}`, 'Open', () => openDownload(d, 'auto'));
+  try { if (Notification.permission === 'granted' && document.hidden) { const n = new Notification('Download finished', {body: d.fileName}); n.onclick = () => { window.focus(); openDownload(d, 'auto'); }; } } catch {}
+}
+
+// ---------- Add dialog ----------
+const show = (id, on) => $(id).classList.toggle('show', on);
+// A list of qualities. With a data budget, those bigger than the data left say
+// so, and the best one that fits is picked.
+function qualHTML(list, est, left) {
+  const fits = x => !(left >= 0) || !est(x) || est(x) <= left;
+  let pick = list.findIndex(x => fits(x) && !x.subsOnly); if (pick < 0) pick = 0;
+  return list.map((x, i) => `<label class="qopt${fits(x) ? '' : ' over'}"><input type="radio" name="q" value="${i}" ${i===pick?'checked':''}><b>${esc(x.label)}</b><small>${est(x) ? '~' + fmtB(est(x)) : ''}${fits(x) ? '' : ' · more than your data left'}</small></label>`).join('');
+}
+const dataLeft = left => left >= 0 ? ` · ${fmtB(left)} of data left` : '';
+const hourText = h => (h % 12 || 12) + (h < 12 ? ' AM' : ' PM');
+document.querySelectorAll('.scrim').forEach(s => s.addEventListener('click', e => { if (e.target === s || e.target.closest('[data-close]')) s.classList.remove('show'); }));
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if ($('#vLayer').classList.contains('show') && !$('#openScrim').classList.contains('show')) { closeViewerLayer(); return; }
+  document.querySelectorAll('.scrim.show').forEach(s => s.classList.remove('show'));
+});
+
+function openAdd(url = '') {
+  $('#aUrl').value = url; $('#aName').value = ''; $('#aDir').value = ''; $('#aErr').textContent = ''; resetQual();
+  $('#aMirrors').checked = false; $('#aSum').value = ''; $('#aAdv2').open = false; $('#aFrom').value = ''; $('#aTo').value = '';
+  $('#aUser').value = ''; $('#aPass').value = ''; $('#aAdv').open = false; $('#aHelper').checked = false; $('#aName').placeholder = 'Automatic';
+  $('#aConn').value = state.settings.connections || 16; $('#aConnV').textContent = $('#aConn').value;
+  syncAdd(); show('#addScrim', true); setTimeout(() => (url ? $('#aGo') : $('#aUrl')).focus(), 30);
+  try { if (Notification.permission === 'default') Notification.requestPermission(); } catch {}
+}
+let mediaProbe = null;
+const isPlaylist = u => /^https?:\/\/\S+\.(m3u8|mpd)(\?\S*)?$/i.test(u.trim());
+function resetQual() { $('#aHelperWrap').style.display = ''; mediaProbe = null; $('#aQualWrap').style.display = 'none'; $('#aQual').innerHTML = ''; $('#aGo').textContent = 'Start download'; $('#aLater').textContent = 'Download later'; $('#aClipWrap').style.display = 'none'; $('#aSubsWrap').style.display = 'none'; $('#aSubs').innerHTML = '<option value="">None</option>'; }
+const isZipUrl = u => /^https?:\/\/\S+\.(zip|apk|epub|cbz|jar)(\?\S*)?$/i.test(u.trim());
+const isTorrent = u => /^magnet:/i.test(u.trim()) || /^https?:\/\/\S+\.torrent(\?\S*)?$/i.test(u.trim());
+function syncAdd() {
+  const lines = $('#aUrl').value.trim().split('\n').filter(x => x.trim()), many = lines.length > 1;
+  $('#aNameWrap').style.display = many || (lines[0] && isTorrent(lines[0])) ? 'none' : '';
+  $('#aMirrorWrap').style.display = many ? '' : 'none';
+  $('#aZip').style.display = !many && lines[0] && isZipUrl(lines[0]) ? '' : 'none';
+}
+$('#aZip').onclick = () => { const u = $('#aUrl').value.trim(); show('#addScrim', false); openZip(u); };
+$('#aTorrentFile').onchange = async e => {
+  const f = e.target.files[0]; if (!f) return;
+  const b64 = await new Promise(r => { const fr = new FileReader(); fr.onload = () => r(String(fr.result).split(',')[1]); fr.readAsDataURL(f); });
+  try { await api('torrent/add', {data: b64, dir: $('#aDir').value.trim()}); show('#addScrim', false); toast('Torrent added'); poll(); } catch (err) { $('#aErr').textContent = err.message; }
+  e.target.value = '';
+};
+const parseT = v => { v = v.trim(); if (!v) return 0; if (/^\d+(\.\d+)?$/.test(v)) return +v; const p = v.split(':').map(Number); if (p.some(isNaN)) return NaN; return p.reduce((a, x) => a * 60 + x, 0); };
+function clipValue() {
+  const a = parseT($('#aFrom').value), b = parseT($('#aTo').value);
+  if (isNaN(a) || isNaN(b)) throw new Error('Write clip times like 2:30 or 1:02:30');
+  if (!a && !b) return null;
+  if (b && b <= a) throw new Error("The clip's end must be after its start");
+  return {start: a, end: b};
+}
+function clipEst() {
+  const p = mediaProbe; if (!p) return;
+  const dur = p.info.duration; let c; try { c = clipValue(); } catch { $('#aClipEst').textContent = ''; return; }
+  const sel = +(document.querySelector('#aQual input:checked')||{}).value || 0;
+  const est = p.kind === 'yt' ? (p.opts[sel] || {}).est : (p.info.variants[sel] || {}).estSize;
+  if (!c || !dur) { $('#aClipEst').textContent = ''; return; }
+  const len = Math.max(0, (c.end || dur) - c.start);
+  $('#aClipEst').textContent = `${fmtT(len)} of ${fmtT(dur)}` + (est ? ` · about ${fmtB(est * Math.min(1, (len + 5) / dur))} instead of ${fmtB(est)}` : '');
+}
+$('#aFrom').oninput = clipEst; $('#aTo').oninput = clipEst; $('#aQual').addEventListener('change', clipEst);
+$('#aUrl').oninput = () => { syncAdd(); if (mediaProbe && mediaProbe.url !== $('#aUrl').value.trim()) resetQual(); };
+$('#aConn').oninput = () => $('#aConnV').textContent = $('#aConn').value;
+$('#addBtn').onclick = () => openAdd();
+$('#aBrowse').onclick = async () => { const r = await api('pickfolder', {}); if (r.path) { $('#aDir').value = r.path; } };
+async function submitAdd(later) {
+  $('#aErr').textContent = '';
+  const one = $('#aUrl').value.trim();
+  if (!one.includes('\n') && one && (isYTUrl(one) || $('#aHelper').checked)) return submitYT(one, later);
+  if (isPlaylist(one) && !one.includes('\n')) {
+    if (!mediaProbe) { // first click: show the qualities
+      $('#aGo').textContent = 'Reading playlist…';
+      try {
+        const info = await api('media/probe', {url: one});
+        if (info.drm) throw new Error('This video is protected by DRM, so it can\'t be saved.');
+        if (info.live) throw new Error('This is a live stream. Jasqet can only save finished videos.');
+        mediaProbe = {url: one, info};
+        $('#aQual').innerHTML = qualHTML(info.variants, v => v.estSize, info.budget);
+        $('#aQualHint').textContent = (info.duration ? 'Length ' + fmtT(info.duration).replace(/(\d+)m (\d+)s/, '$1 min $2 s') : '') + dataLeft(info.budget);
+        $('#aQualWrap').style.display = ''; $('#aClipWrap').style.display = info.duration ? '' : 'none';
+        $('#aGo').textContent = 'Download this quality'; $('#aLater').textContent = 'Download it later';
+      } catch (err) { $('#aGo').textContent = 'Start download'; $('#aErr').textContent = err.message; }
+      return;
+    }
+    const v = mediaProbe.info.variants[+(document.querySelector('#aQual input:checked')||{}).value || 0];
+    try {
+      await api('media/add', {url: one, variant: v.id, quality: v.label, audioOnly: !!v.audioOnly, estSize: v.estSize || 0,
+        title: $('#aName').value.trim(), dir: $('#aDir').value.trim(), connections: +$('#aConn').value, later, clip: clipValue(), duration: mediaProbe.info.duration || 0});
+      show('#addScrim', false); toast(later ? 'Video scheduled: ' + nextRunText() : 'Video added'); view = 'all'; poll();
+    } catch (err) { $('#aErr').textContent = err.message; }
+    return;
+  }
+  try {
+    const conns = +$('#aConn').value;
+    const r = await api('add', {urls: $('#aUrl').value, fileName: $('#aName').value.trim(), dir: $('#aDir').value.trim(), connections: conns === (state.settings.connections || 16) ? 0 : conns, later,
+      user: $('#aUser').value.trim(), password: $('#aPass').value, mirrors: $('#aMirrors').checked && $('#aMirrorWrap').style.display !== 'none', checksum: $('#aSum').value.trim()});
+    const what = r.ids.length > 1 ? `${r.ids.length} downloads` : 'Download';
+    show('#addScrim', false); toast(later ? `${what} scheduled: ${nextRunText()}` : (r.ids.length > 1 ? `Added ${r.ids.length} downloads` : 'Download added'));
+    if (view !== 'all' && view !== 'active') { view = 'all'; } poll();
+  } catch (err) { $('#aErr').textContent = err.message; }
+}
+// YouTube and other video pages: ask the site helper for qualities, then add.
+async function submitYT(link, later) {
+  if (!mediaProbe || mediaProbe.url !== link) {
+    $('#aGo').textContent = 'Asking the site…';
+    try {
+      const p = await api('yt/probe', {url: link});
+      if (p.setup) { showSetupInAdd(p.setup, link, later); return; }
+      if (p.drm) throw new Error('This video is protected by DRM, so it can\'t be saved.');
+      if (p.live) throw new Error('This is a live or upcoming video. It can be saved once it has finished.');
+      mediaProbe = {url: link, kind: 'yt', info: p};
+      const opts = (p.variants || []).map(v => ({variant: v.id, label: v.label, est: v.estSize}));
+      if (p.playlist && p.playlist.count > 1) {
+        const hs = [...new Set((p.variants||[]).map(v => v.height).filter(h => h > 0 && h <= 1080))].slice(0, 4);
+        for (const h of (hs.length ? hs : [720, 480, 360])) opts.push({variant: 'h:' + h, label: `Whole playlist (${p.playlist.count} videos) in ${h}p`, playlist: true});
+        opts.push({variant: 'audio', label: `Whole playlist (${p.playlist.count}), audio only`, playlist: true});
+      }
+      if (p.subs && p.subs.length && !(p.playlist && p.playlist.count > 1 && !p.variants?.length)) opts.push({variant: 'subs', label: 'Only the subtitles (.srt)', subsOnly: true});
+      if (!opts.length) throw new Error('No downloadable quality found for this page.');
+      mediaProbe.opts = opts;
+      $('#aQual').innerHTML = qualHTML(opts, o => o.est, p.budget);
+      $('#aQualHint').textContent = [p.title, p.duration ? fmtT(p.duration) : ''].filter(Boolean).join(' · ') + dataLeft(p.budget);
+      if (p.title && !$('#aName').value) $('#aName').placeholder = p.title;
+      $('#aQualWrap').style.display = ''; $('#aHelperWrap').style.display = 'none';
+      $('#aClipWrap').style.display = p.duration && !(p.playlist && p.playlist.count > 1 && !p.variants?.length) ? '' : 'none';
+      if (p.subs && p.subs.length) { $('#aSubs').innerHTML = '<option value="">None</option>' + p.subs.map(x => `<option value="${esc(x.lang)}">${esc(x.name)}</option>`).join(''); $('#aSubsWrap').style.display = ''; }
+      $('#aGo').textContent = 'Download this'; $('#aLater').textContent = 'Download it later';
+    } catch (err) {
+      $('#aGo').textContent = 'Start download';
+      $('#aErr').innerHTML = esc(err.message) + (/robot/.test(err.message) ? '<br><span style="color:var(--muted)">Fix: open the video in your browser, click <b>Download video</b> and choose <b>Use my YouTube session</b>. Jasqet then remembers it for links you paste here too.</span>' : '');
+    }
+    return;
+  }
+  const o = mediaProbe.opts[+(document.querySelector('#aQual input:checked')||{}).value || 0];
+  const p = mediaProbe.info;
+  if (o.subsOnly && !$('#aSubs').value) { $('#aErr').textContent = 'Choose the subtitle language below first.'; return; }
+  try {
+    const r = await api('yt/add', {url: p.url || link, variant: o.variant, quality: o.playlist ? o.label.replace(/^.* in /, '') : o.label, title: $('#aName').value.trim() || p.title || '',
+      estSize: o.est || 0, later, playlist: o.playlist ? p.playlist : null, dir: $('#aDir').value.trim(),
+      clip: o.playlist ? null : clipValue(), duration: p.duration || 0, subs: $('#aSubs').value});
+    const n = r.ids.length;
+    show('#addScrim', false); toast((n > 1 ? `${n} videos` : 'Video') + (later ? ' scheduled: ' + nextRunText() : ' added')); view = 'all'; poll();
+  } catch (err) { $('#aErr').textContent = err.message; }
+}
+// The helper tools set themselves up the first time a video link needs them.
+async function showSetupInAdd(st, link, later) {
+  $('#aQualWrap').style.display = '';
+  $('#aQualHint').textContent = '';
+  if (st.state === 'error') {
+    $('#aQual').innerHTML = `<div class="note"><b>YouTube support couldn't be set up.</b><br><span style="color:var(--bad)">${esc(st.message)}</span><br><button class="btn primary" id="aSetup" style="margin-top:8px">Try again</button></div>`;
+    $('#aGo').textContent = 'Start download';
+    $('#aSetup').onclick = () => showSetupInAdd({state: 'missing'}, link, later);
+    return;
+  }
+  if (st.state !== 'installing') await api('tools/install', {}).catch(() => {});
+  for (;;) {
+    const s2 = await api('tools').catch(() => ({state: 'error', message: 'Jasqet stopped'}));
+    if (s2.state === 'ready') break;
+    if (s2.state !== 'installing') { showSetupInAdd({...s2, state: 'error', message: s2.message || 'The setup didn\'t start.'}, link, later); return; }
+    if (!$('#addScrim').classList.contains('show')) return; // closed: the setup carries on by itself
+    $('#aQual').innerHTML = `<div class="note">Setting up YouTube support (one time only)… <b class="mono">${Math.round((s2.progress||0)*100)}%</b><br>${esc(s2.message && s2.message !== 'Starting…' ? s2.message : `Jasqet is downloading two free helper tools (about ${s2.sizeMB} MB).`)}</div>`;
+    await new Promise(r => setTimeout(r, 1000));
+  }
+  mediaProbe = null; submitYT(link, later);
+}
+$('#aGo').onclick = () => submitAdd(false);
+$('#aLater').onclick = () => submitAdd(true);
+$('#aUrl').addEventListener('keydown', e => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) submitAdd(false); });
+
+// paste / drop a link anywhere
+const linkRe = /^https?:\/\/\S+$/m;
+document.addEventListener('paste', e => {
+  if (e.target.closest('input,textarea')) return;
+  const t = (e.clipboardData.getData('text') || '').trim();
+  if (linkRe.test(t)) openAdd(t);
+});
+let dragDepth = 0;
+document.addEventListener('dragenter', e => { dragDepth++; show('#drop', true); });
+document.addEventListener('dragleave', e => { if (--dragDepth <= 0) { dragDepth = 0; show('#drop', false); } });
+document.addEventListener('dragover', e => e.preventDefault());
+document.addEventListener('drop', e => {
+  e.preventDefault(); dragDepth = 0; show('#drop', false);
+  const t = (e.dataTransfer.getData('text/uri-list') || e.dataTransfer.getData('text') || '').split('\n').filter(l => /^https?:/.test(l.trim())).join('\n');
+  if (t) openAdd(t);
+});
+
+// ---------- Settings ----------
+const LIMITS = [[0,'No limit'],[100,'100 KB/s'],[250,'250 KB/s'],[500,'500 KB/s'],[1024,'1 MB/s'],[5120,'5 MB/s']];
+function chips() { const v = +$('#sLimit').value; $('#limitChips').innerHTML = LIMITS.map(([k,l]) => `<button type="button" class="chip ${v===k?'on':''}" data-k="${k}">${l}</button>`).join(''); }
+$('#limitChips').onclick = e => { const c = e.target.closest('.chip'); if (c) { $('#sLimit').value = c.dataset.k; chips(); } };
+$('#sLimit').oninput = chips;
+$('#setBtn').onclick = () => openSettings('gen');
+$('#sTabs').onclick = e => { const t = e.target.closest('.tab'); if (t) setTab(t.dataset.t); };
+function setTab(t) {
+  document.querySelectorAll('#sTabs .tab').forEach(x => x.classList.toggle('on', x.dataset.t === t));
+  document.querySelectorAll('#setScrim .pane').forEach(x => x.classList.toggle('on', x.dataset.p === t));
+  if (t === 'net') drawLAN();
+}
+let rulesDraft = [], watchCache = [];
+// Saved keys and passwords don't come back to the window, only whether they're
+// set: a saved one shows as dots, and saving the dots keeps it (secrets.go).
+const SAVED = '••••••••';
+function openSettings(tab) {
+  const s = state.settings, x = state.extras || {}, sv = state.saved || {};
+  $('#sDir').value = s.downloadDir; $('#sCat').checked = s.categorize; $('#sTidy').checked = s.tidy !== false; $('#sConn').value = s.connections; $('#sMax').value = s.maxConcurrent;
+  $('#sLimit').value = s.speedLimitKB; $('#sProxy').value = s.proxy || ''; $('#sErr').textContent = '';
+  $('#sAuto').checked = s.autoConnections !== false; $('#sSmooth').checked = !!s.smooth; syncAuto();
+  try { $('#sTheme').value = localStorage.getItem('tg-theme') || ''; } catch {}
+  $('#sConnV').textContent = s.connections; $('#sMaxV').textContent = s.maxConcurrent; chips();
+  // data saver
+  const bud = s.budget || {};
+  $('#dReset').innerHTML = '<option value="0">Never</option>' + Array.from({length: 28}, (_, i) => `<option value="${i+1}">${i+1}</option>`).join('');
+  if (bud.enabled) { const left = Math.max(0, bud.limit - bud.used); const gb = left >= 1 << 30; $('#dUnit').value = gb ? '1024' : '1'; $('#dLeft').value = (left / (1 << 20) / (gb ? 1024 : 1)).toFixed(gb ? 2 : 0); }
+  else { $('#dLeft').value = ''; $('#dUnit').value = '1024'; }
+  $('#dLeft').dataset.orig = $('#dLeft').value; $('#dReset').value = String(bud.resetDay || 0); $('#dReset').dataset.orig = $('#dReset').value;
+  $('#dMetered').value = s.meteredMode || 'pause'; $('#dSlowKB').value = s.meteredKB || 100; $('#dSlowWrap').style.display = $('#dMetered').value === 'slow' ? '' : 'none';
+  $('#dDup').checked = s.dupCheck !== false; $('#dLib').value = (s.library || []).join('\n');
+  $('#dUsage').innerHTML = `Used <b>${fmtB(x.usedToday || 0)}</b> today and <b>${fmtB(x.usedMonth || 0)}</b> this month.` + (x.budgetLimit > 0 ? ` <b>${fmtB(x.budgetLeft)}</b> of your budget is left.` : '') + (x.network ? `<br>Network now: <b>${esc(x.network)}</b>${x.metered ? ' (metered)' : ''}` : '');
+  // safety
+  const sf = s.safety || {}; $('#fScan').checked = sf.scan !== false; $('#fSums').checked = sf.findChecksums !== false; $('#fVT').value = sv.virusTotalKey ? SAVED : '';
+  // rules
+  rulesDraft = JSON.parse(JSON.stringify(s.after || [])); drawRules();
+  api('watch').then(r => { watchCache = r.rules; drawRules(); }).catch(() => {});
+  // viewer
+  const vw = {...defaultViewer(), ...(s.viewer || {})};
+  $('#vOpen').value = vw.openWith; $('#vVideo').value = vw.video; $('#vAudio').value = vw.audio; $('#vImage').value = vw.image; $('#vPdf').value = vw.pdf;
+  $('#vWin').value = vw.window || 'inside';
+  $('#vAuto').checked = !!vw.autoOpen; $('#vPrev').checked = vw.preview !== false; $('#vHW').value = vw.hwDecode; $('#vSubs').checked = vw.subs !== false; $('#vPos').checked = vw.remember !== false;
+  // notifications
+  const n = s.notify || {}; $('#nTok').value = sv.telegramToken ? SAVED : ''; $('#nChat').value = n.telegramChat || ''; $('#nTgAll').checked = !!n.telegramAll; $('#nTgErr').checked = !!n.telegramErrors; $('#nDesk').checked = !!n.desktopAll;
+  // network
+  const l = s.lan || {}; $('#lOn').checked = !!l.enabled; $('#lShare').checked = l.share !== false; $('#lUse').checked = l.use !== false; $('#lCode').value = sv.lanCode ? SAVED : ''; $('#lPeers').value = (l.peers || []).join(', ');
+  const t = s.torrent || {}; $('#tUp').value = t.uploadKB ?? 50; $('#tSeed').checked = !!t.seed;
+  $('#abVer').textContent = state.version || '';
+  drawTools(); setTab(tab || 'gen');
+  show('#setScrim', true);
+}
+function syncAuto() { $('#sConnHint').textContent = $('#sAuto').checked ? 'The most Jasqet will use; it picks the best number by itself' : 'More connections = faster on most servers. 8 to 16 is the sweet spot.'; }
+$('#sAuto').onchange = syncAuto;
+$('#dMetered').onchange = () => { $('#dSlowWrap').style.display = $('#dMetered').value === 'slow' ? '' : 'none'; };
+const MATCHES = [['all','Every download'],['Video','Videos'],['Music','Music and sound'],['Compressed','Archives (ZIP, RAR, 7z)'],['Documents','Documents'],['Programs','Programs'],['ext:','Files ending in…'],['site:','From a website…'],['watch:','From a watch rule…']];
+function drawRules() {
+  const w = watchCache || [];
+  $('#rules').innerHTML = rulesDraft.length ? rulesDraft.map((r, i) => {
+    const kind = r.match?.startsWith('ext:') ? 'ext:' : r.match?.startsWith('site:') ? 'site:' : r.match?.startsWith('watch:') ? 'watch:' : (r.match || 'all');
+    const val = kind.endsWith(':') ? r.match.slice(kind.length) : '';
+    return `<div class="card" data-r="${i}">
+      <div class="head"><input type="checkbox" data-k="on" ${r.on ? 'checked' : ''} title="On"><input class="field" data-k="name" value="${esc(r.name || '')}" placeholder="Rule name" style="height:32px"><button class="icon-btn" data-del="${i}" title="Delete rule">${svg(I.x,null,16)}</button></div>
+      <div class="row2"><select class="field" data-k="kind">${MATCHES.map(([k, l]) => `<option value="${k}" ${k===kind?'selected':''}>${l}</option>`).join('')}</select>
+      <input class="field mono" data-k="val" value="${esc(val)}" placeholder="${kind==='ext:'?'.pdf .epub':kind==='site:'?'example.com':kind==='watch:'?'(pick below)':''}" style="${kind.endsWith(':')?'':'visibility:hidden'}"></div>
+      ${kind === 'watch:' ? `<select class="field" data-k="watchpick">${w.map(x => `<option value="${x.id}" ${x.id===val?'selected':''}>${esc(x.name)}</option>`).join('') || '<option value="">No watch rules yet</option>'}</select>` : ''}
+      <div class="checks"><label><input type="checkbox" data-k="unzip" ${r.unzip?'checked':''}> Unzip archives</label><label><input type="checkbox" data-k="deleteArchive" ${r.deleteArchive?'checked':''}> …then delete the archive</label>
+      <label><input type="checkbox" data-k="extractAudio" ${r.extractAudio?'checked':''}> Save the sound of videos (.m4a)</label>
+      <label><input type="checkbox" data-k="desktop" ${r.desktop?'checked':''}> Windows notification</label><label><input type="checkbox" data-k="telegram" ${r.telegram?'checked':''}> Telegram message</label></div>
+      <div class="row2"><input class="field mono" data-k="renameTo" value="${esc(r.renameTo || '')}" placeholder="Rename, e.g. {date} {name}"><div class="inline"><input class="field mono" data-k="moveTo" value="${esc(r.moveTo || '')}" placeholder="Move to folder"><button class="sbtn" data-pick="${i}" type="button">…</button></div></div>
+      <div class="sub">Rename can use {name} {date} {time} {site} {category}.</div></div>`;
+  }).join('') : '<div class="sub" style="color:var(--muted)">No rules yet.</div>';
+}
+function readRules() {
+  document.querySelectorAll('#rules [data-r]').forEach(c => {
+    const r = rulesDraft[+c.dataset.r]; const g = k => c.querySelector(`[data-k="${k}"]`);
+    r.on = g('on').checked; r.name = g('name').value.trim() || 'Rule';
+    const kind = g('kind').value; let val = g('val').value.trim();
+    if (kind === 'watch:' && g('watchpick')) val = g('watchpick').value;
+    r.match = kind.endsWith(':') ? kind + val : kind;
+    for (const k of ['unzip','deleteArchive','extractAudio','desktop','telegram']) r[k] = g(k).checked;
+    r.renameTo = g('renameTo').value.trim(); r.moveTo = g('moveTo').value.trim();
+  });
+}
+$('#ruleAdd').onclick = () => { readRules(); rulesDraft.push({id: Math.random().toString(16).slice(2, 10), name: 'Unzip archives', on: true, match: 'Compressed', unzip: true}); drawRules(); };
+$('#rules').onclick = async e => {
+  const d = e.target.closest('[data-del]'); if (d) { readRules(); rulesDraft.splice(+d.dataset.del, 1); drawRules(); return; }
+  const p = e.target.closest('[data-pick]'); if (p) { const r = await api('pickfolder', {}); if (r.path) p.previousElementSibling.value = r.path; }
+};
+$('#rules').onchange = e => { if (e.target.matches('[data-k="kind"]')) { readRules(); drawRules(); } };
+$('#nFind').onclick = async () => { try { const r = await api('telegram/find', {token: $('#nTok').value.trim()}); $('#nChat').value = r.chat; toast('Found your chat' + (r.name ? ' with ' + r.name : '')); } catch (err) { toast(err.message); } };
+$('#nTest').onclick = async () => { try { await saveSettings(true); await api('telegram/test', {}); toast('Test message sent. Check Telegram'); } catch (err) { toast(err.message); } };
+async function drawLAN() {
+  try {
+    const st = await api('lan');
+    $('#lStatus').innerHTML = !st.enabled ? 'Off.' : !st.hasCode ? 'Nothing is shared or copied until this computer has a group code. Click <b>Show code</b> to make one.' : (st.peers && st.peers.length ? 'Found: ' + st.peers.map(p => `<b>${esc(p.name || p.addr)}</b>`).join(', ') : 'No other Jasqet found yet on this network.') + (st.saved ? ` · Saved you ${fmtB(st.saved)} of internet data so far.` : '');
+  } catch {}
+}
+// The group code comes with the settings as dots only, so Show code asks
+// Jasqet for it (lan.go, apiLANCode). With no code yet, Jasqet makes one.
+async function showLANCode() {
+  const r = await api('lan/code', {});
+  $('#lCode').value = r.code;
+  if (r.replaced) toast('Your old code was too short, so Jasqet made a new one. Type it on your other computers.', null, null, 7000);
+  else if (r.made) toast('Jasqet made a group code. Type the same code on your other computers.', null, null, 7000);
+  return r.code;
+}
+$('#lShow').onclick = () => showLANCode().catch(err => toast(err.message));
+$('#lCopy').onclick = async () => {
+  try {
+    let c = $('#lCode').value.trim();
+    if (!c || c === SAVED) c = await showLANCode();
+    await navigator.clipboard.writeText(c);
+    toast('Group code copied');
+  } catch { toast("Couldn't copy the code. Select it and copy it yourself."); }
+};
+$('#lOn').onchange = () => { if ($('#lOn').checked && !$('#lCode').value.trim()) showLANCode().catch(err => toast(err.message)); };
+async function drawTools() {
+  let st; try { st = await api('tools'); } catch { return; }
+  const box = $('#toolsBox');
+  if (st.state === 'ready') {
+    box.innerHTML = `<b>YouTube &amp; 1,000+ video sites:</b> ready <span class="mono">(yt-dlp ${esc(st.ytdlp || '…')})</span>. It updates itself every few days. <button class="btn ghost" id="tUpd" style="height:28px;margin-top:6px">Update now</button>` +
+      (state.extras?.ytSession ? `<div style="margin-top:8px">Your browser's YouTube session is saved (used only when YouTube asks "are you a robot?"). <button class="btn ghost" id="tForget" style="height:28px">Forget it</button></div>` : '');
+    if ($('#tForget')) $('#tForget').onclick = async () => { await api('ytsession', {}); toast('YouTube session forgotten'); await poll(); drawTools(); };
+    $('#tUpd').onclick = async () => { $('#tUpd').textContent = 'Updating…'; try { await api('tools/update', {}); toast('Up to date'); } catch (e) { toast(e.message); } drawTools(); };
+  } else if (st.state === 'installing') {
+    box.innerHTML = `<b>Setting up YouTube support…</b> ${Math.round((st.progress||0)*100)}%<br>${esc(st.message||'')}`;
+    setTimeout(() => { if ($('#setScrim').classList.contains('show')) drawTools(); }, 1000);
+  } else {
+    box.innerHTML = `<b>YouTube &amp; 1,000+ video sites:</b> set up by itself the first time you download a video. Jasqet downloads two free helper tools (yt-dlp and Deno, about ${st.sizeMB} MB, once).${st.state==='error' ? `<br><span style="color:var(--bad)">${esc(st.message)}</span>` : ''} <button class="btn ghost" id="tSet" style="height:28px;margin-top:6px">Set up now</button>`;
+    $('#tSet').onclick = async () => { await api('tools/install', {}); drawTools(); };
+  }
+}
+$('#sConn').oninput = () => $('#sConnV').textContent = $('#sConn').value;
+$('#sMax').oninput = () => $('#sMaxV').textContent = $('#sMax').value;
+$('#sBrowse').onclick = async () => { const r = await api('pickfolder', {}); if (r.path) $('#sDir').value = r.path; };
+$('#sTheme').onchange = () => { const v = $('#sTheme').value; if (v) document.documentElement.dataset.theme = v; else delete document.documentElement.dataset.theme; try { v ? localStorage.setItem('tg-theme', v) : localStorage.removeItem('tg-theme'); } catch {} saveTheme(v); };
+// Jasqet keeps the mode too, so the viewer (its own page) opens light or dark like this window
+const saveTheme = v => { if (state.settings) state.settings.theme = v; api('settings', {theme: v}).catch(() => {}); };
+let themeSynced = false;
+function syncTheme() {
+  if (themeSynced || !state.settings) return;
+  themeSynced = true;
+  let v = ''; try { v = localStorage.getItem('tg-theme') || ''; } catch {}
+  if ((state.settings.theme || '') !== v) saveTheme(v); // a choice made before Jasqet kept it
+}
+async function saveSettings(quiet) {
+  readRules();
+  const lib = $('#dLib').value.split('\n').map(x => x.trim()).filter(Boolean);
+  const peers = $('#lPeers').value.split(/[\s,]+/).map(x => x.trim()).filter(Boolean);
+  // a typed group code goes to Jasqet first, which refuses one that's too short
+  let lanCode = $('#lCode').value.trim();
+  if (lanCode && lanCode !== SAVED) { await api('lan/code', {code: lanCode}); lanCode = SAVED; }
+  else if (!lanCode && $('#lOn').checked) throw new Error('Sharing needs a group code. Click Show code to make one, or type the code from your other computer.');
+  await api('settings', {downloadDir: $('#sDir').value.trim(), categorize: $('#sCat').checked, tidy: $('#sTidy').checked, connections: +$('#sConn').value, maxConcurrent: +$('#sMax').value,
+    speedLimitKB: Math.max(0, +$('#sLimit').value || 0), proxy: $('#sProxy').value.trim(), autoConnections: $('#sAuto').checked, smooth: $('#sSmooth').checked,
+    meteredMode: $('#dMetered').value, meteredKB: Math.max(10, +$('#dSlowKB').value || 100), dupCheck: $('#dDup').checked, library: lib,
+    safety: {scan: $('#fScan').checked, findChecksums: $('#fSums').checked, virusTotalKey: $('#fVT').value.trim()},
+    viewer: {openWith: $('#vOpen').value, video: $('#vVideo').value, audio: $('#vAudio').value, image: $('#vImage').value, pdf: $('#vPdf').value,
+      autoOpen: $('#vAuto').checked, preview: $('#vPrev').checked, hwDecode: $('#vHW').value, subs: $('#vSubs').checked, remember: $('#vPos').checked, window: $('#vWin').value},
+    after: rulesDraft,
+    notify: {telegramToken: $('#nTok').value.trim(), telegramChat: $('#nChat').value.trim(), telegramAll: $('#nTgAll').checked, telegramErrors: $('#nTgErr').checked, desktopAll: $('#nDesk').checked},
+    lan: {...(state.settings.lan || {}), enabled: $('#lOn').checked, share: $('#lShare').checked, use: $('#lUse').checked, code: lanCode, peers},
+    torrent: {uploadKB: Math.max(0, +$('#tUp').value || 0), seed: $('#tSeed').checked}});
+  if ($('#dLeft').value !== $('#dLeft').dataset.orig || $('#dReset').value !== $('#dReset').dataset.orig) {
+    const left = $('#dLeft').value.trim() === '' ? 0 : Math.max(0, +$('#dLeft').value) * +$('#dUnit').value;
+    await api('budget', {leftMB: left, resetDay: +$('#dReset').value});
+  }
+  if (!quiet) { show('#setScrim', false); toast('Settings saved'); }
+  poll();
+}
+$('#sSave').onclick = () => saveSettings(false).catch(err => { $('#sErr').textContent = err.message; });
+
+$('#pauseAll').onclick = () => api('action', {id:'*', action:'pause'}).then(poll);
+$('#resumeAll').onclick = () => api('action', {id:'*', action:'resume'}).then(poll);
+// "Clear finished": with many, a second click; then Undo for a while (the files stay on disk)
+let clearArm = 0;
+$('#clearDone').onclick = async () => {
+  const btn = $('#clearDone'), n = (state.downloads || []).filter(d => d.status === 'completed').length;
+  if (!n) { toast('Nothing finished to clear'); return; }
+  if (n > 20 && Date.now() > clearArm) {
+    clearArm = Date.now() + 4000; btn.textContent = `Clear ${n} finished?`;
+    setTimeout(() => { if (Date.now() >= clearArm) btn.textContent = 'Clear finished'; }, 4000);
+    return;
+  }
+  clearArm = 0; btn.textContent = 'Clear finished';
+  try {
+    const r = await api('action', {id: '*', action: 'clear'});
+    poll();
+    if (r.count) toast(`Cleared ${r.count} finished download${r.count == 1 ? '' : 's'} from the list. The files stay on disk.`, 'Undo', async () => {
+      try { const u = await api('action', {id: '*', action: 'unclear'}); toast(u.count ? 'Back on the list' : 'Too late to undo'); poll(); } catch (err) { toast(err.message); }
+    }, 12000);
+  } catch (err) { toast(err.message); }
+};
+$('#quitBtn').onclick = async () => {
+  if (!confirm('Quit Jasqet? Unfinished downloads will continue next time you open it.')) return;
+  await api('quit', {}).catch(() => {}); clearTimeout(timer);
+  document.body.innerHTML = '<div style="display:grid;place-items:center;height:100vh;color:var(--muted)">Jasqet has closed. You can close this window.</div>';
+};
+// ---------- Scheduler ----------
+const DAYN = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+let schDays = new Set();
+function drawDays() { $('#schDays').innerHTML = [1,2,3,4,5,6,0].map(i => `<button type="button" class="chip ${schDays.size===0||schDays.has(i)?'on':''}" data-d="${i}">${DAYN[i]}</button>`).join('') + `<button type="button" class="chip ${schDays.size===0?'on':''}" data-d="all">Every day</button>`; }
+$('#schDays').onclick = e => {
+  const c = e.target.closest('.chip'); if (!c) return;
+  if (c.dataset.d === 'all') schDays = new Set();
+  else { const i = +c.dataset.d; if (schDays.size === 0) schDays = new Set([0,1,2,3,4,5,6]); schDays.has(i) ? schDays.delete(i) : schDays.add(i); if (schDays.size === 7) schDays = new Set(); }
+  drawDays();
+};
+$('#schedBtn').onclick = () => {
+  const s = state.settings.schedule || {};
+  $('#schOn').checked = !!s.enabled; $('#schStart').value = s.start || '04:00'; $('#schStop').value = s.stop || '';
+  $('#schOnce').checked = !!s.once; $('#schResume').checked = !!s.resumeAll; $('#schAwake').checked = s.keepAwake !== false; $('#schDone').value = s.whenDone || '';
+  schDays = new Set(s.days || []); drawDays(); $('#schErr').textContent = '';
+  schExtra = JSON.parse(JSON.stringify(s.extra || [])); drawExtra(); $('#schMore').open = schExtra.length > 0;
+  $('#schNext').textContent = s.enabled && state.extras?.nextRun ? `Next run ${state.extras.nextRun}.` : 'Downloads you add with "Download later" wait for this time.';
+  drawLearn();
+  show('#schScrim', true);
+};
+// When your internet is usually fastest, as Jasqet learned it while downloading.
+function drawLearn() {
+  const sp = state.extras?.speeds, el = $('#schLearn');
+  if (!sp) { el.innerHTML = '<small>While it downloads, Jasqet learns at what time of day your internet is fastest. After a few days it shows it here.</small>'; return; }
+  const top = Math.max(...sp.hours, 1);
+  const inBest = h => sp.factor > 0 && (h - sp.from + 24) % 24 < 4;
+  const bars = sp.hours.map((v, h) => `<i class="${inBest(h) ? 'best' : ''}" style="height:${v ? Math.max(6, v / top * 100) : 3}%" title="${hourText(h)}: ${v ? 'usually ' + fmtB(v) + '/s' : 'not known yet'}"></i>`).join('');
+  const txt = sp.known < 8 ? `Still learning when your internet is fastest (${sp.known} of 24 hours known so far).`
+    : sp.factor >= 1.2 ? `Usually fastest <b>${hourText(sp.from)} to ${hourText(sp.to)}</b>, ${sp.factor}× the usual speed. <button class="sbtn" type="button" id="schBest">Start then</button>`
+    : 'Your internet is about as fast at any time of day.';
+  el.innerHTML = `<div class="bars">${bars}</div><div class="axis"><span>12 AM</span><span>6 AM</span><span>12 PM</span><span>6 PM</span><span>12 AM</span></div><small>${txt}</small>`;
+  const b = $('#schBest');
+  if (b) b.onclick = () => { $('#schStart').value = String(sp.from).padStart(2, '0') + ':00'; if ($('#schStop').value) $('#schStop').value = String(sp.to).padStart(2, '0') + ':00'; $('#schOn').checked = true; };
+}
+$('#schSave').onclick = async () => {
+  try {
+    readExtra();
+    const r = await api('schedule', {enabled: $('#schOn').checked, start: $('#schStart').value, stop: $('#schStop').value, days: [...schDays],
+      once: $('#schOnce').checked, resumeAll: $('#schResume').checked, keepAwake: $('#schAwake').checked, whenDone: $('#schDone').value, extra: schExtra});
+    show('#schScrim', false); toast($('#schOn').checked && r.nextRun ? `Scheduler on. Next run: ${r.nextRun}` : 'Scheduler saved'); poll();
+  } catch (err) { $('#schErr').textContent = err.message; }
+};
+
+let schExtra = [];
+function drawExtra() {
+  $('#schExtra').innerHTML = schExtra.map((w, i) => `<div class="card" data-w="${i}" style="gap:8px">
+    <div class="head"><input class="field" data-k="name" value="${esc(w.name || '')}" placeholder="Name, e.g. Weekend bundle" style="height:32px"><button class="icon-btn" data-delw="${i}" title="Remove">${svg(I.x,null,16)}</button></div>
+    <div class="row2"><label class="f">Start<input class="field mono" type="time" data-k="start" value="${esc(w.start || '')}"></label><label class="f">Stop<input class="field mono" type="time" data-k="stop" value="${esc(w.stop || '')}"></label></div>
+    <div class="days">${[1,2,3,4,5,6,0].map(d => `<button type="button" class="chip ${(w.days||[]).length===0||(w.days||[]).includes(d)?'on':''}" data-wd="${d}">${DAYN[d]}</button>`).join('')}</div></div>`).join('');
+}
+function readExtra() {
+  document.querySelectorAll('#schExtra [data-w]').forEach(c => { const w = schExtra[+c.dataset.w]; w.name = c.querySelector('[data-k="name"]').value.trim() || 'Extra'; w.start = c.querySelector('[data-k="start"]').value; w.stop = c.querySelector('[data-k="stop"]').value; });
+}
+$('#schAddWin').onclick = () => { readExtra(); schExtra.push({name: 'Weekend', start: '22:00', stop: '06:00', days: [5, 6]}); drawExtra(); };
+$('#schExtra').onclick = e => {
+  const del = e.target.closest('[data-delw]'); if (del) { readExtra(); schExtra.splice(+del.dataset.delw, 1); drawExtra(); return; }
+  const c = e.target.closest('[data-wd]'); if (!c) return;
+  readExtra(); const w = schExtra[+c.closest('[data-w]').dataset.w]; const d = +c.dataset.wd;
+  let days = new Set((w.days || []).length ? w.days : [0,1,2,3,4,5,6]); days.has(d) ? days.delete(d) : days.add(d);
+  w.days = days.size === 7 ? [] : [...days]; if (days.size === 0) w.days = [d]; drawExtra();
+};
+
+// ---------- Watch rules ----------
+let wDraft = [], wReady = true;
+const WKINDS = [['youtube','YouTube channel or playlist'],['podcast','Podcast (RSS feed)'],['github','GitHub releases'],['page','Web page (new files on it)']];
+const ago = t => { if (!t || t.startsWith('0001')) return 'not yet'; const s = (Date.now() - new Date(t)) / 1000; return s < 90 ? 'just now' : s < 5400 ? Math.round(s/60) + ' min ago' : s < 129600 ? Math.round(s/3600) + ' h ago' : Math.round(s/86400) + ' days ago'; };
+async function openWatch() {
+  $('#wErr').textContent = '';
+  try { const r = await api('watch'); wDraft = r.rules; wReady = r.ytReady; } catch (err) { toast(err.message); return; }
+  drawWatch(); show('#wScrim', true);
+}
+function drawWatch() {
+  $('#wList').innerHTML = wDraft.length ? wDraft.map((r, i) => `<div class="card" data-i="${i}">
+    <div class="head"><input type="checkbox" data-k="on" ${r.on ? 'checked' : ''} title="On"><input class="field" data-k="name" value="${esc(r.name || '')}" placeholder="Name" style="height:32px"><button class="sbtn" data-check="${i}" ${r.id ? '' : 'disabled'} title="${r.id ? '' : 'Save first'}">Check now</button><button class="icon-btn" data-del="${i}" title="Delete">${svg(I.x,null,16)}</button></div>
+    <input class="field mono" data-k="url" value="${esc(r.url || '')}" placeholder="https://www.youtube.com/@channel · podcast feed · github.com/owner/project · any page">
+    <div class="row2"><select class="field" data-k="kind">${WKINDS.map(([k, l]) => `<option value="${k}" ${k===r.kind?'selected':''}>${l}</option>`).join('')}</select>
+      <input class="field" data-k="filter" value="${esc(r.filter || '')}" placeholder="${r.kind==='page'?'Only these types, e.g. .pdf .zip':r.kind==='github'?'Only files with, e.g. windows':'Only titles with… (optional)'}"></div>
+    <div class="row2">${r.kind==='youtube' ? `<select class="field" data-k="quality">${[['h:1080','1080p'],['h:720','720p'],['h:480','480p (saves data)'],['h:360','360p (saves more)'],['audio','Audio only']].map(([k,l]) => `<option value="${k}" ${k===(r.quality||'h:720')?'selected':''}>${l}</option>`).join('')}</select>` : '<span></span>'}
+      <div class="inline"><span style="color:var(--muted);font-size:13px;white-space:nowrap">Check every</span><select class="field" data-k="every">${[1,3,6,12,24,72,168].map(h => `<option value="${h}" ${h===(r.every||6)?'selected':''}>${h < 24 ? h + ' h' : h/24 + (h===24?' day':' days')}</option>`).join('')}</select></div></div>
+    <div class="checks"><label><input type="checkbox" data-k="later" ${r.later?'checked':''}> Download at the scheduled time (cheap data)</label>${r.id ? '' : `<label><input type="checkbox" data-k="getLatest" ${r.getLatest?'checked':''}> Also get the newest one now</label>`}</div>
+    ${r.id ? `<div class="sub">Last checked ${ago(r.lastCheck)}${r.lastNew ? ` · ${r.lastNew} new` : ''} · ${r.total || 0} downloaded so far${r.lastError ? ` · <span style="color:var(--bad)">${esc(r.lastError)}</span>` : ''}</div>` : '<div class="sub">The first check only remembers what is there now; new items after that are downloaded.</div>'}
+    ${r.kind==='youtube' && !wReady ? '<div class="sub">YouTube support sets itself up before the first check (one time only).</div>' : ''}
+  </div>`).join('') : '<div class="sub" style="color:var(--muted)">Nothing watched yet.</div>';
+}
+function readWatch() {
+  document.querySelectorAll('#wList [data-i]').forEach(c => {
+    const r = wDraft[+c.dataset.i], g = k => c.querySelector(`[data-k="${k}"]`);
+    r.on = g('on').checked; r.name = g('name').value.trim(); r.url = g('url').value.trim(); r.kind = g('kind').value; r.filter = g('filter').value.trim();
+    r.every = +g('every').value; r.later = g('later').checked; if (g('quality')) r.quality = g('quality').value; if (g('getLatest')) r.getLatest = g('getLatest').checked;
+  });
+}
+const guessKind = u => /youtu\.?be/i.test(u) ? 'youtube' : /github\.com\//i.test(u) ? 'github' : /(rss|feed|\.xml|podcast)/i.test(u) ? 'podcast' : 'page';
+$('#wAdd').onclick = () => { readWatch(); wDraft.push({on: true, kind: 'youtube', every: 6, later: true, quality: 'h:720'}); drawWatch(); };
+$('#wList').addEventListener('change', e => {
+  if (e.target.matches('[data-k="url"]')) { readWatch(); const r = wDraft[+e.target.closest('[data-i]').dataset.i]; if (!r.id) { r.kind = guessKind(r.url); if (!r.name) { try { r.name = new URL(r.url).hostname.replace(/^www\./, ''); } catch {} } } drawWatch(); }
+  else if (e.target.matches('[data-k="kind"]')) { readWatch(); drawWatch(); }
+});
+$('#wList').onclick = async e => {
+  const del = e.target.closest('[data-del]'); if (del) { readWatch(); wDraft.splice(+del.dataset.del, 1); drawWatch(); return; }
+  const ch = e.target.closest('[data-check]'); if (!ch) return;
+  const r = wDraft[+ch.dataset.check]; ch.textContent = 'Checking…';
+  try { const x = await api('watch/check', {id: r.id}); toast(x.started ? `${x.started} new, added to your downloads` : 'Nothing new'); const rr = await api('watch'); wDraft = rr.rules; drawWatch(); poll(); }
+  catch (err) { toast(err.message); ch.textContent = 'Check now'; }
+};
+$('#wSave').onclick = async () => {
+  readWatch(); $('#wErr').textContent = '';
+  try { await api('watch', {rules: wDraft}); const r = await api('watch'); wDraft = r.rules; drawWatch(); toast('Watch rules saved'); }
+  catch (err) { $('#wErr').textContent = err.message; }
+};
+$('#watchBtn').onclick = openWatch;
+
+// ---------- ZIP contents ----------
+let zipInfo = null;
+async function openZip(u) {
+  zipInfo = null; $('#zInfo').textContent = 'Reading the ZIP\'s table of contents…'; $('#zList').innerHTML = ''; $('#zErr').textContent = ''; $('#zFilter').value = '';
+  show('#zScrim', true);
+  try {
+    zipInfo = await api('zip/list', {url: u});
+    const n = zipInfo.entries.filter(e => !e.dir).length;
+    $('#zInfo').innerHTML = `<b>${n} files</b>, ${fmtB(zipInfo.size)} in all. Reading this list used only ${fmtB(zipInfo.used)}. Tick what you want. Only those files are downloaded.`;
+    drawZip();
+  } catch (err) { $('#zInfo').textContent = ''; $('#zErr').textContent = err.message; }
+}
+function drawZip() {
+  if (!zipInfo) return;
+  const q = $('#zFilter').value.trim().toLowerCase();
+  $('#zList').innerHTML = zipInfo.entries.filter(e => !e.dir && (!q || e.name.toLowerCase().includes(q))).map(e => `<label title="${e.supported ? '' : (e.encrypted ? 'Needs a password' : 'Packed in a way Jasqet can\'t unpack alone')}"><input type="checkbox" data-z="${esc(e.name)}" ${e.supported ? '' : 'disabled'}><span class="mono" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(e.name)}</span><small class="mono">${fmtB(e.size)}${e.packed < e.size * 0.9 ? ' (download ' + fmtB(e.packed) + ')' : ''}${e.supported ? '' : ' 🔒'}</small></label>`).join('') || '<small>No files match.</small>';
+}
+$('#zFilter').oninput = drawZip;
+async function zipAdd(later) {
+  const names = [...document.querySelectorAll('#zList [data-z]:checked')].map(c => c.dataset.z);
+  if (!names.length) { $('#zErr').textContent = 'Tick at least one file'; return; }
+  try { const r = await api('zip/add', {url: zipInfo.url, names, later}); show('#zScrim', false); toast(`${r.ids.length} file${r.ids.length==1?'':'s'} added` + (r.warning ? '. ' + r.warning : '')); poll(); }
+  catch (err) { $('#zErr').textContent = err.message; }
+}
+$('#zGo').onclick = () => zipAdd(false); $('#zLater').onclick = () => zipAdd(true);
+$('#zWhole').onclick = async () => { if (!zipInfo) return; try { await api('add', {url: zipInfo.url}); show('#zScrim', false); toast('Download added'); poll(); } catch (err) { $('#zErr').textContent = err.message; } };
+
+// ---------- Connect browser ----------
+let connInfo = null;
+async function openConnect() {
+  show('#cScrim', true);
+  $('#cList').innerHTML = '';
+  $('#cPairMsg').textContent = '';
+  const draw = async () => {
+    try { connInfo = await api('browsers'); } catch { return; }
+    $('#cStatus').innerHTML = (connInfo.ask ? `<b>One more step:</b> an extension in ${esc(connInfo.ask.browser)} is asking to connect. If it's Jasqet's, click <button class="btn" data-ext="${esc(connInfo.ask.origin)}" style="height:30px">Allow</button><br>` : '') +
+      (connInfo.connected ? `<b style="color:var(--good)">✓ Connected</b>${connInfo.connectedBrowser ? ' (' + esc(connInfo.connectedBrowser) + ')' : ''}. Downloads from your browser come here now.${heardAgo(connInfo.lastSeen)}` : connInfo.ask ? '' : '<b>Not connected yet.</b>') +
+      ((connInfo.allowed || []).length ? `<div style="margin-top:6px">Other extensions you allowed: ${connInfo.allowed.map(o => `<span class="mono">${esc(o.replace(/^[a-z-]+:\/\//, '').slice(0, 10))}…</span> <button class="sbtn" data-unext="${esc(o)}">Remove</button>`).join(' ')}</div>` : '');
+    const found = connInfo.browsers.filter(b => b.found);
+    if (!$('#cList').querySelector('.bhint:not(:empty)')) // keep a "paste it" hint you're following
+      $('#cList').innerHTML = (found.length ? found : connInfo.browsers.filter(b => !b.firefox)).map(b => `<div class="brow"><b>${esc(b.name)}</b>${b.found ? `<button class="btn ghost" data-ob="${b.id}" style="height:30px">Open its extensions page</button>` : `<small style="color:var(--muted)">open <span class="mono">${esc(b.page)}</span></small>`}<small class="bhint"></small></div>`).join('');
+    if ($('#cScrim').classList.contains('show') && (!connInfo.connected || connInfo.ask)) setTimeout(draw, 2500);
+  };
+  connDraw = draw;
+  draw();
+}
+let connDraw = () => {};
+$('#cStatus').onclick = async e => {
+  const a = e.target.closest('[data-ext]'), u = e.target.closest('[data-unext]');
+  if (!a && !u) return;
+  try { await api('extension', {origin: (a || u).dataset[a ? 'ext' : 'unext'], allow: !!a}); } catch (err) { toast(err.message); }
+  connDraw(); poll();
+};
+// "last heard from it 2 h ago": Jasqet remembers across restarts (browsers.go)
+const heardAgo = t => { if (!t) return ''; const m = (Date.now() - new Date(t)) / 60000; return m < 10 ? '' : ` <span style="color:var(--muted)">(last heard from it ${m < 90 ? Math.round(m) + ' min' : m < 2880 ? Math.round(m / 60) + ' h' : Math.round(m / 1440) + ' days'} ago)</span>`; };
+// Chrome, Edge and the like show a new tab instead of their extensions page
+// when another program asks for it: copy the address for you to paste.
+$('#cList').onclick = async e => {
+  const b = e.target.closest('[data-ob]'); if (!b) return;
+  const br = (connInfo?.browsers || []).find(x => x.id === b.dataset.ob);
+  let copied = false;
+  if (br && !br.firefox) { try { await navigator.clipboard.writeText(br.page); copied = true; } catch {} }
+  try { await api('browsers', {open: b.dataset.ob}); } catch (err) { toast(err.message); return; }
+  const hint = b.closest('.brow').querySelector('.bhint');
+  if (br && !br.firefox && hint) hint.innerHTML = `${esc(br.name)} is opening. It doesn't let other programs open its extensions page, so click its address bar, ` +
+    (copied ? `press <b>Ctrl+V</b> and <b>Enter</b> (<span class="mono">${esc(br.page)}</span> is copied).` : `type <span class="mono">${esc(br.page)}</span> and press <b>Enter</b>.`);
+};
+$('#cFolderCopy').onclick = async () => {
+  try { await navigator.clipboard.writeText(connInfo?.folder || ''); toast('Folder address copied. In "Load unpacked", paste it into the address bar at the top (Ctrl+V, Enter)'); }
+  catch { toast(connInfo?.folder || 'Could not copy it'); }
+};
+$('#cFolder').onclick = () => api('browsers', {folder: 'chrome'}).catch(err => toast(err.message));
+$('#cFolderFF').onclick = () => api('browsers', {folder: 'firefox'}).catch(err => toast(err.message));
+// Pair again: for two minutes each browser's extension may pair with Jasqet once more (extauth.go)
+$('#cPair').onclick = async () => {
+  try { await api('extension', {pairAgain: true}); $('#cPairMsg').textContent = 'For the next 2 minutes your browser can pair again. Click the Jasqet icon in your browser, then Pair again if it asks.'; }
+  catch (err) { toast(err.message); }
+};
+$('#sConnect').onclick = () => { show('#setScrim', false); openConnect(); };
+
+function handleOpenPage(p) {
+  if (p.startsWith('view:')) { showInViewer(p.slice(5)); return; }
+  if (p.startsWith('open:')) { const d = state.downloads.find(x => x.id === p.slice(5)); if (d) openDownload(d, 'auto'); return; }
+  if (p === 'connect') openConnect();
+  else if (p === 'settings') openSettings('gen');
+  else if (p === 'watch') openWatch();
+  else if (p.startsWith('zip:')) openZip(p.slice(4));
+  else if (p.startsWith('add:')) openAdd(p.slice(4));
+}
+if (location.hash.startsWith('#viewcrash=')) {
+  const p = decodeURIComponent(location.hash.slice(11));
+  history.replaceState(null, '', '/');
+  if (p.startsWith('/viewer?')) { viewing = p; viewFile = new URLSearchParams(p.split('?')[1]).get('f') || ''; $('#vLayer').classList.add('show', 'crashed'); }
+}
+if (location.hash === '#connect') { history.replaceState(null, '', '/'); setTimeout(openConnect, 300); }
+
+// ---------- Refresh link ----------
+let refId = null;
+function openRefresh(d) { refId = d.id; $('#refUrl').value = ''; $('#refErr').textContent = ''; show('#refScrim', true); setTimeout(() => $('#refUrl').focus(), 30); }
+$('#refGo').onclick = async () => {
+  $('#refErr').textContent = ''; $('#refGo').textContent = 'Checking…';
+  try { await api('action', {id: refId, action: 'refresh', url: $('#refUrl').value.trim()}); show('#refScrim', false); toast('Link refreshed, continuing'); poll(); }
+  catch (err) { $('#refErr').textContent = err.message; }
+  $('#refGo').textContent = 'Use this link';
+};
+$('#refCatch').onclick = async () => { await api('action', {id: refId, action: 'refreshwait'}); show('#refScrim', false); poll(); };
+
+$('#q').oninput = renderList;
+poll();
+</script>
+</body>
+</html>

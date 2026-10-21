@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --bg:#fff; --text:#052044; --muted:#68707d; --line:#e2e5ea; --soft:#f0f2f5; --hover:#e8ebf0; --good:#13955b; --bad:#d23c3c; --accent:#006fef; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#161a21; --text:#e9ecf1; --muted:#8c94a3; --line:#262c37; --soft:#1c212a; --hover:#232934; --good:#35c483; --bad:#ff6b6b; } }
+  body { margin:0; width:320px; background:var(--bg); color:var(--text); font:13px/1.4 "Segoe UI",system-ui,sans-serif; }
+  .head { display:flex; align-items:center; gap:10px; padding:14px 16px; border-bottom:1px solid var(--line); }
+  .logo { width:28px; height:28px; background:url(icons/48.png) center/contain no-repeat; }
+  .et { color:var(--accent); }
+  @media (prefers-color-scheme: dark) { .et { color:#3daeff; } }
+  .head b { font-size:15px; }
+  .st { margin-left:auto; font-size:12px; display:flex; align-items:center; gap:6px; color:var(--muted); }
+  .dot { width:8px; height:8px; border-radius:50%; background:var(--muted); }
+  .on .dot { background:var(--good); } .off .dot { background:var(--bad); }
+  .sec { padding:12px 16px; border-bottom:1px solid var(--line); display:flex; flex-direction:column; gap:10px; }
+  .lbl { font-size:11px; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); display:flex; justify-content:space-between; }
+  label.sw { display:flex; justify-content:space-between; align-items:center; gap:12px; font-weight:600; }
+  label.sw small { display:block; font-weight:400; color:var(--muted); }
+  input[type=checkbox] { width:18px; height:18px; accent-color:var(--accent); flex:none; }
+  textarea { width:100%; box-sizing:border-box; min-height:60px; border-radius:8px; border:1px solid var(--line); background:var(--soft); color:var(--text); font:12px ui-monospace,Consolas,monospace; padding:8px; resize:vertical; }
+  .btn { height:34px; border:0; border-radius:8px; font:600 13px "Segoe UI",system-ui,sans-serif; cursor:pointer; background:var(--accent); color:#fff; width:100%; }
+  .tip { color:var(--muted); font-size:12px; }
+  .tip b { color:var(--text); }
+  .vids { display:flex; flex-direction:column; gap:2px; max-height:320px; overflow:auto; }
+  .vids .i { display:flex; justify-content:space-between; align-items:center; gap:10px; border:0; background:var(--soft); color:var(--text); font:inherit; padding:8px 10px; border-radius:8px; cursor:pointer; text-align:left; width:100%; }
+  .vids .i:hover:not([disabled]) { background:var(--hover); }
+  .vids .i[disabled] { opacity:.55; cursor:default; }
+  .vids .i small { color:var(--muted); white-space:nowrap; }
+  .vids .i.act b { color:#0055c6; }
+  @media (prefers-color-scheme: dark) { .vids .i.act b { color:#3daeff; } }
+  .vids .h { font-size:11px; color:var(--muted); padding:6px 2px 2px; display:flex; justify-content:space-between; gap:8px; }
+  .vids .h .t { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:12px; }
+  .vids .n { color:var(--muted); font-size:12.5px; padding:2px; }
+  .vids .sep { height:1px; background:var(--line); margin:6px 0; }
+  .vids .lat { display:flex; gap:8px; align-items:center; color:var(--muted); font-size:12.5px; padding-top:6px; }
+  .ok { color:var(--good); font-weight:600; }
+  .err { color:var(--bad); }
+  /* thin scrollbars in the page's own colours (Firefox: the @supports line) */
+  ::-webkit-scrollbar{width:6px;height:6px}
+  ::-webkit-scrollbar-track,::-webkit-scrollbar-corner{background:transparent}
+  ::-webkit-scrollbar-button{display:none;width:0;height:0}
+  ::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--muted) 35%,transparent);border-radius:6px}
+  ::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--muted) 60%,transparent)}
+  @supports not selector(::-webkit-scrollbar){*{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--muted) 35%,transparent) transparent}}
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="logo"></div>
+    <b>Jasq<span class="et">et</span></b>
+    <span class="st" id="st"><span class="dot"></span><span id="stt">Checking…</span></span>
+  </div>
+  <div class="sec">
+    <div class="lbl"><span>Videos on this page</span><span id="vcount"></span></div>
+    <div class="vids" id="vids"><div class="msg">Looking…</div></div>
+  </div>
+  <div class="sec">
+    <label class="sw"><span>Download button on videos<small>Shows "Download video" on players</small></span><input type="checkbox" id="videoButton"></label>
+    <label class="sw"><span>Catch browser downloads<small>Send downloads to Jasqet automatically</small></span><input type="checkbox" id="enabled"></label>
+    <label class="sw"><span>Get video qualities ready<small>Asks as soon as a video plays, so the menu opens at once</small></span><input type="checkbox" id="prefetch"></label>
+    <label class="sw"><span>Use my YouTube session if YouTube asks<small>Only when YouTube says "confirm you're not a robot"</small></span><input type="checkbox" id="ytSession"></label>
+    <label class="sw"><span>Catch magnet links<small>Torrents open in Jasqet</small></span><input type="checkbox" id="catchMagnet"></label>
+    <label class="sw"><span>Catch every file type<small>Otherwise only the types below</small></span><input type="checkbox" id="catchAll"></label>
+    <div id="typesWrap"><div class="tip" style="margin-bottom:4px">File types to catch</div><textarea id="types"></textarea></div>
+  </div>
+  <div class="sec">
+    <div class="tip err" id="stMsg" hidden></div>
+    <button class="btn" id="openApp">Open Jasqet</button>
+    <button class="btn" id="grab" style="background:var(--soft);color:var(--text)">Grab all links on this page…</button>
+    <div class="tip">Tip: right-click any link and choose <b>Download with Jasqet</b>.</div>
+  </div>
+<script src="menu.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
