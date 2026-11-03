@@ -35,6 +35,13 @@
   .vids .n { color:var(--muted); font-size:12.5px; padding:2px; }
   .vids .sep { height:1px; background:var(--line); margin:6px 0; }
   .vids .lat { display:flex; gap:8px; align-items:center; color:var(--muted); font-size:12.5px; padding-top:6px; }
+  [hidden] { display:none !important; }
+  .recent { display:flex; flex-direction:column; gap:4px; }
+  .recent .r { display:flex; align-items:baseline; gap:8px; font-size:12.5px; min-width:0; }
+  .recent .r span { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .recent .r small { color:var(--muted); white-space:nowrap; }
+  .recent .r::before { content:"✓"; color:var(--good); font-weight:700; }
+  .recent .r.bad::before { content:"✕"; color:var(--bad); }
   .ok { color:var(--good); font-weight:600; }
   .err { color:var(--bad); }
   /* thin scrollbars in the page's own colours (Firefox: the @supports line) */
@@ -56,9 +63,14 @@
     <div class="lbl"><span>Videos on this page</span><span id="vcount"></span></div>
     <div class="vids" id="vids"><div class="msg">Looking…</div></div>
   </div>
+  <div class="sec" id="recentSec" hidden>
+    <div class="lbl"><span>Sent to Jasqet</span></div>
+    <div class="recent" id="recent"></div>
+  </div>
   <div class="sec">
     <label class="sw"><span>Download button on videos<small>Shows "Download video" on players</small></span><input type="checkbox" id="videoButton"></label>
     <label class="sw"><span>Catch browser downloads<small>Send downloads to Jasqet automatically</small></span><input type="checkbox" id="enabled"></label>
+    <label class="sw"><span>Show a note on the page<small>When Jasqet takes a download from the browser</small></span><input type="checkbox" id="toast"></label>
     <label class="sw"><span>Get video qualities ready<small>Asks as soon as a video plays, so the menu opens at once</small></span><input type="checkbox" id="prefetch"></label>
     <label class="sw"><span>Use my YouTube session if YouTube asks<small>Only when YouTube says "confirm you're not a robot"</small></span><input type="checkbox" id="ytSession"></label>
     <label class="sw"><span>Catch magnet links<small>Torrents open in Jasqet</small></span><input type="checkbox" id="catchMagnet"></label>

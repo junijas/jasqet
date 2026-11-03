@@ -8,13 +8,17 @@ const DEFAULTS = {
   catchMagnet: true,
   ytSession: false, // use this browser's YouTube session when YouTube asks "are you a robot?"
   prefetch: true,   // get video qualities ready before you click
-  catchAll: false,
+  catchAll: true,   // every file the browser downloads (over 64 KB); off: only the types below
   videoButton: true,
+  toast: true,      // a note on the page when Jasqet takes a download
   types: 'zip rar 7z gz tar xz iso img exe msi apk xapk dmg deb rpm appimage mp4 mkv avi mov wmv flv webm m4v 3gp mp3 m4a flac wav aac ogg pdf epub docx xlsx pptx torrent bin',
 };
 const CATCH_MIME = /^(video|audio)\/|application\/(zip|x-zip|x-rar|vnd\.rar|x-7z|x-msdownload|x-msi|octet-stream|vnd\.android\.package-archive|x-iso9660|x-apple-diskimage|pdf|epub|x-tar|gzip|x-bittorrent)/i;
 
-const getSettings = () => chrome.storage.local.get(DEFAULTS);
+// Kept in memory until one changes: every download the browser starts waits for them.
+let settings = null;
+const getSettings = () => settings ||= chrome.storage.local.get(DEFAULTS);
+chrome.storage.onChanged.addListener((ch, area) => { if (area === 'local') settings = null; });
 
 function extOf(s) {
   try { s = decodeURIComponent(new URL(s).pathname); } catch {}
@@ -192,21 +196,27 @@ async function pairAgain() {
 // post: hand something to Jasqet, once it has proved it's the Jasqet we paired with.
 async function post(path, body, timeout = 4000) {
   const c = await checkJasqet();
-  if (!c.ok) throw new Error(c.message);
+  if (!c.ok) throw Object.assign(new Error(c.message), { problem: c.problem });
   try { return await rawPost(path, body, timeout); }
-  catch (e) { trustedUntil = 0; throw e; } // check again next time
+  catch (e) {
+    trustedUntil = 0; // check again next time
+    // nothing answered: Jasqet was closed since the last check
+    if (e.name === 'TypeError') throw Object.assign(new Error(PROBLEMS.app), { problem: 'app' });
+    throw e;
+  }
 }
 
 // Hello when the extension starts: Jasqet notes it's installed (and the first time, they pair).
 checkJasqet();
 
+// sendToApp: { ok: true, refreshed } or { ok: false, error, problem } (problem is one of PROBLEMS, or '').
 async function sendToApp(url, { referrer = '', fileName = '', page = '' } = {}) {
   try {
     const headers = /^magnet:/i.test(url) ? { 'User-Agent': navigator.userAgent } : await headersFor(url, referrer);
     // page: where the link came from, so Jasqet can get a fresh link if this one expires
-    await post('/api/add', { url, fileName, headers, page: page || referrer }, /^magnet:|\.torrent(\?|$)/i.test(url) ? 30000 : 2500);
-    return true;
-  } catch { return false; }
+    const r = await post('/api/add', { url, fileName, headers, page: page || referrer }, /^magnet:|\.torrent(\?|$)/i.test(url) ? 30000 : 2500);
+    return { ok: true, refreshed: !!r.refreshed };
+  } catch (e) { return { ok: false, error: e.message || 'Could not reach Jasqet', problem: e.problem || '' }; }
 }
 
 async function showApp(page = '') {
@@ -215,11 +225,43 @@ async function showApp(page = '') {
   catch { return false; }
 }
 
+// flash: a short badge on a tab. A badge without a tab hides behind each
+// tab's own (the video count), so always name the tab when there is one.
+const flashTimers = new Map();
 function flash(text, color, tabId) {
   const o = tabId ? { tabId } : {};
   chrome.action.setBadgeBackgroundColor({ ...o, color });
   chrome.action.setBadgeText({ ...o, text });
-  setTimeout(() => updateBadge(tabId), 3000);
+  clearTimeout(flashTimers.get(tabId)); // a newer flash keeps its full 3 s
+  flashTimers.set(tabId, setTimeout(() => { flashTimers.delete(tabId); updateBadge(tabId); }, 3000));
+}
+
+async function activeTab() {
+  try { const [t] = await chrome.tabs.query({ active: true, lastFocusedWindow: true }); return t || null; }
+  catch { return null; }
+}
+
+const nameOf = url => { try { return decodeURIComponent(new URL(url).pathname.split('/').pop()) || hostOf(url); } catch { return ''; } };
+
+// The last few things sent (or not) to Jasqet, for the popup. One write at a time.
+let recentQueue = Promise.resolve();
+function remember(entry) {
+  recentQueue = recentQueue.then(async () => {
+    const { recent = [] } = await chrome.storage.session.get('recent');
+    await chrome.storage.session.set({ recent: [entry, ...recent].slice(0, 5) });
+  }).catch(() => {});
+}
+
+// tell: show on the tab that Jasqet took something (r from sendToApp), or why
+// it didn't: the badge, and a note on the page itself where the extension can
+// show one. kept: the browser downloads it itself instead.
+async function tell(tabId, name, r, kept = false) {
+  flash(r.ok ? '✓' : 'OFF', r.ok ? '#13955b' : '#d23c3c', tabId);
+  remember({ name, ok: r.ok, error: r.ok ? '' : r.error, at: Date.now() });
+  if (!tabId || !(await getSettings()).toast) return;
+  const note = { type: 'tg-toast', ok: r.ok, name, refreshed: !!r.refreshed, adopted: !!r.adopted, saved: !!r.saved,
+    error: r.error || '', problem: r.problem || '', kept };
+  chrome.tabs.sendMessage(tabId, note, { frameId: 0 }).catch(() => {}); // a page it can't run on keeps just the badge
 }
 
 // ---------- catching normal downloads ----------
@@ -227,19 +269,22 @@ function flash(text, color, tabId) {
 async function toCatch(item) {
   const s = await getSettings();
   if (!s.enabled || item.incognito || item.byExtensionId === chrome.runtime.id) return null;
-  if (item.state !== 'in_progress') return null;
   const url = item.finalUrl || item.url;
-  if (!/^https?:/i.test(url)) return null; // blob:, data: etc. only exist inside the page
+  // blob: and data: only exist inside the page (an Outlook attachment): the
+  // browser saves those, and Jasqet takes the saved file (inPage, below)
+  const inPage = /^(blob|data):/i.test(url);
+  if (!inPage && !/^https?:/i.test(url)) return null;
+  if (item.state !== 'in_progress' && !(inPage && item.state === 'complete')) return null; // (Firefox may have saved a small one already)
   const name = (item.filename || '').split(/[\\/]/).pop();
-  const ext = extOf(name) || extOf(url);
+  const ext = extOf(name) || (inPage ? '' : extOf(url));
   const wanted = s.catchAll || s.types.split(/\s+/).includes(ext) || (!ext && CATCH_MIME.test(item.mime || ''));
   if (!wanted || (item.fileSize > 0 && item.fileSize < 64 * 1024)) return null;
-  return { url, name };
+  return { url, name, inPage };
 }
 
 async function handOver(item, c) {
   let page = item.referrer || '';
-  if (!page) { try { const [t] = await chrome.tabs.query({ active: true, lastFocusedWindow: true }); page = t?.url || ''; } catch {} }
+  if (!page) page = (await activeTab())?.url || '';
   return sendToApp(c.url, { referrer: item.referrer, fileName: c.name, page });
 }
 
@@ -251,8 +296,67 @@ async function dropBrowserCopy(id) {
     if (it?.state === 'complete') await chrome.downloads.removeFile(id); // it finished first: no second copy
   } catch {}
   try { await chrome.downloads.erase({ id }); } catch {}
-  flash('✓', '#13955b');
 }
+
+// told: the browser's download vanishes when Jasqet takes it, so show where it
+// went, on the tab you're looking at (a link that opened its own tab for the
+// download has closed it by now). When Jasqet isn't running, the browser just
+// keeps the download, as without the extension; any other "no" is shown.
+async function told(c, r) {
+  if (!r.ok && r.problem === 'app') return;
+  tell((await activeTab())?.id, c.name || nameOf(c.url), r, !r.ok);
+}
+
+// ---------- files a page made itself ----------
+// The browser saves a blob: or data: download; once it's saved, Jasqet takes
+// the file into its own folder and list (adopt.go). Waiting downloads are kept
+// in session storage: the background may sleep while a big one is saved.
+let adoptQueue = Promise.resolve();
+function adoptWaiting(fn) { // one change at a time
+  const step = adoptQueue.then(async () => {
+    const { adopt = {} } = await chrome.storage.session.get('adopt');
+    const out = fn(adopt);
+    await chrome.storage.session.set({ adopt });
+    return out;
+  });
+  adoptQueue = step.catch(() => {});
+  return step;
+}
+
+async function waitForSave(item, c) {
+  let page = item.referrer || (await activeTab())?.url || '';
+  if (!/^https?:/i.test(page)) page = /^blob:(https?:\/\/[^/]+)/i.exec(c.url)?.[1] || ''; // the page that made it
+  await adoptWaiting(a => {
+    for (const [id, w] of Object.entries(a)) if (Date.now() - w.at > 6 * 3600e3) delete a[id]; // forgotten ones
+    a[item.id] = { name: c.name, page, at: Date.now() };
+  });
+}
+
+async function adoptFile(path, page) {
+  try {
+    const r = await post('/api/adopt', { path, page }, 120000); // to another drive, a big file takes a while
+    return { ok: true, adopted: true, fileName: r.fileName || '' };
+  } catch (e) {
+    const old = /Only the Jasqet window/.test(e.message || ''); // a Jasqet from before adopt.go
+    return { ok: false, saved: true, problem: e.problem || '',
+      error: old ? 'This Jasqet can\'t take files a page made itself yet. Update Jasqet.' : e.message || 'Could not reach Jasqet' };
+  }
+}
+
+// saved: a waiting download finished (or failed): hand the file to Jasqet.
+async function saved(id) {
+  const [it] = await chrome.downloads.search({ id }).catch(() => []);
+  if (!it || it.state === 'in_progress') return;
+  const w = await adoptWaiting(a => { const w = a[id]; delete a[id]; return w; });
+  if (!w || it.state !== 'complete' || !it.exists || !it.filename) return; // cancelled, or already handed over
+  const r = await adoptFile(it.filename, w.page);
+  if (r.ok) chrome.downloads.erase({ id }).catch(() => {}); // Jasqet has it now: the entry would say "deleted"
+  if (!r.ok && r.problem === 'app') return; // Jasqet is closed: the browser's copy stays, as before
+  tell((await activeTab())?.id, r.fileName || w.name || it.filename.split(/[\\/]/).pop(), r, !r.ok);
+}
+chrome.downloads.onChanged.addListener(ch => {
+  if (ch.state && ch.state.current !== 'in_progress') saved(ch.id);
+});
 
 if (chrome.downloads.onDeterminingFilename) {
   // Chrome and Edge hold a new download until extensions have had their say
@@ -260,12 +364,18 @@ if (chrome.downloads.onDeterminingFilename) {
   // small PDF used to finish first and end up downloaded twice).
   chrome.downloads.onDeterminingFilename.addListener((item, suggest) => {
     (async () => {
+      let c, r;
       try {
-        const c = await toCatch(item);
-        if (c && await handOver(item, c)) await dropBrowserCopy(item.id);
+        c = await toCatch(item);
+        if (c?.inPage) await waitForSave(item, c); // before the browser saves it
+        else if (c) {
+          r = await handOver(item, c);
+          if (r.ok) await dropBrowserCopy(item.id);
+        }
       } finally {
         try { suggest(); } catch {} // otherwise the browser saves it as usual
       }
+      if (r) told(c, r);
     })();
     return true; // answered later
   });
@@ -274,10 +384,17 @@ if (chrome.downloads.onDeterminingFilename) {
   chrome.downloads.onCreated.addListener(async item => {
     const c = await toCatch(item);
     if (!c) return;
+    if (c.inPage) { // a small one may be saved already
+      await waitForSave(item, c);
+      saved(item.id);
+      return;
+    }
     let held = false;
     try { await chrome.downloads.pause(item.id); held = true; } catch {}
-    if (await handOver(item, c)) await dropBrowserCopy(item.id);
+    const r = await handOver(item, c);
+    if (r.ok) await dropBrowserCopy(item.id);
     else if (held) { try { await chrome.downloads.resume(item.id); } catch {} } // Jasqet isn't there: the browser carries on
+    told(c, r);
   });
 }
 
@@ -333,7 +450,11 @@ chrome.webRequest.onHeadersReceived.addListener(d => {
   if (!c) return;
   loadTab(d.tabId).then(m => {
     const prev = m.get(d.url);
-    m.set(d.url, { url: d.url, ...c, at: Date.now(), size: Math.max(c.size || 0, prev?.size || 0) });
+    const size = Math.max(c.size || 0, prev?.size || 0);
+    // A player asks for the same file over and over (one range at a time):
+    // nothing new to save then, only that it's still the newest.
+    if (prev && prev.size === size) { prev.at = Date.now(); return; }
+    m.set(d.url, { url: d.url, ...c, at: Date.now(), size });
     if (m.size > 40) { // keep the newest
       const oldest = [...m.values()].sort((a, b) => a.at - b.at)[0];
       m.delete(oldest.url);
@@ -382,11 +503,23 @@ async function cookiesForHosts(mainURL, hosts) {
   const out = {};
   const scheme = mainURL.startsWith('http:') ? 'http:' : 'https:';
   const main = hostOf(mainURL);
-  for (const h of new Set([main, ...(hosts || [])])) {
-    if (!h || siteOf(h) !== siteOf(main)) continue; // a playlist can name any site: its cookies stay home
+  await Promise.all([...new Set([main, ...(hosts || [])])].map(async h => {
+    if (!h || siteOf(h) !== siteOf(main)) return; // a playlist can name any site: its cookies stay home
     const c = await cookieString(h === main ? mainURL : `${scheme}//${h}/`);
     if (c) out[h] = c;
+  }));
+  return out;
+}
+
+// cookiesByHost: the cookies of each site in a list of links (the first 30 sites).
+async function cookiesByHost(urls) {
+  const first = new Map(); // host → its first link
+  for (const u of urls) {
+    const h = hostOf(u);
+    if (h && !first.has(h) && first.size < 30) first.set(h, u);
   }
+  const out = {};
+  await Promise.all([...first].map(async ([h, u]) => { const c = await cookieString(u); if (c) out[h] = c; }));
   return out;
 }
 
@@ -550,8 +683,10 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   }
   if (msg?.type === 'tg-download') {
     const tabId = msg.tabId ?? sender.tab?.id;
-    download(msg.opt, msg.referer || sender.url, msg.title || sender.tab?.title || '', msg.later).then(r => {
-      if (r.ok) flash('✓', '#13955b', tabId);
+    const title = msg.title || sender.tab?.title || '';
+    download(msg.opt, msg.referer || sender.url, title, msg.later).then(r => {
+      if (r.ok) flash('✓', '#13955b', tabId); // the menu itself says "Downloading in Jasqet"
+      remember({ name: cleanTitle(msg.opt?.title || title) || 'Video', ok: r.ok, error: r.error || '', at: Date.now() });
       sendResponse(r);
     });
     return true;
@@ -563,12 +698,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg?.type === 'tg-batch') {
     (async () => {
       try {
-        const hosts = [...new Set(msg.urls.map(hostOf).filter(Boolean))].slice(0, 30);
-        const cookies = {};
-        for (const h of hosts) {
-          const c = await cookieString(msg.urls.find(u => hostOf(u) === h));
-          if (c) cookies[h] = c;
-        }
+        const cookies = await cookiesByHost(msg.urls);
         const r = await post('/api/add', { urls: msg.urls.join('\n'), later: !!msg.later, cookies, page: msg.referer || '', headers: { 'User-Agent': navigator.userAgent, Referer: msg.referer || '' } }, 15000);
         sendResponse({ ok: true, count: r.ids.length });
       } catch (e) { sendResponse({ ok: false, error: e.message }); }
@@ -580,7 +710,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     return true;
   }
   if (msg?.type === 'tg-magnet') { // a magnet link was clicked on a page
-    sendToApp(msg.url, {}).then(ok => { flash(ok ? '✓' : 'OFF', ok ? '#13955b' : '#d23c3c', sender.tab?.id); sendResponse({ ok }); });
+    sendToApp(msg.url, {}).then(r => { tell(sender.tab?.id, magnetName(msg.url), r); sendResponse({ ok: r.ok }); });
     return true;
   }
   if (msg?.type === 'tg-show') {
@@ -599,9 +729,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg?.type === 'tg-sizes') { // sizes for "files over 1 MB" in the link picker
     (async () => {
       try {
-        const hosts = [...new Set(msg.urls.map(hostOf).filter(Boolean))].slice(0, 30);
-        const cookies = {};
-        for (const h of hosts) { const c = await cookieString(msg.urls.find(u => hostOf(u) === h)); if (c) cookies[h] = c; }
+        const cookies = await cookiesByHost(msg.urls);
         const r = await post('/api/sizes', { urls: msg.urls, cookies, headers: { 'User-Agent': navigator.userAgent, Referer: msg.referer || '' } }, 60000);
         sendResponse({ ok: true, sizes: r.sizes });
       } catch (e) { sendResponse({ ok: false, error: e.message }); }
@@ -635,12 +763,18 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   if (info.menuItemId === 'tg-page') { openBatch(tab.id); return; }
   if (info.menuItemId === 'tg-zip') { const ok = await showApp('zip:' + info.linkUrl); flash(ok ? '✓' : 'OFF', ok ? '#13955b' : '#d23c3c', tab?.id); return; }
   const url = info.menuItemId === 'tg-link' ? info.linkUrl : info.srcUrl;
-  if (url && /^magnet:/i.test(url)) { const ok = await sendToApp(url, {}); flash(ok ? '✓' : 'OFF', ok ? '#13955b' : '#d23c3c', tab?.id); return; }
+  if (url && /^magnet:/i.test(url)) { tell(tab?.id, magnetName(url), await sendToApp(url, {})); return; }
   if (!url || !/^https?:/i.test(url)) {
     // blob: video: point people to the video button instead
     flash('▶', '#006fef', tab?.id);
     return;
   }
-  const ok = await sendToApp(url, { referrer: info.pageUrl || tab?.url || '', page: info.pageUrl || tab?.url || '' });
-  flash(ok ? '✓' : 'OFF', ok ? '#13955b' : '#d23c3c', tab?.id);
+  const r = await sendToApp(url, { referrer: info.pageUrl || tab?.url || '', page: info.pageUrl || tab?.url || '' });
+  tell(tab?.id, nameOf(url), r);
 });
+
+// A magnet link's name (its dn=), or "Torrent".
+function magnetName(url) {
+  const m = /[?&]dn=([^&]+)/.exec(url);
+  try { return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : 'Torrent'; } catch { return 'Torrent'; }
+}

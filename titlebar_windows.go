@@ -42,6 +42,7 @@ const (
 	wmNCCalcSize    = 0x0083
 	wmNCLButtonDown = 0x00A1
 	sizeRestored    = 0
+	sizeMinimized   = 1
 	sizeMaximized   = 2
 	swMinimize      = 6
 	swMaximize      = 3
@@ -59,6 +60,7 @@ type titleBar struct {
 	hwnd uintptr
 	old  uintptr // the window's own message handler (go-webview2's)
 	max  bool
+	min  bool // minimized: the page stops drawing and checks less often
 }
 
 var (
@@ -103,6 +105,10 @@ func titleBarMsg(hwnd, msg, wp uintptr, lp unsafe.Pointer) uintptr {
 			return res
 		}
 	case wmSize:
+		if min := wp == sizeMinimized; t.w != nil && min != t.min {
+			t.min = min
+			t.w.Dispatch(func() { t.w.Eval(fmt.Sprintf("window.tgMinimized && tgMinimized(%v)", min)) })
+		}
 		if t.w != nil && (wp == sizeMaximized || wp == sizeRestored) {
 			if max := wp == sizeMaximized; max != t.max {
 				t.max = max
