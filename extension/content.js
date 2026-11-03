@@ -48,6 +48,85 @@
   // the arrow from Jasqet's logo
   const ICON = '<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v13m-6-6 6 6 6-6M5 21h14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
+  // ---------- the note when Jasqet takes a download ----------
+  // The browser's own download goes away when Jasqet takes it, so this note
+  // (bottom right, a few seconds) is what shows it worked, or why it didn't.
+  // Several downloads at once share one note.
+  let note, noteBox, noteTimer, noteNames = [];
+  try {
+    chrome.runtime.onMessage.addListener(msg => { if (msg?.type === 'tg-toast' && window === window.top) showNote(msg); });
+  } catch {}
+
+  function noteUI() {
+    if (note) return;
+    note = document.createElement('jasqet-note');
+    note.style.cssText = 'all:initial;position:fixed;right:0;bottom:0;width:0;height:0;z-index:2147483647;';
+    const r = note.attachShadow({ mode: 'closed' });
+    r.innerHTML = `<style>
+      :host{all:initial}
+      .t{position:fixed;right:20px;bottom:20px;display:flex;align-items:flex-start;gap:11px;width:340px;max-width:calc(100vw - 40px);box-sizing:border-box;
+         padding:12px 12px 12px 14px;background:#161a21;color:#e9ecf1;border:1px solid #2c3340;border-left:3px solid #35c483;border-radius:12px;
+         box-shadow:0 12px 40px rgba(0,0,0,.45);font:13px/1.4 "Segoe UI",system-ui,-apple-system,sans-serif;
+         opacity:0;transform:translateY(12px);transition:opacity .18s,transform .18s;pointer-events:none}
+      .t.on{opacity:1;transform:none;pointer-events:auto}
+      .t.bad{border-left-color:#ff6b6b}
+      .ic{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#35c483;color:#0b2416}
+      .bad .ic{background:#ff6b6b;color:#2b0b0b}
+      .tx{flex:1;min-width:0}
+      .tx b{display:block;font-weight:600;margin-bottom:2px}
+      .ln{color:#b4bbc7;font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+      .ln.wrap{white-space:normal}
+      .bt{flex:none;display:flex;gap:4px;align-items:center}
+      button{border:0;border-radius:7px;font:600 12.5px "Segoe UI",system-ui,sans-serif;cursor:pointer;color:inherit;background:none;padding:5px 9px}
+      .sh{background:#006fef;color:#fff}
+      .sh:hover{background:#1a80ff}
+      .x{color:#8c94a3;font-size:16px;line-height:1;padding:4px 6px}
+      .x:hover{color:#e9ecf1;background:#232934}
+      button:focus-visible{outline:2px solid #3daeff;outline-offset:1px}
+      @media (prefers-reduced-motion:reduce){.t{transition:none}}
+    </style><div class="t" role="status" aria-live="polite"><span class="ic">${ICON}</span>
+      <div class="tx"><b></b><div class="ls"></div></div>
+      <div class="bt"><button class="sh" type="button">Show</button><button class="x" type="button" aria-label="Close">×</button></div></div>`;
+    noteBox = r.querySelector('.t');
+    r.querySelector('.sh').addEventListener('click', () => { try { chrome.runtime.sendMessage({ type: 'tg-show' }); } catch {} hideNote(); });
+    r.querySelector('.x').addEventListener('click', hideNote);
+    noteBox.addEventListener('mouseenter', () => clearTimeout(noteTimer)); // stays while you read it
+    noteBox.addEventListener('mouseleave', () => hideNoteIn(2500));
+  }
+
+  function showNote(n) {
+    noteUI();
+    (document.fullscreenElement || document.documentElement).appendChild(note);
+    const wasOK = noteBox.classList.contains('on') && !noteBox.classList.contains('bad');
+    noteNames = n.ok && wasOK ? [...noteNames, n.name] : [n.name];
+    let title, lines;
+    if (n.ok) {
+      const k = noteNames.length;
+      title = k > 1 ? `${k} downloads sent to Jasqet` : n.refreshed ? 'Jasqet got a fresh link for this download'
+        : n.adopted ? 'Saved in Jasqet' : 'Downloading in Jasqet';
+      lines = noteNames.slice(-3).reverse();
+      if (k > 3) lines.push(`and ${k - 3} more`);
+    } else {
+      title = n.saved ? 'Your browser kept this file' : n.kept ? 'Your browser is downloading this instead' : 'Jasqet didn\'t get this';
+      lines = [n.name, n.error].filter(Boolean);
+    }
+    noteBox.classList.toggle('bad', !n.ok);
+    noteBox.querySelector('b').textContent = title;
+    const ls = noteBox.querySelector('.ls');
+    ls.replaceChildren(...lines.map((t, i) => {
+      const d = document.createElement('div');
+      d.className = 'ln' + (!n.ok && i > 0 ? ' wrap' : ''); // the reason can take two lines
+      d.textContent = t || 'Download';
+      d.title = t || '';
+      return d;
+    }));
+    noteBox.offsetWidth; // so it slides in the first time
+    noteBox.classList.add('on');
+    hideNoteIn(n.ok ? 5000 : 9000);
+  }
+  function hideNoteIn(ms) { clearTimeout(noteTimer); noteTimer = setTimeout(hideNote, ms); }
+  function hideNote() { clearTimeout(noteTimer); noteBox?.classList.remove('on'); }
+
   function ui() {
     if (host) return;
     host = document.createElement('jasqet-ui');

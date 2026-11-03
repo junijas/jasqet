@@ -546,9 +546,11 @@ const KEY = (async () => {
   }
   try { return sessionStorage.getItem('tg-key') || ''; } catch { return ''; }
 })();
-const api = async (path, body) => {
-  const headers = {'X-Jasqet-Key': await KEY};
+const api = async (path, body, more) => {
+  const headers = {'X-Jasqet-Key': await KEY, ...more};
   const r = await fetch('/api/' + path, body === undefined ? {headers} : {method:'POST', headers:{...headers, 'Content-Type':'application/json'}, body:JSON.stringify(body)});
+  if (r.status === 204) return null; // the list hasn't changed (state, poll)
+  if (path === 'state') stateTag = r.headers.get('X-Jasqet-State') || '';
   const j = await r.json().catch(() => ({}));
   if (r.status === 401) $('#nokey').classList.add('show'); // Jasqet was restarted, or this isn't its window
   if (!r.ok) throw new Error(j.error || r.statusText);
@@ -626,9 +628,12 @@ function renderNav() {
   let h = FILTERS.map(([k,l,ic]) => `<button class="nav ${view===k?'on':''}" data-v="${k}">${svg(ic,null,17)}${l}<span class="n">${c(k)||''}</span></button>`).join('');
   h += '<div class="navlabel">By type</div>';
   h += CATS.map(k => `<button class="nav ${view===k?'on':''}" data-v="${k}">${svg(ICON[k],CATC[k],17)}${k}<span class="n">${c(k)||''}</span></button>`).join('');
-  $('#nav').innerHTML = h;
-  $('#viewTitle').textContent = (FILTERS.find(f=>f[0]===view)||[0,view])[1];
+  if (h !== navHTML) { $('#nav').innerHTML = navHTML = h; } // unchanged: no redraw
+  setText($('#viewTitle'), (FILTERS.find(f=>f[0]===view)||[0,view])[1]);
 }
+let navHTML = '';
+// setText: only when it changed (writing the same text still makes the window redraw)
+function setText(el, t) { if (el.textContent !== t) el.textContent = t; }
 $('#nav').onclick = e => { const b = e.target.closest('.nav'); if (b) { view = b.dataset.v; renderNav(); renderList(); } };
 
 const isStream = d => d.kind === 'media' || d.kind === 'yt';
@@ -756,15 +761,16 @@ function rowEl(d) {
   if (open.has(d.id)) {
     const full = d.dir ? d.dir + (d.dir.includes('\\') ? '\\' : '/') + d.fileName : 'Unknown';
     el.querySelector('.detail').innerHTML = `<div class="kv">
-      <span>Link</span><span class="mono">${esc(d.url)}</span>
+      <span>Link</span><span class="mono">${esc(d.url || '(made inside the page)')}</span>
       <span>Saved to</span><span class="mono">${esc(full)}</span>
       <span>Size</span><span>${d.size>0?fmtB(d.size)+' <span class="mono" style="color:var(--muted)">('+d.size.toLocaleString()+' bytes)</span>':'Unknown until the server says'}</span>
       ${isStream(d)
         ? `<span>Type</span><span>${d.kind === 'yt' ? 'Video page (YouTube / site helper)' : 'Video stream'}${d.quality ? ' · ' + esc(d.quality) : ''}</span>
            <span>Connections</span><span>${d.connections} max${d.barTotal ? ' · ' + d.barTotal + ' chunks' : ''}</span>`
+        : d.fromBrowser ? `<span>Type</span><span>Saved by your browser: the page made this file itself, so there was no link Jasqet could download</span>`
         : d.kind === 'torrent' ? `<span>Type</span><span>Torrent${d.files ? ' · ' + d.files + ' files' : ''} · every piece is checked against its fingerprint</span>`
         : `<span>Connections</span><span>${d.connections} max${d.autoConns ? ' (picked by itself)' : ''} · ${d.segments.length} piece${d.segments.length==1?'':'s'}</span>`}
-      ${d.kind === 'torrent' ? '' : `<span>Resume</span><span>${d.size<0?'Unknown':d.resumable?'<span class="pill" style="color:var(--good)">Supported</span>':'<span class="pill" style="color:var(--bad)">Not supported by this server</span>'}</span>`}
+      ${d.kind === 'torrent' || d.fromBrowser ? '' : `<span>Resume</span><span>${d.size<0?'Unknown':d.resumable?'<span class="pill" style="color:var(--good)">Supported</span>':'<span class="pill" style="color:var(--bad)">Not supported by this server</span>'}</span>`}
       <span>Added</span><span>${new Date(d.addedAt).toLocaleString()}</span>
       ${d.page && d.page !== d.url ? `<span>From page</span><span class="mono">${esc(d.page)}</span>` : ''}
       ${d.mirrors ? `<span>Mirrors</span><span>${d.mirrors} other link${d.mirrors==1?'':'s'}${d.mirrorsOK ? ' · ' + d.mirrorsOK + ' in use' : ''}</span>` : ''}
@@ -787,7 +793,7 @@ function rowEl(d) {
         ${d.status !== 'completed' && d.kind !== 'yt' && d.kind !== 'torrent' ? '<button class="btn ghost" data-a="refreshdlg">Refresh link</button>' : ''}
         ${d.status === 'completed' && d.kind !== 'torrent' ? '<button class="btn ghost" data-a="sumdlg">Check a checksum</button>' : ''}
         ${d.status!=='completed' && d.dir ? '<button class="btn ghost" data-a="folder">Open folder</button>' : ''}
-        <button class="btn ghost" data-a="restart" ${['downloading','connecting'].includes(d.status)?'disabled style="opacity:.5"':''}>Download again</button>
+        ${d.fromBrowser ? '' : `<button class="btn ghost" data-a="restart" ${['downloading','connecting'].includes(d.status)?'disabled style="opacity:.5"':''}>Download again</button>`}
         <button class="btn ghost" data-a="remove">Remove from list</button>
         ${d.status==='completed' ? '<button class="btn danger" data-a="deletefile">Delete file</button>' : ''}
       </div>`;
@@ -1053,18 +1059,52 @@ document.addEventListener('mousedown', e => { if (!e.target.closest('#ctx')) $('
 document.addEventListener('keydown', e => { if (e.key === 'Escape') $('#ctx').classList.remove('show'); });
 addEventListener('blur', () => $('#ctx').classList.remove('show'));
 
-let failures = 0, timer, prevSubs = {};
-async function poll() {
+let failures = 0, timer, prevSubs = {}, minimized = false;
+// Minimized (Jasqet tells the page: tgMinimized) or hidden: nothing to draw,
+// so it only checks every 10 s (finished downloads still notify) and draws
+// again the moment the window comes back.
+const resting = () => minimized || document.hidden;
+var stateTag = ''; // the list the window has drawn (server.go state: "the same" answers 204; set by api())
+const getState = () => api('state', undefined, {'X-Jasqet-Seen': stateTag});
+window.tgMinimized = m => { minimized = m; if (!m) poll(); };
+document.addEventListener('visibilitychange', () => { if (!resting()) poll(); });
+// shown: the window stays hidden until the page has drawn its list (no white
+// flash, desktop_windows.go); a frame later, Jasqet shows it.
+let shown = false;
+function showWindow() {
+  if (shown) return; shown = true;
+  const go = () => { try { window.tgShown && tgShown(); } catch {} };
+  requestAnimationFrame(() => requestAnimationFrame(go));
+  setTimeout(go, 60); // a hidden window may not draw frames: don't wait long for one
+}
+// poll(true): the regular check. Anything else (you did something) gets the
+// whole list and draws it, changed or not.
+async function poll(regular) {
   clearTimeout(timer);
+  if (!regular) stateTag = '';
+  const again = ms => { timer = setTimeout(() => poll(true), ms); };
   try {
-    state = await api('state');
+    const fresh = await getState();
+    failures = 0; $('#offline').classList.remove('show');
+    if (!fresh) { // nothing changed: nothing to read or draw
+      if (state.extras?.power) renderBanners(); // its countdown
+      again(resting() ? 10000 : state.extras?.power ? 500 : 1500);
+      return;
+    }
+    state = fresh;
     state.downloads.forEach(d => { d.segments = d.segments || []; });
     syncTheme();
-    failures = 0; $('#offline').classList.remove('show');
+    const ids = new Set();
     for (const d of state.downloads) {
+      ids.add(d.id);
       if (prevStatus[d.id] && prevStatus[d.id] !== 'completed' && d.status === 'completed') notify(d);
       prevStatus[d.id] = d.status;
     }
+    // removed downloads: let their rows go (they were kept for the whole session)
+    for (const id in rows) if (!ids.has(id)) delete rows[id];
+    for (const id in prevStatus) if (!ids.has(id)) delete prevStatus[id];
+    for (const id in tfiles) if (!ids.has(id)) delete tfiles[id];
+    for (const id of open) if (!ids.has(id)) open.delete(id);
     const subs = state.extras?.subs || {};
     for (const [id, j] of Object.entries(subs)) {
       const was = prevSubs[id]; prevSubs[id] = j.state;
@@ -1074,13 +1114,16 @@ async function poll() {
       else if (j.state === 'error') toast(`Subtitles: ${j.message}`);
     }
     const making = Object.values(subs).some(j => j.state !== 'done' && j.state !== 'error');
-    $('#total').textContent = fmtB(state.totalSpeed) + '/s';
-    const active = state.downloads.some(d => ['downloading','connecting','merging'].includes(d.status));
-    document.title = active ? `${fmtB(state.totalSpeed)}/s · Jasqet` : 'Jasqet';
-    renderNav(); renderList(); renderBanners();
     if (state.openPage) handleOpenPage(state.openPage);
-    timer = setTimeout(poll, active || making || state.extras?.power || state.extras?.refreshId ? 500 : 1500);
-  } catch (e) { console.error(e); if (++failures > 2) $('#offline').classList.add('show'); timer = setTimeout(poll, 2000); }
+    if (resting()) { stateTag = ''; again(10000); return; } // not drawn: the next answer in full
+    setText($('#total'), fmtB(state.totalSpeed) + '/s');
+    const active = state.downloads.some(d => ['downloading','connecting','merging'].includes(d.status));
+    const title = active ? `${fmtB(state.totalSpeed)}/s · Jasqet` : 'Jasqet';
+    if (document.title !== title) document.title = title;
+    renderNav(); renderList(); renderBanners();
+    showWindow();
+    again(active || making || state.extras?.power || state.extras?.refreshId ? 500 : 1500);
+  } catch (e) { console.error(e); if (++failures > 2) $('#offline').classList.add('show'); showWindow(); again(2000); }
 }
 
 function renderBanners() {
@@ -1497,8 +1540,8 @@ async function saveSettings(quiet) {
 }
 $('#sSave').onclick = () => saveSettings(false).catch(err => { $('#sErr').textContent = err.message; });
 
-$('#pauseAll').onclick = () => api('action', {id:'*', action:'pause'}).then(poll);
-$('#resumeAll').onclick = () => api('action', {id:'*', action:'resume'}).then(poll);
+$('#pauseAll').onclick = () => api('action', {id:'*', action:'pause'}).then(() => poll());
+$('#resumeAll').onclick = () => api('action', {id:'*', action:'resume'}).then(() => poll());
 // "Clear finished": with many, a second click; then Undo for a while (the files stay on disk)
 let clearArm = 0;
 $('#clearDone').onclick = async () => {

@@ -16,6 +16,7 @@ import (
 	"net/url"
 	"os"
 	"path/filepath"
+	"slices"
 	"sort"
 	"strings"
 	"sync"
@@ -94,6 +95,7 @@ type Download struct {
 	Checksum     string   `json:"checksum,omitempty"`     // "sha256:…" expected (typed in or found on the site)
 	ChecksumFrom string   `json:"checksumFrom,omitempty"` // where it was found
 	Safety       *Safety  `json:"safety,omitempty"`       // results of the safety checks
+	FromBrowser  bool     `json:"fromBrowser,omitempty"`  // the browser saved it (made inside a page): nothing to download again (adopt.go)
 
 	lastAutoRefresh time.Time
 	pushback        int // "too many requests" answers since the last check
@@ -542,7 +544,14 @@ func (m *Manager) sortedLocked() []*Download {
 	for _, d := range m.downloads {
 		list = append(list, d)
 	}
-	sort.Slice(list, func(i, j int) bool { return list[i].AddedAt.Before(list[j].AddedAt) })
+	// the ID settles a tie (a batch, a torrent's files): otherwise rows that
+	// were added together swap places on each refresh and the window redraws them all
+	slices.SortFunc(list, func(a, b *Download) int {
+		if c := a.AddedAt.Compare(b.AddedAt); c != 0 {
+			return c
+		}
+		return strings.Compare(a.ID, b.ID)
+	})
 	return list
 }
 
@@ -559,7 +568,10 @@ func (m *Manager) loop() {
 			elapsed = 0.5
 		}
 		m.mu.Lock()
-		list := m.sortedLocked()
+		list := make([]*Download, 0, len(m.downloads)) // the order doesn't matter here: no sorting twice a second
+		for _, d := range m.downloads {
+			list = append(list, d)
+		}
 		dirty := m.dirty
 		m.mu.Unlock()
 		active, waiting := false, false
@@ -1070,6 +1082,9 @@ func (m *Manager) Resume(d *Download) {
 		d.Status = StQueued
 		d.Scheduled = false
 	}
+	if d.running && d.stopReason == "pause" {
+		d.stopReason = "hold" // Resume right after Pause, while it's still stopping: it carries on once stopped
+	}
 	d.retryAt, d.autoRetries = time.Time{}, 0 // you asked: now, not later
 	d.mu.Unlock()
 	m.saveSoon()
@@ -1078,7 +1093,7 @@ func (m *Manager) Resume(d *Download) {
 
 func (m *Manager) Restart(d *Download) {
 	d.mu.Lock()
-	if d.running {
+	if d.running || d.FromBrowser { // the browser saved it: its link was the page, not the file
 		d.mu.Unlock()
 		return
 	}
@@ -1302,6 +1317,7 @@ type DownloadView struct {
 	ZipName      string  `json:"zipName,omitempty"` // taken out of a ZIP: its path there
 	AutoConns    bool    `json:"autoConns,omitempty"`
 	FixedChunks  int     `json:"fixedChunks,omitempty"` // damaged chunks fetched again
+	FromBrowser  bool    `json:"fromBrowser,omitempty"` // saved by the browser (adopt.go)
 }
 
 func (m *Manager) Snapshot() ([]DownloadView, Settings) {
@@ -1352,6 +1368,7 @@ func (m *Manager) Snapshot() ([]DownloadView, Settings) {
 		}
 		v.Clip, v.Subs = d.Clip.label(), d.Subs
 		v.FixedChunks = d.badChunks
+		v.FromBrowser = d.FromBrowser
 		if d.Zip != nil {
 			v.ZipName = d.Zip.Name
 		}

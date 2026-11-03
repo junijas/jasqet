@@ -32,7 +32,7 @@ import (
 
 // extensionPaths: everything Jasqet's extension uses.
 var extensionPaths = map[string]bool{
-	"/api/ping": true, "/api/show": true, "/api/pair": true, "/api/add": true, "/api/sizes": true,
+	"/api/ping": true, "/api/show": true, "/api/pair": true, "/api/add": true, "/api/adopt": true, "/api/sizes": true,
 	"/api/media/probe": true, "/api/media/add": true, "/api/yt/probe": true, "/api/yt/add": true,
 	"/api/tools": true, "/api/tools/install": true,
 }

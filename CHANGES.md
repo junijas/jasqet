@@ -1,3 +1,77 @@
+# Browser extension 1.3.7: shows where your download went
+
+- **A note on the page when Jasqet takes a download.** The browser's own
+  download goes away when Jasqet takes it, and the ✓ that was meant to show
+  it hid behind the tab's own badge, so it looked as if nothing happened. Now a
+  note shows at the bottom right for a few seconds ("Downloading in Jasqet",
+  the file's name, and **Show** to open Jasqet); several at once share one
+  note. When Jasqet says no (not paired, not allowed, or an error), the note
+  says why and that the browser is downloading it instead. When Jasqet isn't
+  running, the browser just downloads as before. The ✓ badge now shows on the
+  tab you're on. A switch in the extension's menu turns the note off.
+- **"Sent to Jasqet" in the extension's menu:** the last five things sent,
+  with a ✕ and the reason for any that weren't.
+- **Outlook and Gmail attachments go to Jasqet too.** A file a web page makes
+  itself (attachments in web mail, exports: a `blob:` link) has no address
+  Jasqet could download, so it used to stay in the browser. Now the browser
+  saves it as usual, and Jasqet then takes the saved file: it moves into
+  Jasqet's folder, shows in the list as finished ("Saved by your browser"),
+  and gets the same checks and rules as Jasqet's own downloads. It's only
+  taken from your Downloads folder (or Jasqet's), only right after the
+  browser saved it, and nothing is downloaded again. This needs the Jasqet
+  built with this change; an older one says to update, and the file stays in
+  the browser.
+- **When Jasqet was closed a moment ago**, the extension no longer shows
+  "Failed to fetch": the browser just keeps the download, as when it's closed.
+- **Every file type is caught by default** (anything over 64 KB). Untick
+  **Catch every file type** in the extension's menu to catch only the types
+  listed there, as before.
+- **Right-click → Download with Jasqet and magnet links** show the same note.
+- **Lighter on the browser:** settings are kept in memory instead of read for
+  every download, a video player asking for the same file again and again no
+  longer saves the tab's list each time, and cookies for several sites are
+  looked up together instead of one by one.
+
+# Next Jasqet (after 1.6.2, not released yet): a lighter window
+
+Measured with 300 finished downloads in the list, nothing downloading
+(Jasqet with its window, all its processes):
+
+| Window          | 1.6.2             | now               |
+|-----------------|-------------------|-------------------|
+| open, idle      | 3.0% of one core  | 2.0% of one core  |
+| minimized       | 2.2% of one core  | 0.16% of one core |
+
+- **Minimized, the window rests.** It used to keep checking and redrawing as
+  if you were looking at it. Now Jasqet tells it when it's minimized, and it checks every 10 s
+  instead of every second and a half (finished downloads still notify), and
+  draws again the moment you bring it back.
+- **"Nothing changed" is a short answer.** The window asks for the list every
+  second or so. When nothing changed, Jasqet now says so in a few bytes instead
+  of sending the whole list (about 1 KB per download), so the window doesn't
+  read and check it all again.
+- **No more redrawing what didn't change:** the side bar, the speed and the
+  title are only rewritten when their text changes, and downloads added at the
+  same moment (a batch, a torrent's files) keep one order, instead of swapping
+  places and redrawing the whole list on every check.
+- **The window lets go of removed downloads.** Each row stayed in memory for as
+  long as the window was open, also after Remove or Clear finished.
+- **The tray icon** only updates its tooltip and ticks when they change, not
+  every 2 s; the twice-a-second check no longer sorts the whole list.
+- **No white flash when the window opens.** It showed Windows' light title
+  bar and a black, then white, window for about half a second before the page.
+  Now the window stays hidden until the page has drawn, then appears whole,
+  in the dark or light colours you use (it's ready about as soon as before).
+- **Resume right after Pause works.** Pressed while a download was still
+  stopping, Resume was ignored and the download stayed paused.
+- **Files the browser saved** (Outlook and Gmail attachments): see the
+  extension's notes above.
+- **Checked, and fine as it was:** starting takes 0.4–0.9 s, mostly Windows
+  loading the program (Jasqet's own start-up work is about 50 ms); in the tray
+  with the window closed it uses no measurable CPU and about 28 MB; 120
+  downloads in a row (with pauses and resumes) leave no goroutines or memory
+  behind (a new test checks this).
+
 # Jasqet 1.6.2: fixes from a security review
 
 1.6.1 was given a security review: the local server and its API, LAN sharing,

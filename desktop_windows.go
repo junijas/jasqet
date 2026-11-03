@@ -127,6 +127,13 @@ func (d *desktop) Show() {
 		}
 		os.Setenv("WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS", d.args)
 		d.mu.Unlock()
+		d.m.mu.Lock()
+		theme := d.m.settings.Theme
+		d.m.mu.Unlock()
+		var made sync.Once
+		madeIt := made.Do
+		cloaking := startCloaked(theme) // hidden until the page has drawn: no white flash (splash_windows.go)
+		defer madeIt(cloaking)
 		ww, wh := windowSize()
 		w := webview2.NewWithOptions(webview2.WebViewOptions{
 			AutoFocus: true,
@@ -135,6 +142,7 @@ func (d *desktop) Show() {
 				Title: "Jasqet", Width: ww, Height: wh, IconId: appIconID, Center: true,
 			},
 		})
+		madeIt(cloaking)
 		os.Unsetenv("WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS") // for this window only, not the programs Open starts
 		if w == nil {
 			d.useFallback("WebView2 is not available")
@@ -151,6 +159,18 @@ func (d *desktop) Show() {
 		w.Bind("tgFullscreen", v.fullscreen)
 		w.Bind("tgPong", v.pong)
 		stop := make(chan struct{})
+		// the page shows the window once it has drawn; it never stays hidden
+		// for long, even if the page can't load
+		var shown sync.Once
+		show := func() { shown.Do(func() { uncloak(v.hwnd) }) }
+		w.Bind("tgShown", show)
+		go func() {
+			select {
+			case <-time.After(4 * time.Second):
+				w.Dispatch(show)
+			case <-stop:
+			}
+		}()
 		go v.watch(stop, func(file string) bool {
 			target := d.url
 			if file != "" {
@@ -201,6 +221,7 @@ func (d *desktop) tray() {
 		go func() {
 			t := time.NewTicker(2 * time.Second)
 			defer t.Stop()
+			lastTip := "Jasqet"
 			for {
 				select {
 				case <-mOpen.ClickedCh:
@@ -229,16 +250,24 @@ func (d *desktop) tray() {
 				if sum.BudgetLeft >= 0 {
 					tip += fmt.Sprintf(" · %s data left", humanSize(sum.BudgetLeft))
 				}
-				systray.SetTooltip(tip)
-				if sum.SchedOn {
-					mSched.Check()
-				} else {
-					mSched.Uncheck()
+				// only what changed: each of these is a call into Windows' taskbar
+				if tip != lastTip {
+					systray.SetTooltip(tip)
+					lastTip = tip
 				}
-				if sum.Quiet {
-					mQuiet.Check()
-				} else {
-					mQuiet.Uncheck()
+				if sum.SchedOn != mSched.Checked() {
+					if sum.SchedOn {
+						mSched.Check()
+					} else {
+						mSched.Uncheck()
+					}
+				}
+				if sum.Quiet != mQuiet.Checked() {
+					if sum.Quiet {
+						mQuiet.Check()
+					} else {
+						mQuiet.Uncheck()
+					}
 				}
 			}
 		}()

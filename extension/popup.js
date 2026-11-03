@@ -3,8 +3,9 @@ const DEFAULTS = {
   catchMagnet: true,
   ytSession: false,
   prefetch: true,
-  catchAll: false,
+  catchAll: true,
   videoButton: true,
+  toast: true,
   types: 'zip rar 7z gz tar xz iso img exe msi apk xapk dmg deb rpm appimage mp4 mkv avi mov wmv flv webm m4v 3gp mp3 m4a flac wav aac ogg pdf epub docx xlsx pptx torrent bin',
 };
 const $ = id => document.getElementById(id);
@@ -16,6 +17,7 @@ chrome.storage.local.get(DEFAULTS).then(s => {
   $('catchMagnet').checked = s.catchMagnet !== false;
   $('prefetch').checked = s.prefetch !== false;
   $('ytSession').checked = !!s.ytSession;
+  $('toast').checked = s.toast !== false;
   $('types').value = s.types;
   $('typesWrap').style.display = s.catchAll ? 'none' : '';
 });
@@ -24,6 +26,25 @@ $('videoButton').onchange = e => chrome.storage.local.set({ videoButton: e.targe
 $('catchMagnet').onchange = e => chrome.storage.local.set({ catchMagnet: e.target.checked });
 $('prefetch').onchange = e => chrome.storage.local.set({ prefetch: e.target.checked });
 $('ytSession').onchange = e => chrome.storage.local.set({ ytSession: e.target.checked });
+$('toast').onchange = e => chrome.storage.local.set({ toast: e.target.checked });
+
+// What was sent to Jasqet lately (background.js remember), newest first.
+const ago = t => { const s = (Date.now() - t) / 1000; return s < 60 ? 'just now' : s < 3600 ? `${Math.floor(s / 60)} min ago` : `${Math.floor(s / 3600)} h ago`; };
+chrome.storage.session.get('recent').then(({ recent = [] }) => {
+  if (!recent.length) return;
+  $('recent').replaceChildren(...recent.map(e => {
+    const r = document.createElement('div');
+    r.className = 'r' + (e.ok ? '' : ' bad');
+    const name = document.createElement('span');
+    name.textContent = e.name || 'Download';
+    name.title = e.ok ? e.name || '' : `${e.name || ''}\n${e.error || ''}`;
+    const when = document.createElement('small');
+    when.textContent = e.ok ? ago(e.at) : 'not sent';
+    r.append(name, when);
+    return r;
+  }));
+  $('recentSec').hidden = false;
+}, () => {});
 $('catchAll').onchange = e => { chrome.storage.local.set({ catchAll: e.target.checked }); $('typesWrap').style.display = e.target.checked ? 'none' : ''; };
 $('types').onchange = e => chrome.storage.local.set({ types: e.target.value.toLowerCase().replace(/[.,]/g, ' ').trim() });
 $('openApp').onclick = async () => {

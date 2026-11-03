@@ -3,11 +3,13 @@ package main
 import (
 	"embed"
 	"encoding/json"
+	"hash/fnv"
 	"net"
 	"net/http"
 	"os"
 	"path/filepath"
 	"slices"
+	"strconv"
 	"strings"
 	"sync"
 	"time"
@@ -42,6 +44,7 @@ func (s *Server) routes() http.Handler {
 	mux.HandleFunc("/api/session", s.apiSession)
 	mux.HandleFunc("/api/state", s.state)
 	mux.HandleFunc("/api/add", s.add)
+	mux.HandleFunc("/api/adopt", s.adopt)
 	mux.HandleFunc("/api/action", s.action)
 	mux.HandleFunc("/api/settings", s.saveSettings)
 	mux.HandleFunc("/api/schedule", s.saveSchedule)
@@ -163,8 +166,26 @@ func (s *Server) state(w http.ResponseWriter, r *http.Request) {
 	s.openPage = ""
 	s.pageMu.Unlock()
 	seen, _ := extensionSeen()
-	writeJSON(w, map[string]any{"downloads": list, "settings": settings, "saved": saved, "totalSpeed": total, "version": version,
+	b, err := json.Marshal(map[string]any{"downloads": list, "settings": settings, "saved": saved, "totalSpeed": total, "version": version,
 		"extras": s.m.Extras(), "openPage": page, "extConnected": seen, "extAsk": s.extQuestion(), "pairAsk": s.pairQuestion()})
+	if err != nil {
+		writeErrCode(w, http.StatusInternalServerError, err.Error())
+		return
+	}
+	// The window asks every second or so; mostly nothing changed. Then the
+	// answer is "the same" with no body: the window doesn't read the whole
+	// list again or redraw (X-Jasqet-Seen: the tag of the list it has).
+	h := fnv.New64a()
+	h.Write(b)
+	tag := strconv.FormatUint(h.Sum64(), 36)
+	w.Header().Set("X-Jasqet-State", tag)
+	w.Header().Set("Cache-Control", "no-store")
+	if r.Header.Get("X-Jasqet-Seen") == tag {
+		w.WriteHeader(http.StatusNoContent)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(b)
 }
 
 func (s *Server) add(w http.ResponseWriter, r *http.Request) {
@@ -195,6 +216,24 @@ func (s *Server) add(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	writeJSON(w, map[string]any{"ids": ids})
+}
+
+// adopt: the extension hands over a file the browser saved itself (adopt.go).
+func (s *Server) adopt(w http.ResponseWriter, r *http.Request) {
+	var req AdoptRequest
+	if r.Method != http.MethodPost || json.NewDecoder(r.Body).Decode(&req) != nil {
+		writeErr(w, "bad request")
+		return
+	}
+	d, err := s.m.Adopt(req)
+	if err != nil {
+		writeErr(w, friendlyError(err))
+		return
+	}
+	d.mu.Lock()
+	name := d.FileName
+	d.mu.Unlock()
+	writeJSON(w, map[string]any{"ids": []string{d.ID}, "fileName": name})
 }
 
 func (s *Server) action(w http.ResponseWriter, r *http.Request) {
