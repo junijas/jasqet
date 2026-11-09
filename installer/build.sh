@@ -2,7 +2,7 @@
 # Builds Jasqet-Setup.exe. Usage: installer/build.sh [version]
 set -e
 cd "$(dirname "$0")/.."
-V=${1:-1.6.2}
+V=${1:-1.6.3}
 P=installer/payload
 rm -rf "$P" && mkdir -p "$P"
 # cgo off, like every release: with MinGW, ld would also add MinGW's own manifest

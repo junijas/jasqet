@@ -15,7 +15,7 @@ Target ${TARGET}
 !include "FileFunc.nsh"
 
 !ifndef VERSION
-  !define VERSION "1.6.2"
+  !define VERSION "1.6.3"
 !endif
 !ifndef SRCDIR
   !define SRCDIR "payload"

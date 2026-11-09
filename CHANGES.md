@@ -1,4 +1,11 @@
-# Browser extension 1.3.7: shows where your download went
+# Jasqet 1.6.3: Outlook attachments, a lighter window, no white flash
+
+Downloads the browser extension hands to Jasqet now show on the page, files
+web mail makes inside the page (Outlook and Gmail attachments) go to Jasqet
+too, and Jasqet's window is lighter and opens without a white flash. The
+browser extension is 1.3.7.
+
+## Browser extension 1.3.7
 
 - **A note on the page when Jasqet takes a download.** The browser's own
   download goes away when Jasqet takes it, and the ✓ that was meant to show
@@ -18,9 +25,8 @@
   Jasqet's folder, shows in the list as finished ("Saved by your browser"),
   and gets the same checks and rules as Jasqet's own downloads. It's only
   taken from your Downloads folder (or Jasqet's), only right after the
-  browser saved it, and nothing is downloaded again. This needs the Jasqet
-  built with this change; an older one says to update, and the file stays in
-  the browser.
+  browser saved it, and nothing is downloaded again. This needs Jasqet 1.6.3
+  or newer; an older one says to update, and the file stays in the browser.
 - **When Jasqet was closed a moment ago**, the extension no longer shows
   "Failed to fetch": the browser just keeps the download, as when it's closed.
 - **Every file type is caught by default** (anything over 64 KB). Untick
@@ -32,12 +38,12 @@
   longer saves the tab's list each time, and cookies for several sites are
   looked up together instead of one by one.
 
-# Next Jasqet (after 1.6.2, not released yet): a lighter window
+## The window
 
 Measured with 300 finished downloads in the list, nothing downloading
 (Jasqet with its window, all its processes):
 
-| Window          | 1.6.2             | now               |
+| Window          | 1.6.2             | 1.6.3             |
 |-----------------|-------------------|-------------------|
 | open, idle      | 3.0% of one core  | 2.0% of one core  |
 | minimized       | 2.2% of one core  | 0.16% of one core |
@@ -64,9 +70,9 @@ Measured with 300 finished downloads in the list, nothing downloading
   in the dark or light colours you use (it's ready about as soon as before).
 - **Resume right after Pause works.** Pressed while a download was still
   stopping, Resume was ignored and the download stayed paused.
-- **Files the browser saved** (Outlook and Gmail attachments): see the
-  extension's notes above.
-- **Checked, and fine as it was:** starting takes 0.4–0.9 s, mostly Windows
+## Checked, and fine as it was
+
+- Starting takes 0.4–0.9 s, mostly Windows
   loading the program (Jasqet's own start-up work is about 50 ms); in the tray
   with the window closed it uses no measurable CPU and about 28 MB; 120
   downloads in a row (with pauses and resumes) leave no goroutines or memory
